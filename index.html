@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skema Investasi TPS3R Rescue Nirmala Anggadita</title>
+    <meta name="description" content="Rancangan kerja sama operasi TPS3R tanpa residu di Desa Anggadita, Karawang. Belanja modal Rp 1,6 Miliar, balik modal dipercepat lewat penjualan biochar & bahan bakar padat, aset dihibahkan ke desa setelah 5 tahun.">
+    <meta property="og:title" content="Investasi TPS3R Rescue Nirmala Anggadita — Pengolahan Sampah Tanpa Residu">
+    <meta property="og:description" content="Belanja modal Rp 1,6 M, payback dipercepat oleh komoditas sampingan, aset dihibahkan ke desa di akhir kontrak 5 tahun.">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#07261F">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --ink: #07261F;          /* ruang pirolisis / karbon */
+            --ink-2: #0B3328;        /* layer gelap kedua */
+            --ink-3: #0F4035;        /* layer gelap ketiga */
+            --emerald: #10B981;      /* hidup / keluaran */
+            --emerald-deep: #0E9F6E;
+            --spring: #BEF264;       /* energi tech */
+            --ember: #F5A524;        /* panas / nilai biochar */
+            --ember-deep: #D98A12;
+            --sky: #38BDF8;          /* bahan bakar padat (RDF) */
+            --paper: #F4F8F4;        /* kertas hijau-dingin */
+            --paper-2: #EAF2EC;
+            --slate-ink: #0F1F1B;    /* teks gelap di latar terang */
+            --muted: #5A726A;        /* teks sekunder */
+            --line: #DCE7E0;         /* garis pemisah terang */
+            --glass: rgba(255,255,255,0.06);
+            --glass-line: rgba(190,242,100,0.16);
+        }
+
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+            background-color: var(--paper);
+            color: var(--slate-ink);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+        body * { min-width: 0; }
+
+        .font-display { font-family: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif; }
+        .tnum { font-variant-numeric: tabular-nums; font-feature-settings: "tnum"; }
+
+        ::selection { background: var(--spring); color: var(--ink); }
+
+        /* ---------- SCROLL PROGRESS ---------- */
+        #progress {
+            position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+            background: linear-gradient(90deg, var(--emerald), var(--spring));
+            z-index: 90; box-shadow: 0 0 14px rgba(190,242,100,0.6);
+            transition: width 90ms linear;
+        }
+
+        /* ---------- NAVBAR ---------- */
+        #nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 80;
+            transition: background-color .4s ease, backdrop-filter .4s ease, border-color .4s ease, padding .4s ease;
+            border-bottom: 1px solid transparent;
+            padding: 1.1rem 0;
+        }
+        #nav.scrolled {
+            background: rgba(7,38,31,0.72);
+            backdrop-filter: blur(14px) saturate(140%);
+            -webkit-backdrop-filter: blur(14px) saturate(140%);
+            border-bottom-color: rgba(190,242,100,0.14);
+            padding: 0.7rem 0;
+        }
+        .nav-link {
+            position: relative; color: rgba(244,248,244,0.78); font-size: .9rem; font-weight: 500;
+            transition: color .25s ease; padding: .25rem 0;
+        }
+        .nav-link::after {
+            content: ""; position: absolute; left: 0; bottom: -3px; height: 2px; width: 0;
+            background: var(--spring); transition: width .3s ease; border-radius: 2px;
+        }
+        .nav-link:hover { color: #fff; }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+        .nav-link.active { color: var(--spring); }
+
+        .btn-spring {
+            background: linear-gradient(135deg, var(--spring), var(--emerald));
+            color: var(--ink); font-weight: 700; border-radius: 999px;
+            box-shadow: 0 8px 26px -8px rgba(16,185,129,.65);
+            transition: transform .25s cubic-bezier(.2,.8,.2,1), box-shadow .25s ease, filter .25s ease;
+        }
+        .btn-spring:hover { transform: translateY(-2px); box-shadow: 0 14px 34px -8px rgba(16,185,129,.8); filter: brightness(1.04); }
+        .btn-ghost {
+            border: 1px solid rgba(190,242,100,0.35); color: var(--paper); border-radius: 999px;
+            transition: background-color .25s ease, border-color .25s ease, transform .25s ease;
+        }
+        .btn-ghost:hover { background: rgba(190,242,100,0.10); border-color: var(--spring); transform: translateY(-2px); }
+
+        /* ---------- HERO (dark cinematic) ---------- */
+        .hero {
+            position: relative; overflow: hidden;
+            background:
+                radial-gradient(120% 90% at 80% -10%, #103a2e 0%, transparent 55%),
+                radial-gradient(100% 80% at 0% 110%, #0c3327 0%, transparent 55%),
+                linear-gradient(160deg, var(--ink) 0%, #061d18 100%);
+            color: var(--paper);
+        }
+        .aurora { position: absolute; inset: -20% -10% auto -10%; height: 120%; pointer-events: none; z-index: 0; }
+        .blob { position: absolute; border-radius: 50%; filter: blur(70px); opacity: .5; will-change: transform; }
+        .blob.b1 { width: 42vw; height: 42vw; left: -8vw; top: -6vw; background: radial-gradient(circle, rgba(16,185,129,.55), transparent 70%); animation: float1 16s ease-in-out infinite; }
+        .blob.b2 { width: 36vw; height: 36vw; right: -6vw; top: 4vw; background: radial-gradient(circle, rgba(190,242,100,.40), transparent 70%); animation: float2 19s ease-in-out infinite; }
+        .blob.b3 { width: 30vw; height: 30vw; right: 16vw; bottom: -10vw; background: radial-gradient(circle, rgba(56,189,248,.30), transparent 70%); animation: float1 22s ease-in-out infinite reverse; }
+        @keyframes float1 { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(4%,5%) scale(1.08)} }
+        @keyframes float2 { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(-5%,4%) scale(1.12)} }
+
+        .grain { position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: .5;
+            background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 3px 3px; mix-blend-mode: overlay; }
+
+        /* drifting embers */
+        .ember-field { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+        .ember-dot { position: absolute; bottom: -10px; width: 4px; height: 4px; border-radius: 50%;
+            background: var(--spring); box-shadow: 0 0 8px var(--spring); opacity: 0; animation: rise linear infinite; }
+        @keyframes rise {
+            0% { transform: translateY(0) translateX(0) scale(.6); opacity: 0; }
+            12% { opacity: .9; }
+            70% { opacity: .7; }
+            100% { transform: translateY(-90vh) translateX(var(--dx,20px)) scale(1.1); opacity: 0; }
+        }
+
+        .chip {
+            display: inline-flex; align-items: center; gap: .5rem;
+            padding: .4rem .85rem; border-radius: 999px; font-size: .78rem; font-weight: 600; letter-spacing: .02em;
+            background: rgba(190,242,100,0.10); color: var(--spring); border: 1px solid rgba(190,242,100,0.25);
+        }
+        .chip .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--spring); box-shadow: 0 0 10px var(--spring); animation: blink 1.8s ease-in-out infinite; }
+        @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.35} }
+
+        .gradient-word {
+            background: linear-gradient(100deg, var(--spring), var(--emerald) 60%, var(--sky));
+            -webkit-background-clip: text; background-clip: text; color: transparent;
+        }
+
+        /* ---------- SIGNATURE: circular economy loop ---------- */
+        .loop-wrap { position: relative; width: 100%; max-width: 420px; margin: 0 auto; aspect-ratio: 1; }
+        .loop-svg { width: 100%; height: 100%; overflow: visible; }
+        .loop-track { fill: none; stroke: rgba(255,255,255,0.08); stroke-width: 2; }
+        .loop-flow { fill: none; stroke: url(#loopGrad); stroke-width: 3.5; stroke-linecap: round;
+            stroke-dasharray: 14 18; animation: loopDash 2.2s linear infinite; filter: drop-shadow(0 0 6px rgba(16,185,129,.55)); }
+        @keyframes loopDash { to { stroke-dashoffset: -320; } }
+        .spark { offset-path: path("M 210 40 A 170 170 0 1 1 209.9 40"); offset-rotate: 0deg;
+            animation: orbit 6s linear infinite; }
+        @keyframes orbit { to { offset-distance: 100%; } }
+        .loop-core { animation: corePulse 3.4s ease-in-out infinite; transform-origin: center; }
+        @keyframes corePulse { 0%,100%{ opacity:.85 } 50%{ opacity:1 } }
+        .loop-node circle { transition: transform .3s ease; }
+        .loop-node:hover .node-ring { stroke: var(--spring); }
+
+        /* ---------- METRIC STRIP ---------- */
+        .metric {
+            background: linear-gradient(160deg, rgba(255,255,255,0.07), rgba(255,255,255,0.02));
+            border: 1px solid rgba(190,242,100,0.14); border-radius: 1.25rem; padding: 1.4rem 1.5rem;
+            backdrop-filter: blur(6px); transition: transform .35s cubic-bezier(.2,.8,.2,1), border-color .35s ease, box-shadow .35s ease;
+        }
+        .metric:hover { transform: translateY(-5px); border-color: rgba(190,242,100,0.4); box-shadow: 0 22px 50px -30px rgba(190,242,100,.5); }
+        .metric .val { font-size: clamp(1.7rem, 3.4vw, 2.5rem); line-height: 1; }
+
+        /* ---------- LIGHT SECTIONS ---------- */
+        .eyebrow {
+            display: inline-flex; align-items: center; gap: .55rem; font-size: .78rem; font-weight: 700;
+            letter-spacing: .14em; text-transform: uppercase; color: var(--emerald-deep);
+        }
+        .eyebrow::before { content: ""; width: 26px; height: 2px; background: linear-gradient(90deg, var(--emerald), var(--spring)); border-radius: 2px; }
+
+        .card {
+            background: #fff; border: 1px solid var(--line); border-radius: 1.5rem;
+            box-shadow: 0 1px 0 rgba(15,31,27,.02), 0 18px 40px -34px rgba(15,31,27,.35);
+            transition: transform .4s cubic-bezier(.2,.8,.2,1), box-shadow .4s ease, border-color .4s ease;
+        }
+        .card-hover:hover { transform: translateY(-6px); box-shadow: 0 30px 60px -36px rgba(15,31,27,.45); border-color: rgba(16,185,129,.4); }
+
+        .pill {
+            display: inline-flex; align-items: center; gap: .35rem; padding: .25rem .7rem; border-radius: 999px;
+            font-size: .68rem; font-weight: 700; letter-spacing: .03em; text-transform: uppercase;
+        }
+        .pill.amber { background: #FEF3DC; color: #92610A; border: 1px solid #F6DBA4; }
+        .pill.emerald { background: #DCFCE9; color: #08664A; border: 1px solid #A7F3CF; }
+        .pill.sky { background: #DEF1FD; color: #0B5C84; border: 1px solid #A9DDF7; }
+        .pill.slate { background: var(--paper-2); color: var(--muted); border: 1px solid var(--line); }
+
+        .num-badge {
+            width: 3.25rem; height: 3.25rem; border-radius: 1rem; display: flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: 1.15rem; color: #fff;
+        }
+
+        /* form controls */
+        .ctl {
+            background: #fff; border: 1.5px solid var(--line); border-radius: 1rem; padding: 1rem;
+            font-weight: 600; color: var(--slate-ink); width: 100%; outline: none; cursor: pointer;
+            transition: border-color .2s ease, box-shadow .2s ease;
+        }
+        .ctl:focus { border-color: var(--emerald); box-shadow: 0 0 0 4px rgba(16,185,129,.14); }
+        .seg {
+            border: 1.5px solid var(--line); background: #fff; color: var(--muted); font-weight: 700;
+            border-radius: .9rem; padding: .85rem; transition: all .2s ease; cursor: pointer; font-size: .9rem;
+        }
+        .seg:hover { border-color: rgba(16,185,129,.5); color: var(--slate-ink); }
+        .seg.is-active {
+            border-color: var(--emerald); background: linear-gradient(160deg, #ECFDF3, #DCFCE9); color: var(--emerald-deep);
+            box-shadow: 0 8px 20px -12px rgba(16,185,129,.5);
+        }
+
+        /* ---------- FLOW DIAGRAM ---------- */
+        .flow-diagram {
+            position: relative; display: grid; grid-template-columns: repeat(4, minmax(0,1fr));
+            grid-template-rows: auto auto; gap: 2rem; align-items: center;
+        }
+        .flow-card { min-height: 200px; position: relative; }
+        .flow-card.inflow { grid-column: 1; grid-row: 1 / span 2; }
+        .flow-card.gibrik { grid-column: 2; grid-row: 1 / span 2; }
+        .flow-card.organic { grid-column: 3; grid-row: 1; }
+        .flow-card.biochar { grid-column: 4; grid-row: 1; }
+        .flow-card.rdf { grid-column: 3 / span 2; grid-row: 2; min-height: 150px; }
+        .flow-lines { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+        .flow-path { fill: none; stroke-width: 3; stroke-linecap: round; stroke-dasharray: 9 12; animation: flowDash 1.7s linear infinite; }
+        .flow-path.main { stroke: var(--emerald); }
+        .flow-path.organic { stroke: var(--ember); }
+        .flow-path.biochar { stroke: var(--emerald-deep); }
+        .flow-path.rdf { stroke: var(--sky); }
+        @keyframes flowDash { from { stroke-dashoffset: 42; } to { stroke-dashoffset: 0; } }
+        .flow-node { z-index: 1; transition: transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s ease, border-color .3s ease; }
+        .flow-node:hover { transform: translateY(-6px); box-shadow: 0 26px 55px -34px rgba(15,31,27,.55); }
+
+        /* ---------- DARK RECAP / CTA ---------- */
+        .panel-dark {
+            position: relative; overflow: hidden; color: var(--paper);
+            background: linear-gradient(155deg, var(--ink-2) 0%, var(--ink) 100%);
+            border: 1px solid rgba(190,242,100,0.14);
+        }
+        .glass-row {
+            background: linear-gradient(160deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+            border: 1px solid rgba(255,255,255,0.08); border-radius: 1rem;
+        }
+
+        /* ---------- DONUT ---------- */
+        .donut-seg { transition: stroke-dasharray .9s cubic-bezier(.2,.8,.2,1), stroke-dashoffset .9s cubic-bezier(.2,.8,.2,1); }
+
+        /* ---------- BARS ---------- */
+        .bar-track { background: rgba(15,31,27,.06); border-radius: 999px; overflow: hidden; }
+        .bar-fill { height: 100%; border-radius: 999px; width: 0; transition: width 1.1s cubic-bezier(.2,.8,.2,1); }
+        .split-fill { height: 100%; width: 0; transition: width 1.2s cubic-bezier(.2,.8,.2,1); }
+
+        /* phase rail timeline */
+        .rail-dot { width: 14px; height: 14px; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 0 0 2px var(--line); }
+
+        /* ---------- REVEAL ---------- */
+        .reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s cubic-bezier(.2,.8,.2,1), transform .8s cubic-bezier(.2,.8,.2,1); }
+        .reveal.in { opacity: 1; transform: none; }
+
+        /* ---------- RESPONSIVE FLOW ---------- */
+        @media (max-width: 767px) {
+            .flow-diagram { display: flex; flex-direction: column; gap: 1rem; }
+            .flow-lines { display: none; }
+            .flow-card, .flow-card.rdf { width: 100%; min-height: auto; }
+            .flow-card::after { content: ""; display: block; width: 2px; height: 24px; margin: 1rem auto -.25rem; background: linear-gradient(var(--emerald), transparent); }
+            .flow-card:last-child::after { display: none; }
+        }
+
+        /* ---------- MOBILE MENU ---------- */
+        #mobileMenu { transition: opacity .3s ease, transform .3s ease; }
+        #mobileMenu.hidden-menu { display: none; opacity: 0; transform: translateY(-12px); pointer-events: none; }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
+            .reveal { opacity: 1 !important; transform: none !important; }
+        }
+    </style>
+</head>
+<body>
+    <div id="progress"></div>
+
+    <!-- ============ NAV ============ -->
+    <nav id="nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+            <a href="#overview" class="flex items-center gap-2.5 group">
+                <span class="grid place-items-center w-9 h-9 rounded-xl" style="background:linear-gradient(135deg,var(--spring),var(--emerald));">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#07261F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6"/><path d="M5.6 8a8 8 0 1 0 12.8 0"/><path d="M12 12l3 3"/></svg>
+                </span>
+                <span class="font-display font-bold text-[15px] tracking-tight" style="color:var(--paper)">TPS3R <span style="color:var(--spring)">Rescue Nirmala</span></span>
+            </a>
+
+            <div class="hidden lg:flex items-center gap-8">
+                <a href="#overview" class="nav-link">Ringkasan</a>
+                <a href="#technology" class="nav-link">Teknologi</a>
+                <a href="#pricing" class="nav-link">Tarif</a>
+                <a href="#booster" class="nav-link">Simulasi</a>
+                <a href="#profit-sharing" class="nav-link">Bagi Hasil</a>
+            </div>
+
+            <button id="menuBtn" class="lg:hidden grid place-items-center w-10 h-10 rounded-xl" style="border:1px solid rgba(190,242,100,.25);color:var(--paper)" aria-label="Buka menu">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+            </button>
+        </div>
+
+        <div id="mobileMenu" class="hidden-menu lg:hidden mt-3 mx-4 rounded-2xl p-4" style="background:rgba(7,38,31,.96);backdrop-filter:blur(14px);border:1px solid rgba(190,242,100,.14)">
+            <div class="flex flex-col gap-1">
+                <a href="#overview" class="nav-link py-2.5 px-2 rounded-lg">Ringkasan</a>
+                <a href="#technology" class="nav-link py-2.5 px-2 rounded-lg">Teknologi</a>
+                <a href="#pricing" class="nav-link py-2.5 px-2 rounded-lg">Tarif</a>
+                <a href="#booster" class="nav-link py-2.5 px-2 rounded-lg">Simulasi</a>
+                <a href="#profit-sharing" class="nav-link py-2.5 px-2 rounded-lg">Bagi Hasil</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============ HERO ============ -->
+    <header id="overview" class="hero pt-32 pb-20 lg:pt-40 lg:pb-28">
+        <div class="aurora"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
+        <div class="ember-field" id="emberField"></div>
+        <div class="grain"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <!-- Left -->
+                <div class="lg:col-span-7">
+                    <span class="chip reveal"><span class="dot"></span>Desa Anggadita · Karawang Timur</span>
+                    <h1 class="font-display font-bold tracking-tight mt-6 reveal" style="font-size:clamp(2.4rem,5.4vw,4.1rem);line-height:1.04">
+                        Rancangan Kerja Sama Operasi<br>TPS3R <span class="gradient-word">Tanpa Residu</span>
+                    </h1>
+                    <p class="mt-6 text-lg leading-relaxed reveal" style="color:rgba(244,248,244,.78);max-width:44rem">
+                        Investor menyediakan belanja modal alat, TPS3R Rescue Nirmala Anggadita menjalankan operasional harian, dan skema kerja sama operasi menjadi wadah pengawasan bagi hasil selama masa kontrak 5 tahun — yang ditutup dengan hibah penuh aset kepada desa.
+                    </p>
+
+                    <!-- budget card -->
+                    <div class="mt-10 reveal" style="max-width:44rem">
+                        <div class="rounded-2xl p-6" style="background:rgba(255,255,255,.05);border:1px solid rgba(190,242,100,.14);backdrop-filter:blur(6px)">
+                            <h4 class="font-display font-semibold text-[15px] mb-4" style="color:var(--paper)">Rincian Belanja Modal Pengadaan</h4>
+                            <ul class="space-y-3 text-sm" style="color:rgba(244,248,244,.72)">
+                                <li class="flex items-start gap-3">
+                                    <span style="color:var(--spring)" class="mt-0.5">◆</span>
+                                    <span class="flex-1">Mesin Pyronex Pirolisis <span class="opacity-60">(kapasitas 1 ton/jam)</span></span>
+                                    <strong class="tnum" style="color:var(--paper)">Rp 1.500.000.000</strong>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span style="color:var(--spring)" class="mt-0.5">◆</span>
+                                    <span class="flex-1">Jembatan timbang &amp; pekerjaan sipil dasar</span>
+                                    <strong class="tnum" style="color:var(--paper)">Rp 100.000.000</strong>
+                                </li>
+                            </ul>
+                            <div class="mt-5 pt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3" style="border-top:1px solid rgba(255,255,255,.08)">
+                                <span class="text-sm" style="color:rgba(244,248,244,.6)">Operasional ± <strong style="color:var(--paper)">Rp 12 jt</strong>/bulan</span>
+                                <span class="font-display font-bold text-lg px-4 py-2 rounded-xl tnum" style="color:var(--ink);background:linear-gradient(135deg,var(--spring),var(--emerald))">Total Modal: Rp 1,6 Miliar</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: signature loop -->
+                <div class="lg:col-span-5 reveal">
+                    <div class="loop-wrap">
+                        <svg class="loop-svg" viewBox="0 0 420 420" aria-label="Diagram siklus ekonomi sirkular pengolahan sampah">
+                            <defs>
+                                <linearGradient id="loopGrad" x1="0" y1="0" x2="1" y2="1">
+                                    <stop offset="0%" stop-color="#BEF264"/><stop offset="50%" stop-color="#10B981"/><stop offset="100%" stop-color="#38BDF8"/>
+                                </linearGradient>
+                                <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
+                                    <stop offset="0%" stop-color="rgba(16,185,129,.35)"/><stop offset="100%" stop-color="rgba(16,185,129,0)"/>
+                                </radialGradient>
+                            </defs>
+
+                            <circle class="loop-core" cx="210" cy="210" r="120" fill="url(#coreGlow)"/>
+                            <circle class="loop-track" cx="210" cy="210" r="170"/>
+                            <circle class="loop-flow" cx="210" cy="210" r="170"/>
+
+                            <!-- orbiting spark -->
+                            <circle class="spark" cx="0" cy="0" r="6" fill="#BEF264" filter="drop-shadow(0 0 9px #BEF264)"/>
+
+                            <!-- center label -->
+                            <text x="210" y="196" text-anchor="middle" font-family="Space Grotesk" font-size="15" fill="rgba(244,248,244,.55)" letter-spacing="3">SIKLUS</text>
+                            <text x="210" y="226" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="30" fill="#BEF264">SIRKULAR</text>
+                            <text x="210" y="252" text-anchor="middle" font-family="Plus Jakarta Sans" font-size="12" fill="rgba(244,248,244,.5)">tanpa residu ke TPA</text>
+
+                            <!-- nodes around the ring (top, right, bottom, left) -->
+                            <g class="loop-node">
+                                <circle class="node-ring" cx="210" cy="40" r="26" fill="#0B3328" stroke="rgba(190,242,100,.4)" stroke-width="1.5"/>
+                                <text x="210" y="45" text-anchor="middle" font-size="20">🗑️</text>
+                                <text x="210" y="14" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="700" font-size="11" fill="#fff">Sampah Masuk</text>
+                            </g>
+                            <g class="loop-node">
+                                <circle class="node-ring" cx="380" cy="210" r="26" fill="#0B3328" stroke="rgba(245,165,36,.5)" stroke-width="1.5"/>
+                                <text x="380" y="216" text-anchor="middle" font-size="20">🔥</text>
+                                <text x="380" y="258" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="700" font-size="11" fill="#fff">Pirolisis</text>
+                            </g>
+                            <g class="loop-node">
+                                <circle class="node-ring" cx="210" cy="380" r="26" fill="#0B3328" stroke="rgba(16,185,129,.5)" stroke-width="1.5"/>
+                                <text x="210" y="386" text-anchor="middle" font-size="20">🌱</text>
+                                <text x="210" y="416" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="700" font-size="11" fill="#fff">Biochar &amp; RDF</text>
+                            </g>
+                            <g class="loop-node">
+                                <circle class="node-ring" cx="40" cy="210" r="26" fill="#0B3328" stroke="rgba(56,189,248,.5)" stroke-width="1.5"/>
+                                <text x="40" y="216" text-anchor="middle" font-size="20">💰</text>
+                                <text x="40" y="258" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="700" font-size="11" fill="#fff">Pendapatan</text>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- metric strip -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-16">
+                <div class="metric reveal">
+                    <span class="text-xs font-semibold uppercase tracking-wider" style="color:rgba(244,248,244,.55)">Belanja Modal</span>
+                    <div class="font-display font-bold mt-3 val tnum" style="color:var(--spring)"><span data-count="1.6" data-decimals="1" data-suffix=" M">0</span></div>
+                    <span class="text-xs mt-1 block" style="color:rgba(244,248,244,.5)">Rupiah, sekali di awal</span>
+                </div>
+                <div class="metric reveal" style="transition-delay:.08s">
+                    <span class="text-xs font-semibold uppercase tracking-wider" style="color:rgba(244,248,244,.55)">Estimasi Balik Modal</span>
+                    <div class="font-display font-bold mt-3 val tnum" style="color:var(--paper)"><span id="hero-bep">--</span></div>
+                    <span class="text-xs mt-1 block" style="color:rgba(244,248,244,.5)">mengikuti asumsi &amp; produk sampingan</span>
+                </div>
+                <div class="metric reveal" style="transition-delay:.16s">
+                    <span class="text-xs font-semibold uppercase tracking-wider" style="color:rgba(244,248,244,.55)">Masa Kontrak</span>
+                    <div class="font-display font-bold mt-3 val tnum" style="color:var(--paper)"><span data-count="5" data-suffix=" thn">0</span></div>
+                    <span class="text-xs mt-1 block" style="color:rgba(244,248,244,.5)">kerja sama operasi</span>
+                </div>
+                <div class="metric reveal" style="transition-delay:.24s">
+                    <span class="text-xs font-semibold uppercase tracking-wider" style="color:rgba(244,248,244,.55)">Aset di Akhir Kontrak</span>
+                    <div class="font-display font-bold mt-3 val tnum" style="color:var(--sky)"><span data-count="100" data-suffix="%">0</span></div>
+                    <span class="text-xs mt-1 block" style="color:rgba(244,248,244,.5)">dihibahkan ke desa</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============ TECHNOLOGY ============ -->
+    <section id="technology" class="py-24 lg:py-28" style="background:#fff;border-bottom:1px solid var(--line)">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="eyebrow justify-center">Alur Operasi</span>
+                <h2 class="font-display font-bold tracking-tight mt-4" style="font-size:clamp(1.9rem,3.6vw,2.6rem)">Dari timbangan masuk hingga dua keluaran bernilai</h2>
+                <p class="mt-4 leading-relaxed" style="color:var(--muted)">
+                    Sampah ditimbang akurat, dipilah secara mekanis, lalu diarahkan ke dua jalur: organik menuju pirolisis Pyronex, anorganik menjadi bahan bakar padat (RDF). Kapasitas optimal <strong style="color:var(--emerald-deep)">8 ton/hari</strong> dengan siklus <strong style="color:var(--emerald-deep)">25 hari kerja</strong> per bulan.
+                </p>
+            </div>
+
+            <div class="flow-diagram reveal">
+                <svg class="flow-lines hidden md:block" viewBox="0 0 1200 470" preserveAspectRatio="none" aria-hidden="true">
+                    <defs>
+                        <marker id="arrow-em" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth"><path d="M 0 0 L 10 5 L 0 10 z" fill="#10B981"/></marker>
+                        <marker id="arrow-emd" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth"><path d="M 0 0 L 10 5 L 0 10 z" fill="#0E9F6E"/></marker>
+                        <marker id="arrow-sky" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth"><path d="M 0 0 L 10 5 L 0 10 z" fill="#38BDF8"/></marker>
+                    </defs>
+                    <path class="flow-path main" marker-end="url(#arrow-em)" d="M 245 235 C 285 235, 310 235, 350 235"/>
+                    <path class="flow-path organic" marker-end="url(#arrow-em)" d="M 550 235 C 615 235, 610 120, 685 120"/>
+                    <path class="flow-path biochar" marker-end="url(#arrow-emd)" d="M 855 120 C 905 120, 925 120, 975 120"/>
+                    <path class="flow-path rdf" marker-end="url(#arrow-sky)" d="M 550 235 C 620 235, 610 350, 705 350"/>
+                </svg>
+
+                <div class="flow-card inflow flow-node card p-6 text-center">
+                    <div class="num-badge mx-auto mb-4" style="background:linear-gradient(135deg,var(--emerald),var(--emerald-deep))">1</div>
+                    <span class="pill slate mb-2">Tahap Masuk</span>
+                    <h4 class="font-display font-bold mt-2 mb-2">Penerimaan Sampah</h4>
+                    <p class="text-sm leading-relaxed" style="color:var(--muted)">Maksimal 8 ton/hari. Setiap muatan ditimbang akurat di jembatan timbang sebagai dasar tipping fee.</p>
+                </div>
+
+                <div class="flow-card gibrik flow-node card p-6 text-center" style="border-color:#A7F3CF">
+                    <div class="num-badge mx-auto mb-4" style="background:linear-gradient(135deg,var(--emerald),var(--emerald-deep))">2</div>
+                    <span class="pill emerald mb-2">Titik Pemisahan</span>
+                    <h4 class="font-display font-bold mt-2 mb-2">Pemilahan Mekanis</h4>
+                    <p class="text-sm leading-relaxed" style="color:var(--muted)">Asumsi komposisi rata-rata <strong>70% organik</strong> dan <strong>30% anorganik</strong>.</p>
+                </div>
+
+                <div class="flow-card organic flow-node card p-6 text-center" style="border-color:#F6DBA4">
+                    <div class="num-badge mx-auto mb-4" style="background:linear-gradient(135deg,var(--ember),var(--ember-deep))">3A</div>
+                    <span class="pill amber mb-2">Jalur Organik</span>
+                    <h4 class="font-display font-bold mt-2 mb-2">Pemrosesan Pyronex</h4>
+                    <p class="text-sm leading-relaxed" style="color:var(--muted)">Pecahan organik masuk ruang termal Pyronex dengan kecepatan 1 ton/jam.</p>
+                </div>
+
+                <div class="flow-card biochar flow-node card p-6 text-center" style="border-color:#A7F3CF">
+                    <div class="num-badge mx-auto mb-4" style="background:linear-gradient(135deg,var(--emerald),var(--emerald-deep))">4A</div>
+                    <span class="pill emerald mb-2">Keluaran Produk</span>
+                    <h4 class="font-display font-bold mt-2 mb-2">Material Biochar</h4>
+                    <p class="text-sm leading-relaxed" style="color:var(--muted)">Estimasi <strong>10%</strong> volume biochar dari total beban organik.</p>
+                </div>
+
+                <div class="flow-card rdf flow-node card p-6 text-center md:flex md:items-center md:justify-center md:gap-8" style="border-color:#A9DDF7">
+                    <div class="md:w-40">
+                        <div class="num-badge mx-auto mb-4" style="background:linear-gradient(135deg,var(--sky),#0B82C4)">3B</div>
+                        <span class="pill sky">Jalur Anorganik</span>
+                    </div>
+                    <div class="md:max-w-md text-center md:text-left mt-4 md:mt-0">
+                        <h4 class="font-display font-bold mb-2">Bahan Bakar Padat (RDF)</h4>
+                        <p class="text-sm leading-relaxed" style="color:var(--muted)">Anorganik dicacah menjadi pengganti bahan bakar industri. Estimasi konversi <strong>80%</strong> dari total beban anorganik.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ PRICING / CALCULATOR ============ -->
+    <section id="pricing" class="py-24 lg:py-28" style="background:var(--paper);border-bottom:1px solid var(--line)">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="eyebrow justify-center">Kalkulator Interaktif</span>
+                <h2 class="font-display font-bold tracking-tight mt-4" style="font-size:clamp(1.9rem,3.6vw,2.6rem)">Tipping fee yang ideal</h2>
+                <p class="mt-4 leading-relaxed" style="color:var(--muted)">Dengan kapasitas maksimal <strong>8 ton/hari</strong>, sistem mencari tipping fee dasar agar target pengembalian investor dan seluruh biaya operasional (OpEx) terpenuhi. Atur asumsinya, angka memperbarui otomatis.</p>
+            </div>
+
+            <div class="card max-w-5xl mx-auto p-8 lg:p-10 mb-12 reveal">
+                <div class="grid lg:grid-cols-2 gap-10 items-stretch">
+                    <div>
+                        <h3 class="font-display text-lg font-bold mb-6">1 · Atur target operasional</h3>
+
+                        <label class="block text-sm font-bold mb-3">Target waktu pengembalian modal investor</label>
+                        <div class="grid grid-cols-2 gap-3 mb-8">
+                            <button onclick="updateBEP(18)" id="bep-18" class="bep-btn seg">18 Bulan</button>
+                            <button onclick="updateBEP(24)" id="bep-24" class="bep-btn seg is-active">24 Bulan</button>
+                            <button onclick="updateBEP(30)" id="bep-30" class="bep-btn seg">30 Bulan</button>
+                            <button onclick="updateBEP(36)" id="bep-36" class="bep-btn seg">36 Bulan</button>
+                        </div>
+
+                        <label class="block text-sm font-bold mb-3">Estimasi volume sampah masuk harian (maks. 8 ton)</label>
+                        <select id="daily-volume" onchange="updateSimulations()" class="ctl">
+                            <option value="4">4 ton/hari — 50% kapasitas</option>
+                            <option value="6">6 ton/hari — 75% kapasitas</option>
+                            <option value="8" selected>8 ton/hari — kapasitas penuh</option>
+                        </select>
+                        <p class="text-xs mt-3" style="color:var(--muted)">*Semua perhitungan memakai ketetapan 25 hari kerja per bulan.</p>
+                    </div>
+
+                    <div class="rounded-2xl p-8 flex flex-col justify-center" style="background:linear-gradient(160deg,#ECFDF3,#DCFCE9);border:1px solid #A7F3CF">
+                        <span class="text-xs font-bold uppercase tracking-wider" style="color:var(--emerald-deep)">Target pendapatan kotor / bulan</span>
+                        <span id="target-revenue" class="font-display font-bold tnum block mt-2 mb-6" style="font-size:clamp(1.9rem,4vw,2.6rem);color:var(--slate-ink)">Rp --</span>
+
+                        <div class="rounded-2xl p-6" style="background:#fff;border:1px solid #A7F3CF">
+                            <span class="block text-xs uppercase font-bold tracking-wider mb-2" style="color:var(--emerald-deep)">Rekomendasi tipping fee minimal</span>
+                            <span class="font-display font-bold tnum" style="font-size:clamp(1.9rem,4vw,2.6rem);color:var(--emerald-deep)"><span id="target-fee">Rp --</span> <span class="text-lg font-semibold" style="color:var(--muted)">/ kg</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- option 1 -->
+                <div class="card card-hover p-8 flex flex-col reveal">
+                    <div class="mb-7">
+                        <span class="pill slate">Pilihan Pertama</span>
+                        <h4 class="font-display text-2xl font-bold mt-4">Paket Kuota</h4>
+                        <p class="text-sm mt-3 leading-relaxed" style="color:var(--muted)">Iuran berlangganan bulanan, <strong>berlaku kelipatan</strong> bagi perusahaan multi-lokasi, dengan penghematan dari tipping fee dasar.</p>
+                    </div>
+                    <div class="space-y-4 flex-grow">
+                        <div class="flex justify-between items-center pb-4" style="border-bottom:1px solid var(--line)">
+                            <div><span class="block font-bold text-sm">Tingkat 1 — maks. 10 ton/bln</span><span class="text-xs" style="color:var(--muted)">Potongan 10%</span></div>
+                            <span id="tier1-val" class="font-display font-bold text-xl tnum">Rp --</span>
+                        </div>
+                        <div class="flex justify-between items-center pb-4" style="border-bottom:1px solid var(--line)">
+                            <div><span class="block font-bold text-sm">Tingkat 2 — maks. 25 ton/bln</span><span class="text-xs" style="color:var(--muted)">Potongan 15%</span></div>
+                            <span id="tier2-val" class="font-display font-bold text-xl tnum">Rp --</span>
+                        </div>
+                        <div class="flex justify-between items-center pb-4" style="border-bottom:1px solid var(--line)">
+                            <div><span class="block font-bold text-sm">Tingkat 3 — maks. 50 ton/bln</span><span class="text-xs" style="color:var(--muted)">Potongan 20%</span></div>
+                            <span id="tier3-val" class="font-display font-bold text-xl tnum">Rp --</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 p-4 rounded-xl text-sm leading-relaxed" style="background:var(--paper-2);color:var(--muted);border:1px solid var(--line)">
+                        <strong style="color:var(--slate-ink)">Catatan:</strong> pelanggan boleh mengambil lebih dari satu paket. Kelebihan berat di atas kuota ditagihkan pada tarif reguler.
+                    </div>
+                </div>
+
+                <!-- option 2 (recommended) -->
+                <div class="card card-hover p-8 flex flex-col relative overflow-hidden reveal" style="border-color:#A7F3CF">
+                    <div class="absolute top-0 right-0 text-xs font-bold px-4 py-2 rounded-bl-2xl" style="background:linear-gradient(135deg,var(--emerald),var(--emerald-deep));color:#fff">Direkomendasikan</div>
+                    <div class="mb-7">
+                        <span class="pill emerald">Pilihan Kedua</span>
+                        <h4 class="font-display text-2xl font-bold mt-4">Tipping Fee per Timbang</h4>
+                        <p class="text-sm mt-3 leading-relaxed" style="color:var(--muted)">Penagihan transparan, dihitung langsung dari berat bersih jembatan timbang saat kedatangan.</p>
+                    </div>
+                    <div class="flex-grow flex flex-col items-center justify-center rounded-2xl p-8 text-center" style="background:linear-gradient(160deg,#ECFDF3,#DCFCE9);border:1px solid #A7F3CF">
+                        <span id="flat-rate-display" class="font-display font-bold tnum" style="font-size:clamp(2.6rem,6vw,3.6rem);color:var(--emerald-deep)">Rp --</span>
+                        <span class="text-xs font-bold uppercase tracking-widest mt-3 px-4 py-1 rounded-full" style="background:#fff;color:var(--muted);border:1px solid #A7F3CF">per kilogram</span>
+                        <p class="text-sm mt-5 leading-relaxed" style="color:var(--muted)">Acuan per-kg ini adalah batas minimal agar cash flow fasilitas tetap positif.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ BOOSTER / SIMULATION ============ -->
+    <section id="booster" class="py-24 lg:py-28" style="background:#fff;border-bottom:1px solid var(--line)">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="eyebrow justify-center">Pendapatan Tambahan</span>
+                <h2 class="font-display font-bold tracking-tight mt-4" style="font-size:clamp(1.9rem,3.6vw,2.6rem)">Komoditas sampingan sebagai pendapatan tambahan</h2>
+                <p class="mt-4 leading-relaxed text-lg" style="color:var(--muted)">
+                    Tipping fee sudah dirancang untuk menutup kewajiban operasional. Maka pendapatan biochar dan RDF berposisi sebagai <strong style="color:var(--emerald-deep)">pendapatan tambahan</strong> yang mempersingkat waktu balik modal.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-8">
+                <!-- inputs -->
+                <div class="lg:col-span-5 reveal">
+                    <div class="card p-8 h-full">
+                        <h4 class="font-display text-lg font-bold mb-6 pb-4" style="border-bottom:1px solid var(--line)">Asumsi penjualan produk tambahan</h4>
+                        <p class="text-sm mb-6 leading-relaxed" style="color:var(--muted)">Volume mengikuti pilihan volume harian. Konversi massa: <strong>70% organik → biochar 10%</strong>, <strong>30% anorganik → RDF 80%</strong>.</p>
+
+                        <div class="space-y-5">
+                            <div class="flex items-center justify-between gap-3">
+                                <span class="text-sm font-bold">Harga jual biochar</span>
+                                <select id="biochar-quality" onchange="updateSimulations()" class="ctl" style="width:12rem;padding:.7rem .9rem">
+                                    <option value="1000">Rp 1.000 / kg</option>
+                                    <option value="1500">Rp 1.500 / kg</option>
+                                    <option value="2000" selected>Rp 2.000 / kg</option>
+                                </select>
+                            </div>
+                            <div class="flex justify-between items-center p-4 rounded-xl" style="background:var(--paper-2);border:1px solid var(--line)">
+                                <span class="text-sm font-bold" style="color:var(--muted)">Estimasi biochar / bulan</span>
+                                <span id="bonus-biochar-val" class="font-display font-bold text-lg tnum" style="color:var(--emerald-deep)">Rp --</span>
+                            </div>
+
+                            <div class="flex items-center justify-between gap-3 pt-4" style="border-top:1px solid var(--line)">
+                                <span class="text-sm font-bold">Harga jual RDF</span>
+                                <select id="rdf-price" onchange="updateSimulations()" class="ctl" style="width:12rem;padding:.7rem .9rem">
+                                    <option value="300000">Rp 300.000 / ton</option>
+                                    <option value="360000" selected>Rp 360.000 / ton</option>
+                                    <option value="700000">Rp 700.000 / ton</option>
+                                </select>
+                            </div>
+                            <div class="flex justify-between items-center p-4 rounded-xl" style="background:var(--paper-2);border:1px solid var(--line)">
+                                <span class="text-sm font-bold" style="color:var(--muted)">Estimasi RDF / bulan</span>
+                                <span id="bonus-rdf-val" class="font-display font-bold text-lg tnum" style="color:var(--sky)">Rp --</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-7 flex justify-between items-center p-5 rounded-2xl" style="background:linear-gradient(160deg,#FEF6E6,#FDEFD3);border:1px solid #F6DBA4">
+                            <span class="text-sm font-bold" style="color:#92610A">Total pendapatan tambahan / bulan</span>
+                            <span id="total-bonus-val" class="font-display text-2xl font-bold tnum" style="color:#B97509">Rp --</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- recap (dark) -->
+                <div class="lg:col-span-7 reveal">
+                    <div class="panel-dark rounded-3xl p-8 lg:p-10 h-full flex flex-col">
+                        <div class="blob b2" style="position:absolute;top:-20%;right:-10%;width:300px;height:300px;opacity:.25"></div>
+                        <div class="relative z-10 flex flex-col h-full">
+                            <h3 class="font-display text-2xl font-bold mb-8">Rekapitulasi keuntungan bersih</h3>
+
+                            <div class="grid sm:grid-cols-5 gap-8 items-center flex-grow">
+                                <!-- donut -->
+                                <div class="sm:col-span-2 flex flex-col items-center">
+                                    <div class="relative" style="width:190px;height:190px">
+                                        <svg viewBox="0 0 120 120" style="width:100%;height:100%;transform:rotate(-90deg)">
+                                            <circle cx="60" cy="60" r="46" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="13"/>
+                                            <circle id="donut-tip" class="donut-seg" cx="60" cy="60" r="46" pathLength="100" fill="none" stroke="#10B981" stroke-width="13" stroke-linecap="round" stroke-dasharray="0 100" stroke-dashoffset="0"/>
+                                            <circle id="donut-bio" class="donut-seg" cx="60" cy="60" r="46" pathLength="100" fill="none" stroke="#F5A524" stroke-width="13" stroke-linecap="round" stroke-dasharray="0 100" stroke-dashoffset="0"/>
+                                            <circle id="donut-rdf" class="donut-seg" cx="60" cy="60" r="46" pathLength="100" fill="none" stroke="#38BDF8" stroke-width="13" stroke-linecap="round" stroke-dasharray="0 100" stroke-dashoffset="0"/>
+                                        </svg>
+                                        <div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+                                            <span class="text-[10px] uppercase tracking-wider" style="color:rgba(244,248,244,.5)">Pendapatan kotor</span>
+                                            <span id="donut-total" class="font-display font-bold text-sm tnum" style="color:var(--spring)">Rp --</span>
+                                        </div>
+                                    </div>
+                                    <div class="mt-5 space-y-1.5 text-xs w-full">
+                                        <div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full" style="background:#10B981"></span><span style="color:rgba(244,248,244,.75)">Tipping fee</span></div>
+                                        <div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full" style="background:#F5A524"></span><span style="color:rgba(244,248,244,.75)">Biochar</span></div>
+                                        <div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full" style="background:#38BDF8"></span><span style="color:rgba(244,248,244,.75)">Bahan bakar padat</span></div>
+                                    </div>
+                                </div>
+
+                                <!-- waterfall lines -->
+                                <div class="sm:col-span-3 space-y-3">
+                                    <div class="glass-row flex justify-between items-center px-5 py-3.5">
+                                        <span class="text-sm" style="color:rgba(244,248,244,.7)">Target tipping fee (kotor)</span>
+                                        <span id="sim-tipping" class="font-display font-semibold tnum">Rp --</span>
+                                    </div>
+                                    <div class="glass-row flex justify-between items-center px-5 py-3.5">
+                                        <span class="text-sm" style="color:rgba(244,248,244,.7)">+ penjualan komoditas</span>
+                                        <span id="sim-bonus" class="font-display font-semibold tnum" style="color:var(--spring)">+ Rp --</span>
+                                    </div>
+                                    <div class="glass-row flex justify-between items-center px-5 py-3.5">
+                                        <span class="text-sm" style="color:rgba(244,248,244,.7)">− biaya operasional (OpEx)</span>
+                                        <span id="sim-opex" class="font-display font-semibold tnum" style="color:#FCA5A5">− Rp 12.000.000</span>
+                                    </div>
+                                    <div class="flex justify-between items-center px-5 py-4 rounded-xl" style="background:linear-gradient(135deg,rgba(190,242,100,.16),rgba(16,185,129,.10));border:1px solid rgba(190,242,100,.3)">
+                                        <span class="font-display font-bold">Keuntungan bersih / bulan</span>
+                                        <span id="sim-net" class="font-display text-2xl font-bold tnum" style="color:var(--spring)">Rp --</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ PROFIT SHARING ============ -->
+    <section id="profit-sharing" class="py-24 lg:py-28" style="background:var(--paper)">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="eyebrow justify-center">Struktur Bagi Hasil &amp; Aset</span>
+                <h2 class="font-display font-bold tracking-tight mt-4" style="font-size:clamp(1.9rem,3.6vw,2.6rem)">Tiga fase bagi hasil dan serah terima aset</h2>
+                <p class="mt-4 leading-relaxed text-lg" style="color:var(--muted)">Siklus 5 tahun dipecah ke tiga fase. Kecepatan perpindahan fase berbanding lurus dengan penyerapan penjualan komoditas sampingan.</p>
+            </div>
+
+            <!-- BEP benchmark comparison -->
+            <div class="card max-w-4xl mx-auto p-8 lg:p-10 mb-16 reveal">
+                <h3 class="font-display text-lg font-bold mb-2">Perbandingan waktu balik modal (BEP)</h3>
+                <p class="text-sm mb-8" style="color:var(--muted)">Semakin pendek bar, semakin cepat investor balik modal.</p>
+
+                <div class="space-y-7">
+                    <div>
+                        <div class="flex justify-between items-end mb-2">
+                            <span class="text-sm font-bold">BEP — tipping fee only</span>
+                            <span id="bep-benchmark-1" class="font-display text-2xl font-bold tnum" style="color:var(--muted)">24 Bulan</span>
+                        </div>
+                        <div class="bar-track h-4"><div id="bar-bench1" class="bar-fill" style="background:linear-gradient(90deg,#94A3A0,#64776F)"></div></div>
+                        <p class="text-xs mt-2" style="color:var(--muted)">Hanya dari tipping fee.</p>
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-end mb-2">
+                            <span class="text-sm font-bold" style="color:var(--emerald-deep)">BEP — dengan penjualan produk</span>
+                            <span id="bep-benchmark-2" class="font-display text-2xl font-bold tnum" style="color:var(--emerald-deep)">-- Bulan</span>
+                        </div>
+                        <div class="bar-track h-4"><div id="bar-bench2" class="bar-fill" style="background:linear-gradient(90deg,var(--emerald),var(--spring))"></div></div>
+                        <p class="text-xs mt-2" style="color:var(--emerald-deep)">Dipercepat oleh penjualan biochar &amp; RDF.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3 phases -->
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- phase 1 -->
+                <div class="card p-8 lg:p-9 relative flex flex-col reveal" style="border-color:#F6DBA4">
+                    <div class="absolute -top-3.5 left-8 text-xs font-bold px-5 py-2 rounded-full" style="background:linear-gradient(135deg,var(--ember),var(--ember-deep));color:#fff;box-shadow:0 8px 20px -10px rgba(245,165,36,.7)">FASE PERTAMA</div>
+                    <h4 class="font-display text-lg font-bold mt-4">Bulan ke-1 → break-even point (BEP)</h4>
+                    <p class="text-sm mt-3 mb-5 leading-relaxed" style="color:var(--muted)">Prioritas perlindungan dana: porsi dominan untuk pengembalian pokok modal investor.</p>
+
+                    <div class="rounded-xl px-4 py-3 mb-6" style="background:var(--paper);border:1px solid var(--line)">
+                        <span class="block text-[10px] font-bold uppercase tracking-wide mb-2" style="color:var(--muted)">Fase ini berjalan sampai BEP</span>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div>
+                                <span class="block text-[10px] font-semibold" style="color:var(--muted)">Tipping fee only</span>
+                                <span id="ph1-bep-base" class="font-display font-bold text-lg tnum" style="color:var(--slate-ink)">-- bln</span>
+                            </div>
+                            <div>
+                                <span class="block text-[10px] font-semibold" style="color:var(--emerald-deep)">+ Penjualan produk</span>
+                                <span id="ph1-bep-total" class="font-display font-bold text-lg tnum" style="color:var(--emerald-deep)">-- bln</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-7">
+                        <div class="flex justify-between text-xs font-bold uppercase tracking-wide mb-2">
+                            <span style="color:var(--slate-ink)">Investor 80%</span><span style="color:var(--ember-deep)">Pengelola 20%</span>
+                        </div>
+                        <div class="bar-track h-7 flex">
+                            <div class="split-fill" data-split="80" style="background:linear-gradient(90deg,#0F4035,#10B981)"></div>
+                            <div class="split-fill" data-split="20" style="background:linear-gradient(90deg,var(--ember),var(--ember-deep))"></div>
+                        </div>
+                    </div>
+
+                    <div class="card p-5 space-y-4 mt-auto" style="box-shadow:none;background:var(--paper)">
+                        <div class="pb-4" style="border-bottom:1px solid var(--line)">
+                            <span class="block text-[11px] font-bold uppercase mb-2 tracking-wide" style="color:var(--muted)">Bagi hasil — tipping fee only</span>
+                            <div class="flex justify-between text-sm mb-1"><span style="color:var(--muted)">Investor</span><strong id="ph1-inv-base" class="tnum">Rp --</strong></div>
+                            <div class="flex justify-between text-sm"><span style="color:var(--muted)">Pengelola</span><strong id="ph1-pgl-base" class="tnum">Rp --</strong></div>
+                        </div>
+                        <div>
+                            <span class="block text-[11px] font-bold uppercase mb-2 tracking-wide" style="color:var(--ember-deep)">Bagi hasil — + penjualan produk</span>
+                            <div class="flex justify-between text-base mb-1"><span class="font-bold">Investor</span><strong id="ph1-inv-total" class="font-display font-bold tnum">Rp --</strong></div>
+                            <div class="flex justify-between text-base"><span class="font-bold" style="color:var(--ember-deep)">Pengelola</span><strong id="ph1-pgl-total" class="font-display font-bold tnum" style="color:var(--ember-deep)">Rp --</strong></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- phase 2 -->
+                <div class="card p-8 lg:p-9 relative flex flex-col reveal" style="border-color:#A9DDF7">
+                    <div class="absolute -top-3.5 left-8 text-xs font-bold px-5 py-2 rounded-full" style="background:linear-gradient(135deg,var(--sky),#0B82C4);color:#fff;box-shadow:0 8px 20px -10px rgba(56,189,248,.7)">FASE KEDUA</div>
+                    <h4 class="font-display text-lg font-bold mt-4">Setelah BEP → kontrak selesai</h4>
+                    <p class="text-sm mt-3 mb-5 leading-relaxed" style="color:var(--muted)">Modal sudah lunas. Skema terbalik: margin mayoritas untuk kesejahteraan &amp; ekspansi desa.</p>
+
+                    <div class="rounded-xl px-4 py-3 mb-6" style="background:var(--paper);border:1px solid var(--line)">
+                        <span class="block text-[10px] font-bold uppercase tracking-wide mb-2" style="color:var(--muted)">Dimulai setelah BEP, sampai akhir kontrak (bln ke-60)</span>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div>
+                                <span class="block text-[10px] font-semibold" style="color:var(--muted)">Tipping fee only</span>
+                                <span id="ph2-bep-base" class="font-display font-bold text-lg tnum" style="color:var(--slate-ink)">-- bln</span>
+                            </div>
+                            <div>
+                                <span class="block text-[10px] font-semibold" style="color:#0B82C4">+ Penjualan produk</span>
+                                <span id="ph2-bep-total" class="font-display font-bold text-lg tnum" style="color:#0B82C4">-- bln</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-7">
+                        <div class="flex justify-between text-xs font-bold uppercase tracking-wide mb-2">
+                            <span style="color:var(--slate-ink)">Investor 20%</span><span style="color:#0B82C4">Pengelola 80%</span>
+                        </div>
+                        <div class="bar-track h-7 flex">
+                            <div class="split-fill" data-split="20" style="background:linear-gradient(90deg,#0F4035,#10B981)"></div>
+                            <div class="split-fill" data-split="80" style="background:linear-gradient(90deg,var(--sky),#0B82C4)"></div>
+                        </div>
+                    </div>
+
+                    <div class="card p-5 space-y-4 mt-auto" style="box-shadow:none;background:var(--paper)">
+                        <div class="pb-4" style="border-bottom:1px solid var(--line)">
+                            <span class="block text-[11px] font-bold uppercase mb-2 tracking-wide" style="color:var(--muted)">Bagi hasil — tipping fee only</span>
+                            <div class="flex justify-between text-sm mb-1"><span style="color:var(--muted)">Investor</span><strong id="ph2-inv-base" class="tnum">Rp --</strong></div>
+                            <div class="flex justify-between text-sm"><span style="color:var(--muted)">Pengelola</span><strong id="ph2-pgl-base" class="tnum">Rp --</strong></div>
+                        </div>
+                        <div>
+                            <span class="block text-[11px] font-bold uppercase mb-2 tracking-wide" style="color:#0B82C4">Bagi hasil — + penjualan produk</span>
+                            <div class="flex justify-between text-base mb-1"><span class="font-bold">Investor</span><strong id="ph2-inv-total" class="font-display font-bold tnum">Rp --</strong></div>
+                            <div class="flex justify-between text-base"><span class="font-bold" style="color:#0B82C4">Pengelola</span><strong id="ph2-pgl-total" class="font-display font-bold tnum" style="color:#0B82C4">Rp --</strong></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- phase 3 -->
+                <div class="panel-dark rounded-3xl p-8 lg:p-9 relative flex flex-col reveal">
+                    <div class="absolute -top-3.5 left-8 text-xs font-bold px-5 py-2 rounded-full" style="background:linear-gradient(135deg,var(--spring),var(--emerald));color:var(--ink);box-shadow:0 8px 20px -10px rgba(190,242,100,.7)">FASE KETIGA</div>
+                    <div class="blob b2" style="position:absolute;bottom:-20%;left:-10%;width:260px;height:260px;opacity:.22"></div>
+                    <div class="relative z-10 flex flex-col h-full">
+                        <h4 class="font-display text-lg font-bold mt-4" style="color:var(--paper)">Setelah kontrak selesai (5 tahun / bln ke-60+)</h4>
+                        <p class="text-sm mt-3 mb-5 leading-relaxed" style="color:rgba(244,248,244,.7)">Durasi kontrak 5 tahun berakhir. Bagian komersial investor selesai tanpa sisa tuntutan.</p>
+
+                        <div class="rounded-xl px-4 py-3 mb-5 glass-row">
+                            <span class="block text-[10px] font-bold uppercase tracking-wide mb-2" style="color:rgba(244,248,244,.6)">Modal investor sudah kembali sejak BEP</span>
+                            <div class="grid grid-cols-2 gap-3">
+                                <div>
+                                    <span class="block text-[10px] font-semibold" style="color:rgba(244,248,244,.6)">Tipping fee only</span>
+                                    <span id="ph3-bep-base" class="font-display font-bold text-lg tnum" style="color:var(--paper)">-- bln</span>
+                                </div>
+                                <div>
+                                    <span class="block text-[10px] font-semibold" style="color:var(--spring)">+ Penjualan produk</span>
+                                    <span id="ph3-bep-total" class="font-display font-bold text-lg tnum" style="color:var(--spring)">-- bln</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center my-4 p-6 rounded-2xl glass-row">
+                            <span class="font-display font-bold block tnum" style="font-size:3.5rem;color:var(--spring);line-height:1"><span data-count="100" data-suffix="%" data-trigger="scroll">0</span></span>
+                            <span class="text-xs font-bold uppercase tracking-widest mt-3 block" style="color:rgba(244,248,244,.7)">Hak tunggal pengelola desa</span>
+                        </div>
+
+                        <div class="rounded-2xl p-6 text-center mt-auto" style="background:linear-gradient(135deg,rgba(190,242,100,.14),rgba(16,185,129,.08));border:1px solid rgba(190,242,100,.3)">
+                            <span class="block font-display font-bold mb-3" style="color:var(--spring)">Serah terima aset pemrosesan</span>
+                            <span class="text-sm leading-relaxed block" style="color:rgba(244,248,244,.82)">Mesin Pyronex, jembatan timbang, dan bangunan sipil pendukung secara tertulis <strong style="color:var(--paper)">dihibahkan</strong> menjadi milik abadi TPS3R Rescue Nirmala Anggadita.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="py-12" style="background:var(--ink);border-top:1px solid rgba(190,242,100,.12)">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="font-display text-lg font-bold block mb-4" style="color:var(--paper)">TPS3R <span style="color:var(--spring)">Rescue Nirmala Anggadita</span></span>
+            <p class="text-sm max-w-xl mx-auto mb-8 leading-relaxed" style="color:rgba(244,248,244,.55)">Arsitektur operasi fasilitas pengolahan residu limbah terpadu di Desa Anggadita, Karawang Timur, ditopang teknologi pemanasan Pyronex.</p>
+            <div class="pt-8 text-xs" style="border-top:1px solid rgba(255,255,255,.08);color:rgba(244,248,244,.4)">
+                &copy; 2026. Angka disajikan sebagai simulasi operasional dasar dan akan disesuaikan menjadi nilai mutlak di dalam klausul Surat Perjanjian Kerja Sama resmi.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        /* ================= FINANCIAL MODEL (logika asli dipertahankan) ================= */
+        const capexValue = 1600000000;
+        const opexValue = 12000000;
+        const operationalDays = 25;
+        let currentBEP = 24;
+
+        const fmtIDR = n => new Intl.NumberFormat('id-ID', { style:'currency', currency:'IDR', maximumFractionDigits:0 }).format(n);
+        const roundUpThousands = n => Math.ceil(n/1000)*1000;
+
+        function calculateBaseFinances() {
+            const dailyVolumeTon = parseFloat(document.getElementById('daily-volume').value);
+            const monthlyVolumeTon = dailyVolumeTon * operationalDays;
+            const monthlyVolumeKg = monthlyVolumeTon * 1000;
+            const investorPrincipalTarget = capexValue / currentBEP;
+            const profitRequired = investorPrincipalTarget / 0.8;
+            const totalMonthlyRevenueRequired = profitRequired + opexValue;
+            const requiredTippingFee = totalMonthlyRevenueRequired / monthlyVolumeKg;
+            return { targetRev: totalMonthlyRevenueRequired, requiredFee: requiredTippingFee, monthlyKg: monthlyVolumeKg, monthlyTon: monthlyVolumeTon };
+        }
+
+        /* ================= ANIMATED COUNTERS ================= */
+        const prevVals = {};
+        const easeOutCubic = t => 1 - Math.pow(1 - t, 3);
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        function animateNumber(el, to, formatter, dur = 650) {
+            if (!el) return;
+            const key = el.id || (el.dataset._k || (el.dataset._k = Math.random().toString(36).slice(2)));
+            const from = prevVals[key] ?? 0;
+            prevVals[key] = to;
+            if (reduceMotion || from === to) { el.textContent = formatter(to); return; }
+            const start = performance.now();
+            function frame(now) {
+                const p = Math.min((now - start) / dur, 1);
+                el.textContent = formatter(from + (to - from) * easeOutCubic(p));
+                if (p < 1) requestAnimationFrame(frame);
+            }
+            requestAnimationFrame(frame);
+        }
+        const asIDR = v => fmtIDR(Math.round(v));
+        const asRpKg = v => `Rp ${Math.round(v).toLocaleString('id-ID')}`;
+        const asMonths = v => `${v.toFixed(1).replace('.', ',')} Bulan`;
+        const asMonthsShort = v => `${v.toFixed(1).replace('.', ',')} bln`;
+        const asMonthsInt = v => `${Math.round(v)} bln`;
+
+        /* ================= BEP SELECTOR ================= */
+        function updateBEP(months) {
+            currentBEP = months;
+            document.querySelectorAll('.bep-btn').forEach(b => b.classList.remove('is-active'));
+            document.getElementById('bep-'+months).classList.add('is-active');
+            animateNumber(document.getElementById('bep-benchmark-1'), months, v => `${Math.round(v)} Bulan`);
+            updateSimulations();
+        }
+
+        /* ================= DONUT ================= */
+        function setDonut(p1, p2, p3) {
+            const t = document.getElementById('donut-tip');
+            const b = document.getElementById('donut-bio');
+            const r = document.getElementById('donut-rdf');
+            t.setAttribute('stroke-dasharray', `${p1} ${100-p1}`); t.setAttribute('stroke-dashoffset', `0`);
+            b.setAttribute('stroke-dasharray', `${p2} ${100-p2}`); b.setAttribute('stroke-dashoffset', `${-p1}`);
+            r.setAttribute('stroke-dasharray', `${p3} ${100-p3}`); r.setAttribute('stroke-dashoffset', `${-(p1+p2)}`);
+        }
+
+        /* ================= MAIN SIM ================= */
+        function updateSimulations() {
+            const base = calculateBaseFinances();
+
+            animateNumber(document.getElementById('target-revenue'), base.targetRev, asIDR);
+            animateNumber(document.getElementById('target-fee'), Math.ceil(base.requiredFee), asRpKg);
+            animateNumber(document.getElementById('flat-rate-display'), Math.ceil(base.requiredFee), asRpKg);
+
+            animateNumber(document.getElementById('tier1-val'), roundUpThousands(10000 * base.requiredFee * 0.90), asIDR);
+            animateNumber(document.getElementById('tier2-val'), roundUpThousands(25000 * base.requiredFee * 0.85), asIDR);
+            animateNumber(document.getElementById('tier3-val'), roundUpThousands(50000 * base.requiredFee * 0.80), asIDR);
+
+            const biocharPrice = parseInt(document.getElementById('biochar-quality').value);
+            const rdfPrice = parseInt(document.getElementById('rdf-price').value);
+            const organikKg = base.monthlyKg * 0.70;
+            const anorganikTon = base.monthlyTon * 0.30;
+            const biocharKg = organikKg * 0.10;
+            const rdfTon = anorganikTon * 0.80;
+            const bonusBiochar = biocharKg * biocharPrice;
+            const bonusRdf = rdfTon * rdfPrice;
+            const totalBonus = bonusBiochar + bonusRdf;
+
+            animateNumber(document.getElementById('bonus-biochar-val'), bonusBiochar, asIDR);
+            animateNumber(document.getElementById('bonus-rdf-val'), bonusRdf, asIDR);
+            animateNumber(document.getElementById('total-bonus-val'), totalBonus, asIDR);
+
+            const totalGross = base.targetRev + totalBonus;
+            const newNetProfit = totalGross - opexValue;
+            const newInvestorShare = newNetProfit * 0.8;
+            const acceleratedBEPMonths = capexValue / newInvestorShare;
+
+            animateNumber(document.getElementById('sim-tipping'), base.targetRev, asIDR);
+            animateNumber(document.getElementById('sim-bonus'), totalBonus, v => `+ ${asIDR(v)}`);
+            animateNumber(document.getElementById('sim-net'), newNetProfit, asIDR);
+            animateNumber(document.getElementById('bep-benchmark-2'), acceleratedBEPMonths, asMonths);
+            animateNumber(document.getElementById('hero-bep'), acceleratedBEPMonths, asMonthsShort, 1200);
+
+            // explicit BEP per fase: tipping fee only (= currentBEP) vs dengan penjualan produk (= accelerated)
+            ['ph1','ph2','ph3'].forEach(p => {
+                animateNumber(document.getElementById(p+'-bep-base'), currentBEP, asMonthsInt);
+                animateNumber(document.getElementById(p+'-bep-total'), acceleratedBEPMonths, asMonthsShort);
+            });
+
+            // donut proportions
+            const p1 = (base.targetRev/totalGross)*100, p2 = (bonusBiochar/totalGross)*100, p3 = (bonusRdf/totalGross)*100;
+            setDonut(p1, p2, p3);
+            animateNumber(document.getElementById('donut-total'), totalGross, asIDR);
+
+            // BEP bars (longest = 36 mo as 100%)
+            const maxMo = 36;
+            const b1 = document.getElementById('bar-bench1'), b2 = document.getElementById('bar-bench2');
+            if (b1) b1.style.width = Math.min(currentBEP/maxMo*100, 100) + '%';
+            if (b2) b2.style.width = Math.min(acceleratedBEPMonths/maxMo*100, 100) + '%';
+
+            // profit sharing
+            const netBaseOnly = base.targetRev - opexValue;
+            animateNumber(document.getElementById('ph1-inv-base'), netBaseOnly*0.80, asIDR);
+            animateNumber(document.getElementById('ph1-pgl-base'), netBaseOnly*0.20, asIDR);
+            animateNumber(document.getElementById('ph2-inv-base'), netBaseOnly*0.20, asIDR);
+            animateNumber(document.getElementById('ph2-pgl-base'), netBaseOnly*0.80, asIDR);
+
+            const netTotal = newNetProfit;
+            animateNumber(document.getElementById('ph1-inv-total'), netTotal*0.80, asIDR);
+            animateNumber(document.getElementById('ph1-pgl-total'), netTotal*0.20, asIDR);
+            animateNumber(document.getElementById('ph2-inv-total'), netTotal*0.20, asIDR);
+            animateNumber(document.getElementById('ph2-pgl-total'), netTotal*0.80, asIDR);
+        }
+
+        /* ================= EMBER PARTICLES ================= */
+        (function makeEmbers(){
+            if (reduceMotion) return;
+            const field = document.getElementById('emberField');
+            const n = window.innerWidth < 768 ? 14 : 26;
+            for (let i=0;i<n;i++){
+                const d = document.createElement('div');
+                d.className = 'ember-dot';
+                d.style.left = Math.random()*100 + '%';
+                const dur = 7 + Math.random()*9;
+                d.style.animationDuration = dur + 's';
+                d.style.animationDelay = (-Math.random()*dur) + 's';
+                d.style.setProperty('--dx', (Math.random()*80-40) + 'px');
+                const s = 2 + Math.random()*3; d.style.width = s+'px'; d.style.height = s+'px';
+                if (Math.random() > 0.6) { d.style.background = 'var(--emerald)'; d.style.boxShadow = '0 0 8px var(--emerald)'; }
+                field.appendChild(d);
+            }
+        })();
+
+        /* ================= REVEAL ON SCROLL ================= */
+        const io = new IntersectionObserver((entries)=>{
+            entries.forEach(e=>{
+                if (e.isIntersecting){
+                    e.target.classList.add('in');
+                    // trigger scroll-flagged counters + split bars
+                    e.target.querySelectorAll('[data-count][data-trigger="scroll"]').forEach(runCounter);
+                    e.target.querySelectorAll('.split-fill').forEach(f=>{ f.style.width = (f.dataset.split||0)+'%'; });
+                    io.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+        // split fills not inside .reveal (safety)
+        document.querySelectorAll('.split-fill').forEach(f=>{ if(!f.closest('.reveal')) f.style.width=(f.dataset.split||0)+'%'; });
+
+        /* ================= HERO STAT COUNTERS ================= */
+        function runCounter(el){
+            if (el.dataset._done) return; el.dataset._done = '1';
+            const to = parseFloat(el.dataset.count);
+            const dec = parseInt(el.dataset.decimals||'0');
+            const suf = el.dataset.suffix||'';
+            const dur = 1400, start = performance.now();
+            if (reduceMotion){ el.textContent = to.toFixed(dec).replace('.', ',')+suf; return; }
+            function f(now){ const p=Math.min((now-start)/dur,1); el.textContent=(to*easeOutCubic(p)).toFixed(dec).replace('.', ',')+suf; if(p<1) requestAnimationFrame(f); }
+            requestAnimationFrame(f);
+        }
+        // hero counters fire on load
+        window.addEventListener('load', ()=>{
+            document.querySelectorAll('header [data-count]').forEach(runCounter);
+        });
+
+        /* ================= NAV: scroll state, progress, active link, mobile ================= */
+        const nav = document.getElementById('nav');
+        const progress = document.getElementById('progress');
+        const sections = [...document.querySelectorAll('section[id], header[id]')];
+        const links = [...document.querySelectorAll('.nav-link')];
+
+        function onScroll(){
+            const y = window.scrollY;
+            nav.classList.toggle('scrolled', y > 40);
+            const h = document.documentElement.scrollHeight - window.innerHeight;
+            progress.style.width = (h>0 ? (y/h)*100 : 0) + '%';
+            let cur = sections[0]?.id;
+            for (const s of sections){ if (y >= s.offsetTop - 120) cur = s.id; }
+            links.forEach(l=>l.classList.toggle('active', l.getAttribute('href') === '#'+cur));
+        }
+        window.addEventListener('scroll', onScroll, { passive:true });
+
+        // subtle parallax on hero blobs
+        if (!reduceMotion){
+            window.addEventListener('scroll', ()=>{
+                const y = window.scrollY;
+                document.querySelectorAll('header .blob').forEach((b,i)=>{ b.style.transform = `translateY(${y*(0.04+i*0.02)}px)`; });
+            }, { passive:true });
+        }
+
+        // mobile menu
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuBtn.addEventListener('click', ()=> mobileMenu.classList.toggle('hidden-menu'));
+        mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=> mobileMenu.classList.add('hidden-menu')));
+
+        /* ================= INIT ================= */
+        window.onload = function(){ updateBEP(24); onScroll(); };
+    </script>
+</body>
+</html>
