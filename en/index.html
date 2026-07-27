@@ -893,7 +893,7 @@
 
     <script>
         /* ================= LANGUAGE / SLUG ROUTING ================= */
-        const pageLanguage = location.pathname.split('/').filter(Boolean).pop() === 'en' ? 'en' : 'id';
+        let pageLanguage = location.pathname.split('/').filter(Boolean).pop() === 'en' ? 'en' : 'id';
         document.documentElement.lang = pageLanguage;
         [
             ['canonical', pageLanguage],
@@ -904,24 +904,10 @@
             const link = document.createElement('link');
             link.rel = rel;
             if (rel === 'alternate') link.hreflang = lang;
+            if (rel === 'canonical') link.id = 'canonical-url';
             const slug = lang === 'x-default' ? '' : `${lang}/`;
             link.href = `https://temamumtaza.github.io/tps-anggadita/${slug}`;
             document.head.appendChild(link);
-        });
-        document.querySelectorAll('[data-lang-link]').forEach(link => {
-            const lang = link.dataset.langLink;
-            link.classList.toggle('is-active', lang === pageLanguage);
-            link.setAttribute('aria-current', lang === pageLanguage ? 'page' : 'false');
-            link.addEventListener('click', event => {
-                event.preventDefault();
-                const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
-                sessionStorage.setItem('tpsLanguageScroll', JSON.stringify({
-                    ratio: scrollableHeight > 0 ? window.scrollY / scrollableHeight : 0,
-                    sourceLanguage: pageLanguage,
-                    targetLanguage: lang
-                }));
-                location.href = `/tps-anggadita/${lang}/${location.hash}`;
-            });
         });
 
         const englishText = new Map(Object.entries({
@@ -1019,21 +1005,74 @@
             '© 2026. Angka disajikan sebagai simulasi operasional dasar dan akan disesuaikan menjadi nilai mutlak di dalam klausul Surat Perjanjian Kerja Sama resmi.':'© 2026. Figures are presented as a baseline operating simulation and will be finalized in the official Joint Operation Agreement.'
         }));
 
-        if (pageLanguage === 'en') {
-            document.title = 'TPS3R Rescue Nirmala Anggadita Investment Scheme';
-            document.querySelector('meta[name="description"]').content = 'A zero-residue TPS3R joint operation proposal in Anggadita Village, Karawang. IDR 1.6 billion capital expenditure, accelerated payback through biochar and RDF sales, with assets transferred to the village after five years.';
-            document.querySelector('meta[property="og:title"]').content = 'TPS3R Rescue Nirmala Anggadita Investment — Zero-Residue Waste Processing';
-            document.querySelector('meta[property="og:description"]').content = 'IDR 1.6 billion capital expenditure, payback accelerated by by-products, and full asset transfer to the village after the five-year contract.';
-            const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
-            const nodes = [];
-            while (walker.nextNode()) nodes.push(walker.currentNode);
-            nodes.forEach(node => {
-                const source = node.nodeValue.trim();
-                if (englishText.has(source)) node.nodeValue = node.nodeValue.replace(source, englishText.get(source));
-            });
-            document.getElementById('menuBtn').setAttribute('aria-label', 'Open menu');
-            document.querySelectorAll('.lang-switcher').forEach(el => el.setAttribute('aria-label', 'Choose language'));
+        const languageMeta = {
+            id: {
+                title: 'Skema Investasi TPS3R Rescue Nirmala Anggadita',
+                description: 'Rancangan kerja sama operasi TPS3R tanpa residu di Desa Anggadita, Karawang. Belanja modal Rp 1,6 Miliar, balik modal dipercepat lewat penjualan biochar & bahan bakar padat, aset dihibahkan ke desa setelah 5 tahun.',
+                ogTitle: 'Investasi TPS3R Rescue Nirmala Anggadita — Pengolahan Sampah Tanpa Residu',
+                ogDescription: 'Belanja modal Rp 1,6 M, payback dipercepat oleh komoditas sampingan, aset dihibahkan ke desa di akhir kontrak 5 tahun.'
+            },
+            en: {
+                title: 'TPS3R Rescue Nirmala Anggadita Investment Scheme',
+                description: 'A zero-residue TPS3R investment partnership proposal in Anggadita Village, Karawang. IDR 1.6 billion capital expenditure, accelerated payback through biochar and RDF sales, with assets transferred to the village after five years.',
+                ogTitle: 'TPS3R Rescue Nirmala Anggadita Investment — Zero-Residue Waste Processing',
+                ogDescription: 'IDR 1.6 billion capital expenditure, payback accelerated by by-products, and full asset transfer to the village after the five-year contract.'
+            }
+        };
+
+        const translatableNodes = [];
+        let languageRuntimeReady = false;
+        const languageWalker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+        while (languageWalker.nextNode()) {
+            const node = languageWalker.currentNode;
+            const source = node.nodeValue.trim();
+            if (englishText.has(source)) {
+                translatableNodes.push({
+                    node,
+                    id: node.nodeValue,
+                    en: node.nodeValue.replace(source, englishText.get(source))
+                });
+            }
         }
+
+        function applyLanguage(lang, updateUrl = false) {
+            if (!languageMeta[lang]) return;
+            pageLanguage = lang;
+            document.documentElement.lang = lang;
+            translatableNodes.forEach(item => { item.node.nodeValue = item[lang]; });
+
+            const meta = languageMeta[lang];
+            document.title = meta.title;
+            document.querySelector('meta[name="description"]').content = meta.description;
+            document.querySelector('meta[property="og:title"]').content = meta.ogTitle;
+            document.querySelector('meta[property="og:description"]').content = meta.ogDescription;
+            document.getElementById('canonical-url').href = `https://temamumtaza.github.io/tps-anggadita/${lang}/`;
+            document.getElementById('menuBtn').setAttribute('aria-label', lang === 'en' ? 'Open menu' : 'Buka menu');
+            document.querySelectorAll('.lang-switcher').forEach(el => el.setAttribute('aria-label', lang === 'en' ? 'Choose language' : 'Pilih bahasa'));
+            document.querySelectorAll('[data-lang-link]').forEach(link => {
+                const active = link.dataset.langLink === lang;
+                link.classList.toggle('is-active', active);
+                link.setAttribute('aria-current', active ? 'page' : 'false');
+            });
+
+            if (updateUrl) {
+                history.pushState({ language: lang }, '', `/tps-anggadita/${lang}/${location.hash}`);
+            }
+            if (languageRuntimeReady) updateBEP(currentBEP);
+        }
+
+        document.querySelectorAll('[data-lang-link]').forEach(link => {
+            link.addEventListener('click', event => {
+                event.preventDefault();
+                const lang = link.dataset.langLink;
+                if (lang !== pageLanguage) applyLanguage(lang, true);
+            });
+        });
+        window.addEventListener('popstate', () => {
+            const lang = location.pathname.split('/').filter(Boolean).pop() === 'en' ? 'en' : 'id';
+            applyLanguage(lang, false);
+        });
+        applyLanguage(pageLanguage, false);
 
         /* ================= FINANCIAL MODEL (logika asli dipertahankan) ================= */
         const capexValue = 1600000000;
@@ -1252,28 +1291,9 @@
 
         /* ================= INIT ================= */
         window.onload = function(){
+            languageRuntimeReady = true;
             updateBEP(24);
-            const savedScroll = sessionStorage.getItem('tpsLanguageScroll');
-            if (savedScroll) {
-                try {
-                    const state = JSON.parse(savedScroll);
-                    if (state.targetLanguage === pageLanguage) {
-                        const restorePosition = () => {
-                            const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
-                            window.scrollTo({ top: Math.max(0, state.ratio * scrollableHeight), behavior: 'auto' });
-                            onScroll();
-                        };
-                        restorePosition();
-                        requestAnimationFrame(restorePosition);
-                        if (document.fonts?.ready) document.fonts.ready.then(restorePosition);
-                    }
-                } catch (error) {
-                    console.warn('Unable to restore language-switch scroll position.', error);
-                }
-                sessionStorage.removeItem('tpsLanguageScroll');
-            } else {
-                onScroll();
-            }
+            onScroll();
         };
     </script>
 </body>
