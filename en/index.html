@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skema Investasi TPS3R Rescue Nirmala Anggadita</title>
-    <meta name="description" content="Rancangan kerja sama operasi TPS3R tanpa residu di Desa Anggadita, Karawang. Belanja modal Rp 1,6 Miliar, balik modal dipercepat lewat penjualan biochar & bahan bakar padat, aset dihibahkan ke desa setelah 5 tahun.">
+    <meta name="description" content="Rencana investasi TPS3R tanpa residu di Desa Anggadita, Karawang. Modal awal Rp 1,6 miliar. Pendapatan berasal dari tipping fee, biochar, dan RDF. Aset diserahkan kepada desa setelah 5 tahun.">
     <meta property="og:title" content="Investasi TPS3R Rescue Nirmala Anggadita — Pengolahan Sampah Tanpa Residu">
     <meta property="og:description" content="Belanja modal Rp 1,6 M, payback dipercepat oleh komoditas sampingan, aset dihibahkan ke desa di akhir kontrak 5 tahun.">
     <meta property="og:type" content="website">
@@ -352,7 +352,7 @@
                         Rancangan Kerjasama Investasi<br>TPS3R <span class="gradient-word">Tanpa Residu</span>
                     </h1>
                     <p class="mt-6 text-lg leading-relaxed reveal" style="color:rgba(244,248,244,.78);max-width:44rem">
-                        Investor menyediakan belanja modal alat, TPS3R Rescue Nirmala Anggadita menjalankan operasional harian, dan skema kerja sama operasi menjadi wadah pengawasan bagi hasil selama masa kontrak 5 tahun — yang ditutup dengan hibah penuh aset kepada desa.
+                        Investor membiayai mesin dan fasilitas awal. TPS3R Rescue Nirmala Anggadita mengelola kegiatan harian. Selama kontrak 5 tahun, laba dibagi sesuai fase yang disepakati. Setelah kontrak berakhir, seluruh aset diserahkan kepada desa.
                     </p>
 
                     <!-- budget card -->
@@ -461,7 +461,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16 reveal">
                 <span class="eyebrow justify-center">Alur Operasi</span>
-                <h2 class="font-display font-bold tracking-tight mt-4" style="font-size:clamp(1.9rem,3.6vw,2.6rem)">Dari timbangan masuk hingga dua keluaran bernilai</h2>
+                <h2 class="font-display font-bold tracking-tight mt-4" style="font-size:clamp(1.9rem,3.6vw,2.6rem)">Alur sampah dari timbangan sampai biochar dan RDF</h2>
                 <p class="mt-4 leading-relaxed" style="color:var(--muted)">
                     Sampah ditimbang akurat, dipilah secara mekanis, lalu diarahkan ke dua jalur: organik menuju pirolisis Pyronex, anorganik menjadi bahan bakar padat (RDF). Kapasitas optimal <strong style="color:var(--emerald-deep)">8 ton/hari</strong> dengan siklus <strong style="color:var(--emerald-deep)">25 hari kerja</strong> per bulan.
                 </p>
@@ -527,8 +527,8 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16 reveal">
                 <span class="eyebrow justify-center">Kalkulator Interaktif</span>
-                <h2 class="font-display font-bold tracking-tight mt-4" style="font-size:clamp(1.9rem,3.6vw,2.6rem)">Tipping fee yang ideal</h2>
-                <p class="mt-4 leading-relaxed" style="color:var(--muted)">Dengan kapasitas maksimal <strong>8 ton/hari</strong>, sistem mencari tipping fee dasar agar target pengembalian investor dan seluruh biaya operasional (OpEx) terpenuhi. Atur asumsinya, angka memperbarui otomatis.</p>
+                <h2 class="font-display font-bold tracking-tight mt-4" style="font-size:clamp(1.9rem,3.6vw,2.6rem)">Hitung tipping fee</h2>
+                <p class="mt-4 leading-relaxed" style="color:var(--muted)">Kalkulator memakai kapasitas maksimal <strong>8 ton/hari</strong>. Hasilnya menunjukkan tipping fee minimum untuk membayar biaya operasional dan mencapai target pengembalian modal. Ubah asumsi di bawah untuk melihat perhitungannya.</p>
             </div>
 
             <div class="card max-w-5xl mx-auto p-8 lg:p-10 mb-12 reveal">
@@ -546,9 +546,9 @@
 
                         <label class="block text-sm font-bold mb-3">Estimasi volume sampah masuk harian (maks. 8 ton)</label>
                         <select id="daily-volume" onchange="updateSimulations()" class="ctl">
-                            <option value="4">4 ton/hari — 50% kapasitas</option>
-                            <option value="6">6 ton/hari — 75% kapasitas</option>
-                            <option value="8" selected>8 ton/hari — kapasitas penuh</option>
+                            <option value="4">4 ton/hari · 50% kapasitas</option>
+                            <option value="6">6 ton/hari · 75% kapasitas</option>
+                            <option value="8" selected>8 ton/hari · kapasitas penuh</option>
                         </select>
                         <p class="text-xs mt-3" style="color:var(--muted)">*Semua perhitungan memakai ketetapan 25 hari kerja per bulan.</p>
                     </div>
@@ -571,19 +571,19 @@
                     <div class="mb-7">
                         <span class="pill slate">Pilihan Pertama</span>
                         <h4 class="font-display text-2xl font-bold mt-4">Paket Kuota</h4>
-                        <p class="text-sm mt-3 leading-relaxed" style="color:var(--muted)">Iuran berlangganan bulanan, <strong>berlaku kelipatan</strong> bagi perusahaan multi-lokasi, dengan penghematan dari tipping fee dasar.</p>
+                        <p class="text-sm mt-3 leading-relaxed" style="color:var(--muted)">Paket bulanan untuk perusahaan dengan volume sampah tetap. Perusahaan dengan beberapa lokasi dapat membeli lebih dari satu paket.</p>
                     </div>
                     <div class="space-y-4 flex-grow">
                         <div class="flex justify-between items-center pb-4" style="border-bottom:1px solid var(--line)">
-                            <div><span class="block font-bold text-sm">Tingkat 1 — maks. 10 ton/bln</span><span class="text-xs" style="color:var(--muted)">Potongan 10%</span></div>
+                            <div><span class="block font-bold text-sm">Tingkat 1 · maks. 10 ton/bln</span><span class="text-xs" style="color:var(--muted)">Potongan 10%</span></div>
                             <span id="tier1-val" class="font-display font-bold text-xl tnum">Rp --</span>
                         </div>
                         <div class="flex justify-between items-center pb-4" style="border-bottom:1px solid var(--line)">
-                            <div><span class="block font-bold text-sm">Tingkat 2 — maks. 25 ton/bln</span><span class="text-xs" style="color:var(--muted)">Potongan 15%</span></div>
+                            <div><span class="block font-bold text-sm">Tingkat 2 · maks. 25 ton/bln</span><span class="text-xs" style="color:var(--muted)">Potongan 15%</span></div>
                             <span id="tier2-val" class="font-display font-bold text-xl tnum">Rp --</span>
                         </div>
                         <div class="flex justify-between items-center pb-4" style="border-bottom:1px solid var(--line)">
-                            <div><span class="block font-bold text-sm">Tingkat 3 — maks. 50 ton/bln</span><span class="text-xs" style="color:var(--muted)">Potongan 20%</span></div>
+                            <div><span class="block font-bold text-sm">Tingkat 3 · maks. 50 ton/bln</span><span class="text-xs" style="color:var(--muted)">Potongan 20%</span></div>
                             <span id="tier3-val" class="font-display font-bold text-xl tnum">Rp --</span>
                         </div>
                     </div>
@@ -598,12 +598,12 @@
                     <div class="mb-7">
                         <span class="pill emerald">Pilihan Kedua</span>
                         <h4 class="font-display text-2xl font-bold mt-4">Tipping Fee per Timbang</h4>
-                        <p class="text-sm mt-3 leading-relaxed" style="color:var(--muted)">Penagihan transparan, dihitung langsung dari berat bersih jembatan timbang saat kedatangan.</p>
+                        <p class="text-sm mt-3 leading-relaxed" style="color:var(--muted)">Tagihan dihitung dari berat bersih yang tercatat di jembatan timbang saat sampah datang.</p>
                     </div>
                     <div class="flex-grow flex flex-col items-center justify-center rounded-2xl p-8 text-center" style="background:linear-gradient(160deg,#ECFDF3,#DCFCE9);border:1px solid #A7F3CF">
                         <span id="flat-rate-display" class="font-display font-bold tnum" style="font-size:clamp(2.6rem,6vw,3.6rem);color:var(--emerald-deep)">Rp --</span>
                         <span class="text-xs font-bold uppercase tracking-widest mt-3 px-4 py-1 rounded-full" style="background:#fff;color:var(--muted);border:1px solid #A7F3CF">per kilogram</span>
-                        <p class="text-sm mt-5 leading-relaxed" style="color:var(--muted)">Acuan per-kg ini adalah batas minimal agar cash flow fasilitas tetap positif.</p>
+                        <p class="text-sm mt-5 leading-relaxed" style="color:var(--muted)">Tarif per kilogram ini adalah batas minimum berdasarkan asumsi biaya dan volume di atas.</p>
                     </div>
                 </div>
             </div>
@@ -615,7 +615,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16 reveal">
                 <span class="eyebrow justify-center">Pendapatan Tambahan</span>
-                <h2 class="font-display font-bold tracking-tight mt-4" style="font-size:clamp(1.9rem,3.6vw,2.6rem)">Komoditas sampingan sebagai pendapatan tambahan</h2>
+                <h2 class="font-display font-bold tracking-tight mt-4" style="font-size:clamp(1.9rem,3.6vw,2.6rem)">Pendapatan dari biochar dan RDF</h2>
                 <p class="mt-4 leading-relaxed text-lg" style="color:var(--muted)">
                     Tipping fee sudah dirancang untuk menutup kewajiban operasional. Maka pendapatan biochar dan RDF berposisi sebagai <strong style="color:var(--emerald-deep)">pendapatan tambahan</strong> yang mempersingkat waktu balik modal.
                 </p>
@@ -725,7 +725,7 @@
             <div class="text-center max-w-3xl mx-auto mb-16 reveal">
                 <span class="eyebrow justify-center">Struktur Bagi Hasil &amp; Aset</span>
                 <h2 class="font-display font-bold tracking-tight mt-4" style="font-size:clamp(1.9rem,3.6vw,2.6rem)">Tiga fase bagi hasil dan serah terima aset</h2>
-                <p class="mt-4 leading-relaxed text-lg" style="color:var(--muted)">Siklus 5 tahun dipecah ke tiga fase. Kecepatan perpindahan fase berbanding lurus dengan penyerapan penjualan komoditas sampingan.</p>
+                <p class="mt-4 leading-relaxed text-lg" style="color:var(--muted)">Kontrak berlangsung 5 tahun dan memakai tiga fase pembagian laba. Penjualan biochar dan RDF dapat mempercepat tercapainya BEP.</p>
             </div>
 
             <!-- BEP benchmark comparison -->
@@ -736,7 +736,7 @@
                 <div class="space-y-7">
                     <div>
                         <div class="flex justify-between items-end mb-2">
-                            <span class="text-sm font-bold">BEP — tipping fee only</span>
+                            <span class="text-sm font-bold">BEP dari tipping fee</span>
                             <span id="bep-benchmark-1" class="font-display text-2xl font-bold tnum" style="color:var(--muted)">24 Bulan</span>
                         </div>
                         <div class="bar-track h-4"><div id="bar-bench1" class="bar-fill" style="background:linear-gradient(90deg,#94A3A0,#64776F)"></div></div>
@@ -744,7 +744,7 @@
                     </div>
                     <div>
                         <div class="flex justify-between items-end mb-2">
-                            <span class="text-sm font-bold" style="color:var(--emerald-deep)">BEP — dengan penjualan produk</span>
+                            <span class="text-sm font-bold" style="color:var(--emerald-deep)">BEP dengan penjualan produk</span>
                             <span id="bep-benchmark-2" class="font-display text-2xl font-bold tnum" style="color:var(--emerald-deep)">-- Bulan</span>
                         </div>
                         <div class="bar-track h-4"><div id="bar-bench2" class="bar-fill" style="background:linear-gradient(90deg,var(--emerald),var(--spring))"></div></div>
@@ -759,7 +759,7 @@
                 <div class="card p-8 lg:p-9 relative flex flex-col reveal" style="border-color:#F6DBA4">
                     <div class="absolute -top-3.5 left-8 text-xs font-bold px-5 py-2 rounded-full" style="background:linear-gradient(135deg,var(--ember),var(--ember-deep));color:#fff;box-shadow:0 8px 20px -10px rgba(245,165,36,.7)">FASE PERTAMA</div>
                     <h4 class="font-display text-lg font-bold mt-4">Bulan ke-1 → break-even point (BEP)</h4>
-                    <p class="text-sm mt-3 mb-5 leading-relaxed" style="color:var(--muted)">Prioritas perlindungan dana: porsi dominan untuk pengembalian pokok modal investor.</p>
+                    <p class="text-sm mt-3 mb-5 leading-relaxed" style="color:var(--muted)">Sebelum BEP, investor menerima 80% laba bersih untuk mengembalikan modal awal.</p>
 
                     <div class="rounded-xl px-4 py-3 mb-6" style="background:var(--paper);border:1px solid var(--line)">
                         <span class="block text-[10px] font-bold uppercase tracking-wide mb-2" style="color:var(--muted)">Fase ini berjalan sampai BEP</span>
@@ -803,7 +803,7 @@
                 <div class="card p-8 lg:p-9 relative flex flex-col reveal" style="border-color:#A9DDF7">
                     <div class="absolute -top-3.5 left-8 text-xs font-bold px-5 py-2 rounded-full" style="background:linear-gradient(135deg,var(--sky),#0B82C4);color:#fff;box-shadow:0 8px 20px -10px rgba(56,189,248,.7)">FASE KEDUA</div>
                     <h4 class="font-display text-lg font-bold mt-4">Setelah BEP → kontrak selesai</h4>
-                    <p class="text-sm mt-3 mb-5 leading-relaxed" style="color:var(--muted)">Modal sudah lunas. Skema terbalik: margin mayoritas untuk kesejahteraan &amp; ekspansi desa.</p>
+                    <p class="text-sm mt-3 mb-5 leading-relaxed" style="color:var(--muted)">Setelah BEP, pembagian berbalik: pengelola menerima 80% laba bersih sampai kontrak berakhir.</p>
 
                     <div class="rounded-xl px-4 py-3 mb-6" style="background:var(--paper);border:1px solid var(--line)">
                         <span class="block text-[10px] font-bold uppercase tracking-wide mb-2" style="color:var(--muted)">Dimulai setelah BEP, sampai akhir kontrak (bln ke-60)</span>
@@ -849,7 +849,7 @@
                     <div class="blob b2" style="position:absolute;bottom:-20%;left:-10%;width:260px;height:260px;opacity:.22"></div>
                     <div class="relative z-10 flex flex-col h-full">
                         <h4 class="font-display text-lg font-bold mt-4" style="color:var(--paper)">Setelah kontrak selesai (5 tahun / bln ke-60+)</h4>
-                        <p class="text-sm mt-3 mb-5 leading-relaxed" style="color:rgba(244,248,244,.7)">Durasi kontrak 5 tahun berakhir. Bagian komersial investor selesai tanpa sisa tuntutan.</p>
+                        <p class="text-sm mt-3 mb-5 leading-relaxed" style="color:rgba(244,248,244,.7)">Pada akhir tahun kelima, hak bagi hasil investor berakhir dan aset menjadi milik TPS3R Rescue Nirmala Anggadita.</p>
 
                         <div class="rounded-xl px-4 py-3 mb-5 glass-row">
                             <span class="block text-[10px] font-bold uppercase tracking-wide mb-2" style="color:rgba(244,248,244,.6)">Modal investor sudah kembali sejak BEP</span>
@@ -884,7 +884,7 @@
     <footer class="py-12" style="background:var(--ink);border-top:1px solid rgba(190,242,100,.12)">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <span class="font-display text-lg font-bold block mb-4" style="color:var(--paper)">TPS3R <span style="color:var(--spring)">Rescue Nirmala Anggadita</span></span>
-            <p class="text-sm max-w-xl mx-auto mb-8 leading-relaxed" style="color:rgba(244,248,244,.55)">Arsitektur operasi fasilitas pengolahan residu limbah terpadu di Desa Anggadita, Karawang Timur, ditopang teknologi pemanasan Pyronex.</p>
+            <p class="text-sm max-w-xl mx-auto mb-8 leading-relaxed" style="color:rgba(244,248,244,.55)">Rencana investasi dan pengelolaan sampah TPS3R Rescue Nirmala di Desa Anggadita, Karawang Timur.</p>
             <div class="pt-8 text-xs" style="border-top:1px solid rgba(255,255,255,.08);color:rgba(244,248,244,.4)">
                 &copy; 2026. Angka disajikan sebagai simulasi operasional dasar dan akan disesuaikan menjadi nilai mutlak di dalam klausul Surat Perjanjian Kerja Sama resmi.
             </div>
@@ -916,7 +916,7 @@
             'Desa Anggadita · Karawang Timur':'Anggadita Village · East Karawang',
             'Rancangan Kerjasama Investasi':'Investment Partnership Proposal',
             'Tanpa Residu':'Zero Residue',
-            'Investor menyediakan belanja modal alat, TPS3R Rescue Nirmala Anggadita menjalankan operasional harian, dan skema kerja sama operasi menjadi wadah pengawasan bagi hasil selama masa kontrak 5 tahun — yang ditutup dengan hibah penuh aset kepada desa.':'The investor funds the equipment, TPS3R Rescue Nirmala Anggadita manages daily operations, and the joint operation framework governs profit sharing throughout the five-year contract—ending with the full transfer of all assets to the village.',
+            'Investor membiayai mesin dan fasilitas awal. TPS3R Rescue Nirmala Anggadita mengelola kegiatan harian. Selama kontrak 5 tahun, laba dibagi sesuai fase yang disepakati. Setelah kontrak berakhir, seluruh aset diserahkan kepada desa.':'The investor pays for the machine and initial facilities. TPS3R Rescue Nirmala Anggadita runs the site day to day. Profit is split according to the agreed phases during the five-year contract. At the end of the contract, all assets are transferred to the village.',
             'Rincian Belanja Modal Pengadaan':'Capital Expenditure Breakdown',
             'Mesin Pyronex Pirolisis':'Pyronex Pyrolysis Machine',
             '(kapasitas 1 ton/jam)':'(1 tonne/hour capacity)',
@@ -927,7 +927,7 @@
             'Estimasi Balik Modal':'Estimated Payback', 'mengikuti asumsi & produk sampingan':'based on assumptions & by-product sales',
             'Masa Kontrak':'Contract Term', 'kerja sama operasi':'joint operation',
             'Aset di Akhir Kontrak':'Assets at Contract End', 'dihibahkan ke desa':'transferred to the village',
-            'Alur Operasi':'Operating Flow', 'Dari timbangan masuk hingga dua keluaran bernilai':'From inbound weighing to two valuable outputs',
+            'Alur Operasi':'Operating Flow', 'Alur sampah dari timbangan sampai biochar dan RDF':'How waste moves from the weighbridge to biochar and RDF',
             'Tahap Masuk':'Intake Stage', 'Penerimaan Sampah':'Waste Reception',
             'Maksimal 8 ton/hari. Setiap muatan ditimbang akurat di jembatan timbang sebagai dasar tipping fee.':'Up to 8 tonnes/day. Every load is accurately measured at the weighbridge as the basis for the tipping fee.',
             'Titik Pemisahan':'Separation Point', 'Pemilahan Mekanis':'Mechanical Sorting',
@@ -939,31 +939,30 @@
             'Jalur Anorganik':'Inorganic Stream', 'Bahan Bakar Padat (RDF)':'Solid Recovered Fuel (RDF)',
             'Anorganik dicacah menjadi pengganti bahan bakar industri. Estimasi konversi':'Inorganic waste is shredded into an industrial fuel substitute. Estimated conversion is',
             'dari total beban anorganik.':'of the total inorganic load.',
-            'Kalkulator Interaktif':'Interactive Calculator', 'Tipping fee yang ideal':'The ideal tipping fee',
-            'Dengan kapasitas maksimal':'At a maximum capacity of', 'sistem mencari tipping fee dasar agar target pengembalian investor dan seluruh biaya operasional (OpEx) terpenuhi. Atur asumsinya, angka memperbarui otomatis.':'the system calculates the base tipping fee required to meet the investor payback target and all operating expenses (OpEx). Adjust the assumptions and the figures update automatically.',
+            'Kalkulator Interaktif':'Interactive Calculator', 'Hitung tipping fee':'Calculate the tipping fee',
+            'Kalkulator memakai kapasitas maksimal':'The calculator uses a maximum capacity of', 'Hasilnya menunjukkan tipping fee minimum untuk membayar biaya operasional dan mencapai target pengembalian modal. Ubah asumsi di bawah untuk melihat perhitungannya.':'The result is the minimum tipping fee needed to cover operating costs and meet the capital payback target. Change the assumptions below to recalculate.',
             '1 · Atur target operasional':'1 · Set operating targets',
             'Target waktu pengembalian modal investor':'Investor capital payback target',
             '18 Bulan':'18 Months', '24 Bulan':'24 Months', '30 Bulan':'30 Months', '36 Bulan':'36 Months',
             'Estimasi volume sampah masuk harian (maks. 8 ton)':'Estimated daily incoming waste (max. 8 tonnes)',
-            '4 ton/hari — 50% kapasitas':'4 tonnes/day — 50% capacity',
-            '6 ton/hari — 75% kapasitas':'6 tonnes/day — 75% capacity',
-            '8 ton/hari — kapasitas penuh':'8 tonnes/day — full capacity',
+            '4 ton/hari · 50% kapasitas':'4 tonnes/day · 50% capacity',
+            '6 ton/hari · 75% kapasitas':'6 tonnes/day · 75% capacity',
+            '8 ton/hari · kapasitas penuh':'8 tonnes/day · full capacity',
             '*Semua perhitungan memakai ketetapan 25 hari kerja per bulan.':'*All calculations assume 25 operating days per month.',
             'Target pendapatan kotor / bulan':'Target gross revenue / month',
             'Rekomendasi tipping fee minimal':'Recommended minimum tipping fee', '/ kg':'/ kg',
             'Pilihan Pertama':'First Option', 'Paket Kuota':'Quota Package',
-            'Iuran berlangganan bulanan,':'A monthly subscription,', 'berlaku kelipatan':'available in multiples',
-            'bagi perusahaan multi-lokasi, dengan penghematan dari tipping fee dasar.':'for multi-site companies, with savings against the base tipping fee.',
-            'Tingkat 1 — maks. 10 ton/bln':'Tier 1 — max. 10 tonnes/month', 'Potongan 10%':'10% discount',
-            'Tingkat 2 — maks. 25 ton/bln':'Tier 2 — max. 25 tonnes/month', 'Potongan 15%':'15% discount',
-            'Tingkat 3 — maks. 50 ton/bln':'Tier 3 — max. 50 tonnes/month', 'Potongan 20%':'20% discount',
+            'Paket bulanan untuk perusahaan dengan volume sampah tetap. Perusahaan dengan beberapa lokasi dapat membeli lebih dari satu paket.':'A monthly package for companies with a steady volume of waste. Companies with several sites can purchase more than one package.',
+            'Tingkat 1 · maks. 10 ton/bln':'Tier 1 · max. 10 tonnes/month', 'Potongan 10%':'10% discount',
+            'Tingkat 2 · maks. 25 ton/bln':'Tier 2 · max. 25 tonnes/month', 'Potongan 15%':'15% discount',
+            'Tingkat 3 · maks. 50 ton/bln':'Tier 3 · max. 50 tonnes/month', 'Potongan 20%':'20% discount',
             'Direkomendasikan':'Recommended', 'Pilihan Kedua':'Second Option',
             'Tipping Fee per Timbang':'Tipping Fee per Weighing',
-            'Penagihan transparan, dihitung langsung dari berat bersih jembatan timbang saat kedatangan.':'Transparent billing, calculated directly from the net weighbridge reading upon arrival.',
+            'Tagihan dihitung dari berat bersih yang tercatat di jembatan timbang saat sampah datang.':'The bill is based on the net weight recorded at the weighbridge when the waste arrives.',
             'per kilogram':'per kilogram',
-            'Acuan per-kg ini adalah batas minimal agar cash flow fasilitas tetap positif.':'This per-kg benchmark is the minimum required to keep facility cash flow positive.',
+            'Tarif per kilogram ini adalah batas minimum berdasarkan asumsi biaya dan volume di atas.':'This per-kilogram rate is the minimum based on the cost and volume assumptions above.',
             'Pendapatan Tambahan':'Additional Revenue',
-            'Komoditas sampingan sebagai pendapatan tambahan':'By-products as an additional revenue stream',
+            'Pendapatan dari biochar dan RDF':'Revenue from biochar and RDF',
             'Asumsi penjualan produk tambahan':'By-product sales assumptions',
             'Volume mengikuti pilihan volume harian. Konversi massa:':'Volume follows the selected daily intake. Mass conversion:',
             'organik → biochar 10%':'organic → 10% biochar', 'anorganik → RDF 80%':'inorganic → 80% RDF',
@@ -976,39 +975,39 @@
             '− biaya operasional (OpEx)':'− operating expenses (OpEx)', 'Keuntungan bersih / bulan':'Net profit / month',
             'Struktur Bagi Hasil & Aset':'Profit Sharing & Asset Structure',
             'Tiga fase bagi hasil dan serah terima aset':'Three phases of profit sharing and asset transfer',
-            'Siklus 5 tahun dipecah ke tiga fase. Kecepatan perpindahan fase berbanding lurus dengan penyerapan penjualan komoditas sampingan.':'The five-year cycle is divided into three phases. Progression through the phases accelerates as by-product sales grow.',
+            'Kontrak berlangsung 5 tahun dan memakai tiga fase pembagian laba. Penjualan biochar dan RDF dapat mempercepat tercapainya BEP.':'The contract runs for five years and uses three profit-sharing phases. Biochar and RDF sales can shorten the time to BEP.',
             'Perbandingan waktu balik modal (BEP)':'Payback period (BEP) comparison',
             'Semakin pendek bar, semakin cepat investor balik modal.':'The shorter the bar, the faster the investor recovers the capital.',
-            'BEP — tipping fee only':'BEP — tipping fee only', 'Hanya dari tipping fee.':'From tipping fees only.',
-            'BEP — dengan penjualan produk':'BEP — with product sales',
+            'BEP dari tipping fee':'BEP from tipping fees', 'Hanya dari tipping fee.':'From tipping fees only.',
+            'BEP dengan penjualan produk':'BEP with product sales',
             'Dipercepat oleh penjualan biochar & RDF.':'Accelerated by biochar & RDF sales.',
             'FASE PERTAMA':'PHASE ONE', 'Bulan ke-1 → break-even point (BEP)':'Month 1 → break-even point (BEP)',
-            'Prioritas perlindungan dana: porsi dominan untuk pengembalian pokok modal investor.':'Capital protection takes priority: the majority share repays the investor’s principal.',
+            'Sebelum BEP, investor menerima 80% laba bersih untuk mengembalikan modal awal.':'Before BEP, the investor receives 80% of net profit to recover the initial capital.',
             'Fase ini berjalan sampai BEP':'This phase runs until BEP', 'Tipping fee only':'Tipping fee only',
             '+ Penjualan produk':'+ Product sales', 'Investor 80%':'Investor 80%', 'Pengelola 20%':'Operator 20%',
             'Bagi hasil — tipping fee only':'Profit share — tipping fee only',
             'Bagi hasil — + penjualan produk':'Profit share — + product sales',
             'Investor':'Investor', 'Pengelola':'Operator',
             'FASE KEDUA':'PHASE TWO', 'Setelah BEP → kontrak selesai':'After BEP → contract completion',
-            'Modal sudah lunas. Skema terbalik: margin mayoritas untuk kesejahteraan & ekspansi desa.':'Capital has been repaid. The split reverses: the majority margin supports village welfare & expansion.',
+            'Setelah BEP, pembagian berbalik: pengelola menerima 80% laba bersih sampai kontrak berakhir.':'After BEP, the split reverses: the operator receives 80% of net profit until the contract ends.',
             'Dimulai setelah BEP, sampai akhir kontrak (bln ke-60)':'Starts after BEP and runs to contract end (month 60)',
             'Investor 20%':'Investor 20%', 'Pengelola 80%':'Operator 80%',
             'FASE KETIGA':'PHASE THREE', 'Setelah kontrak selesai (5 tahun / bln ke-60+)':'After contract completion (5 years / month 60+)',
-            'Durasi kontrak 5 tahun berakhir. Bagian komersial investor selesai tanpa sisa tuntutan.':'The five-year contract ends. The investor’s commercial interest concludes with no remaining claim.',
+            'Pada akhir tahun kelima, hak bagi hasil investor berakhir dan aset menjadi milik TPS3R Rescue Nirmala Anggadita.':'At the end of year five, the investor’s profit share ends and the assets become the property of TPS3R Rescue Nirmala Anggadita.',
             'Modal investor sudah kembali sejak BEP':'Investor capital has been fully repaid since BEP',
             'Hak tunggal pengelola desa':'Sole ownership of the village operator',
             'Serah terima aset pemrosesan':'Processing asset transfer',
             'Mesin Pyronex, jembatan timbang, dan bangunan sipil pendukung secara tertulis':'The Pyronex machine, weighbridge, and supporting civil structures are formally',
             'dihibahkan':'transferred',
             'menjadi milik abadi TPS3R Rescue Nirmala Anggadita.':'into the permanent ownership of TPS3R Rescue Nirmala Anggadita.',
-            'Arsitektur operasi fasilitas pengolahan residu limbah terpadu di Desa Anggadita, Karawang Timur, ditopang teknologi pemanasan Pyronex.':'An operating framework for an integrated waste-processing facility in Anggadita Village, East Karawang, powered by Pyronex thermal technology.',
+            'Rencana investasi dan pengelolaan sampah TPS3R Rescue Nirmala di Desa Anggadita, Karawang Timur.':'Investment and waste-management plan for TPS3R Rescue Nirmala in Anggadita Village, East Karawang.',
             '© 2026. Angka disajikan sebagai simulasi operasional dasar dan akan disesuaikan menjadi nilai mutlak di dalam klausul Surat Perjanjian Kerja Sama resmi.':'© 2026. Figures are presented as a baseline operating simulation and will be finalized in the official Joint Operation Agreement.'
         }));
 
         const languageMeta = {
             id: {
                 title: 'Skema Investasi TPS3R Rescue Nirmala Anggadita',
-                description: 'Rancangan kerja sama operasi TPS3R tanpa residu di Desa Anggadita, Karawang. Belanja modal Rp 1,6 Miliar, balik modal dipercepat lewat penjualan biochar & bahan bakar padat, aset dihibahkan ke desa setelah 5 tahun.',
+                description: 'Rencana investasi TPS3R tanpa residu di Desa Anggadita, Karawang. Modal awal Rp 1,6 miliar. Pendapatan berasal dari tipping fee, biochar, dan RDF. Aset diserahkan kepada desa setelah 5 tahun.',
                 ogTitle: 'Investasi TPS3R Rescue Nirmala Anggadita — Pengolahan Sampah Tanpa Residu',
                 ogDescription: 'Belanja modal Rp 1,6 M, payback dipercepat oleh komoditas sampingan, aset dihibahkan ke desa di akhir kontrak 5 tahun.'
             },
