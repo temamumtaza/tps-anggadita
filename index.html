@@ -914,6 +914,12 @@
             link.setAttribute('aria-current', lang === pageLanguage ? 'page' : 'false');
             link.addEventListener('click', event => {
                 event.preventDefault();
+                const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+                sessionStorage.setItem('tpsLanguageScroll', JSON.stringify({
+                    ratio: scrollableHeight > 0 ? window.scrollY / scrollableHeight : 0,
+                    sourceLanguage: pageLanguage,
+                    targetLanguage: lang
+                }));
                 location.href = `/tps-anggadita/${lang}/${location.hash}`;
             });
         });
@@ -1245,7 +1251,30 @@
         mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=> mobileMenu.classList.add('hidden-menu')));
 
         /* ================= INIT ================= */
-        window.onload = function(){ updateBEP(24); onScroll(); };
+        window.onload = function(){
+            updateBEP(24);
+            const savedScroll = sessionStorage.getItem('tpsLanguageScroll');
+            if (savedScroll) {
+                try {
+                    const state = JSON.parse(savedScroll);
+                    if (state.targetLanguage === pageLanguage) {
+                        const restorePosition = () => {
+                            const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+                            window.scrollTo({ top: Math.max(0, state.ratio * scrollableHeight), behavior: 'auto' });
+                            onScroll();
+                        };
+                        restorePosition();
+                        requestAnimationFrame(restorePosition);
+                        if (document.fonts?.ready) document.fonts.ready.then(restorePosition);
+                    }
+                } catch (error) {
+                    console.warn('Unable to restore language-switch scroll position.', error);
+                }
+                sessionStorage.removeItem('tpsLanguageScroll');
+            } else {
+                onScroll();
+            }
+        };
     </script>
 </body>
 </html>
