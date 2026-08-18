@@ -1,496 +1,803 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex, nofollow">
-    <meta name="theme-color" content="#08251f">
-    <title>Detail Proyek · TPS3R Rescue Nirmala Anggadita</title>
-    <meta name="description" content="Dokumen pembahasan investasi TPS3R Rescue Nirmala Anggadita untuk calon investor.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --forest: #08251f;
-            --forest-2: #0d352c;
-            --forest-3: #12483b;
-            --lime: #c5f36b;
-            --green: #1fc58b;
-            --amber: #f4aa3d;
-            --blue: #48bde8;
-            --paper: #f3f6ef;
-            --white: #fff;
-            --ink: #11221d;
-            --muted: #66766f;
-            --line: #dbe4dc;
-            --danger: #d65e4a;
-        }
-        * { box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body {
-            margin: 0;
-            font-family: "Manrope", sans-serif;
-            color: var(--ink);
-            background:
-                radial-gradient(circle at 85% 8%, rgba(31,197,139,.08), transparent 24rem),
-                var(--paper);
-            -webkit-font-smoothing: antialiased;
-        }
-        button, input { font: inherit; }
-        a { color: inherit; text-decoration: none; }
-        ::selection { color: var(--forest); background: var(--lime); }
-        .mono { font-family: "DM Mono", monospace; }
-        .shell { width: min(1320px, calc(100% - 40px)); margin: auto; }
-        .topbar {
-            position: sticky; top: 0; z-index: 50;
-            background: rgba(8,37,31,.92);
-            backdrop-filter: blur(18px);
-            border-bottom: 1px solid rgba(197,243,107,.16);
-        }
-        .topbar-inner {
-            min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 20px;
-        }
-        .brand { display: flex; align-items: center; gap: 12px; color: white; font-weight: 800; }
-        .brand-mark {
-            width: 36px; height: 36px; display: grid; place-items: center; border-radius: 12px;
-            color: var(--forest); background: linear-gradient(135deg, var(--lime), var(--green));
-        }
-        .document-mark {
-            color: rgba(255,255,255,.62); font-size: 11px; letter-spacing: .11em; text-transform: uppercase;
-        }
-        .top-actions { display: flex; align-items: center; gap: 12px; }
-        .confidential {
-            color: var(--lime); border: 1px solid rgba(197,243,107,.25);
-            padding: 8px 11px; border-radius: 999px; font-size: 10px; letter-spacing: .08em; text-transform: uppercase;
-        }
-        .language {
-            display: flex; padding: 3px; border: 1px solid rgba(255,255,255,.16); border-radius: 999px;
-        }
-        .language button {
-            border: 0; min-width: 38px; height: 30px; border-radius: 999px;
-            background: transparent; color: rgba(255,255,255,.56); cursor: pointer;
-            font-size: 11px; font-weight: 800; letter-spacing: .06em;
-        }
-        .language button.active { color: var(--forest); background: var(--lime); }
-        .hero {
-            color: white; position: relative; overflow: hidden;
-            padding: 88px 0 72px;
-            background:
-                linear-gradient(115deg, rgba(8,37,31,.2), rgba(8,37,31,.92)),
-                radial-gradient(circle at 72% 30%, rgba(31,197,139,.25), transparent 28rem),
-                var(--forest);
-        }
-        .hero::after {
-            content: ""; position: absolute; inset: 0; opacity: .16; pointer-events: none;
-            background-image: linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);
-            background-size: 40px 40px;
-            mask-image: linear-gradient(to right, transparent, black);
-        }
-        .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.3fr .7fr; gap: 72px; align-items: end; }
-        .kicker { color: var(--lime); font-size: 12px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
-        h1 { margin: 18px 0 24px; max-width: 850px; font-size: clamp(42px, 7vw, 82px); line-height: .98; letter-spacing: -.055em; }
-        .hero-copy { max-width: 720px; color: rgba(255,255,255,.72); font-size: 18px; line-height: 1.75; }
-        .hero-meta { display: grid; gap: 1px; background: rgba(255,255,255,.13); border: 1px solid rgba(255,255,255,.13); border-radius: 20px; overflow: hidden; }
-        .meta-row { display: flex; justify-content: space-between; gap: 18px; padding: 17px 18px; background: rgba(8,37,31,.74); }
-        .meta-row span:first-child { color: rgba(255,255,255,.5); font-size: 11px; text-transform: uppercase; letter-spacing: .08em; }
-        .meta-row strong { font-size: 13px; text-align: right; }
-        .notice {
-            margin-top: 28px; padding: 15px 17px; border-radius: 14px; color: rgba(255,255,255,.72);
-            background: rgba(244,170,61,.09); border: 1px solid rgba(244,170,61,.24); font-size: 12px; line-height: 1.6;
-        }
-        .layout { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 72px; padding: 64px 0 110px; }
-        .toc { position: sticky; top: 104px; align-self: start; }
-        .toc-label { margin-bottom: 14px; color: var(--muted); font-size: 10px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
-        .toc a {
-            display: grid; grid-template-columns: 30px 1fr; padding: 11px 0;
-            border-bottom: 1px solid var(--line); color: var(--muted); font-size: 12px; line-height: 1.4;
-            transition: color .2s ease, padding-left .2s ease;
-        }
-        .toc a:hover, .toc a.active { color: var(--forest); padding-left: 5px; }
-        .toc a.active span:first-child { color: var(--green); }
-        .section { scroll-margin-top: 105px; padding: 22px 0 72px; border-bottom: 1px solid var(--line); }
-        .section:last-child { border-bottom: 0; }
-        .section-head { display: grid; grid-template-columns: 76px 1fr; gap: 22px; margin-bottom: 32px; align-items: start; }
-        .section-num { color: var(--green); font-size: 12px; padding-top: 9px; }
-        h2 { margin: 0 0 13px; font-size: clamp(29px, 4vw, 48px); letter-spacing: -.04em; line-height: 1.08; }
-        .section-intro { max-width: 760px; margin: 0; color: var(--muted); line-height: 1.75; font-size: 15px; }
-        .grid-2, .grid-3, .grid-4 { display: grid; gap: 16px; }
-        .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-        .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-        .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-        .card {
-            padding: 25px; border: 1px solid var(--line); border-radius: 20px;
-            background: rgba(255,255,255,.82); box-shadow: 0 18px 44px -40px rgba(8,37,31,.6);
-        }
-        .card.dark { color: white; background: var(--forest); border-color: var(--forest); }
-        .card.accent { background: #edfae9; border-color: #cbeabd; }
-        .card-label { margin-bottom: 13px; color: var(--green); font-size: 10px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
-        .card h3 { margin: 0 0 12px; font-size: 18px; letter-spacing: -.02em; }
-        .card p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.7; }
-        .dark p { color: rgba(255,255,255,.64); }
-        .quote {
-            margin: 28px 0 0; padding: 28px 30px; border-left: 4px solid var(--lime);
-            color: white; background: var(--forest); border-radius: 0 20px 20px 0;
-            font-size: 19px; font-weight: 650; line-height: 1.55;
-        }
-        .metric { padding: 23px; background: white; border: 1px solid var(--line); border-radius: 18px; }
-        .metric-label { min-height: 34px; color: var(--muted); font-size: 11px; line-height: 1.45; }
-        .metric-value { margin-top: 16px; font-size: clamp(24px, 3vw, 34px); font-weight: 800; letter-spacing: -.05em; }
-        .metric-note { margin-top: 8px; color: var(--green); font-size: 10px; }
-        .flow { margin-top: 20px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
-        .flow-step { position: relative; min-height: 118px; padding: 18px 15px; border: 1px solid var(--line); background: white; border-radius: 16px; }
-        .flow-step:not(:last-child)::after { content: "→"; position: absolute; top: 45%; right: -15px; z-index: 2; color: var(--green); font-weight: 800; }
-        .flow-step b { display: block; margin-bottom: 9px; font-size: 12px; }
-        .flow-step span { color: var(--muted); font-size: 10px; line-height: 1.55; }
-        .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 18px; background: white; }
-        table { width: 100%; border-collapse: collapse; min-width: 720px; }
-        th, td { padding: 16px 18px; text-align: left; border-bottom: 1px solid var(--line); font-size: 12px; }
-        th { color: var(--muted); background: #f8faf6; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; }
-        tr:last-child td { border-bottom: 0; }
-        td strong { font-size: 13px; }
-        .scenario { position: relative; overflow: hidden; }
-        .scenario.base { color: white; background: var(--forest); border-color: var(--forest); transform: translateY(-8px); }
-        .scenario.base .card-label { color: var(--lime); }
-        .scenario.base p { color: rgba(255,255,255,.62); }
-        .scenario-value { margin: 20px 0 3px; font-size: 32px; font-weight: 800; letter-spacing: -.05em; }
-        .scenario ul { margin: 18px 0 0; padding: 0; list-style: none; }
-        .scenario li { display: flex; justify-content: space-between; gap: 12px; padding: 10px 0; border-top: 1px solid var(--line); font-size: 11px; }
-        .scenario.base li { border-color: rgba(255,255,255,.12); }
-        .scenario li span { color: var(--muted); }
-        .scenario.base li span { color: rgba(255,255,255,.55); }
-        .timeline { position: relative; padding-left: 32px; }
-        .timeline::before { content: ""; position: absolute; left: 7px; top: 10px; bottom: 10px; width: 2px; background: var(--line); }
-        .timeline-item { position: relative; display: grid; grid-template-columns: 125px 1fr; gap: 24px; padding: 0 0 28px; }
-        .timeline-item::before {
-            content: ""; position: absolute; left: -31px; top: 5px; width: 12px; height: 12px;
-            border: 3px solid var(--paper); border-radius: 50%; background: var(--green); box-shadow: 0 0 0 1px var(--green);
-        }
-        .timeline-time { color: var(--green); font-size: 11px; font-weight: 800; }
-        .timeline-content { padding-bottom: 23px; border-bottom: 1px solid var(--line); }
-        .timeline-content h3 { margin: 0 0 8px; font-size: 15px; }
-        .timeline-content p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.65; }
-        .risk { display: grid; grid-template-columns: 60px 1.2fr .8fr; gap: 20px; align-items: start; padding: 22px 0; border-bottom: 1px solid var(--line); }
-        .risk:last-child { border-bottom: 0; }
-        .risk-code { width: 46px; height: 46px; display: grid; place-items: center; color: white; background: var(--forest); border-radius: 14px; font-weight: 800; }
-        .risk h3 { margin: 2px 0 7px; font-size: 15px; }
-        .risk p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.65; }
-        .risk-control { padding: 14px 16px; border-radius: 14px; background: white; border: 1px solid var(--line); }
-        .risk-control b { display: block; margin-bottom: 6px; color: var(--green); font-size: 10px; text-transform: uppercase; letter-spacing: .08em; }
-        .risk-control span { color: var(--muted); font-size: 11px; line-height: 1.55; }
-        .footnote { margin-top: 20px; color: var(--muted); font-size: 10px; line-height: 1.65; }
-        footer { padding: 40px 0; color: rgba(255,255,255,.55); background: var(--forest); font-size: 11px; }
-        .footer-inner { display: flex; justify-content: space-between; gap: 30px; }
-        [data-lang] { transition: opacity .15s ease; }
-        @media (max-width: 1000px) {
-            .hero-grid { grid-template-columns: 1fr; gap: 42px; }
-            .layout { grid-template-columns: 1fr; gap: 30px; }
-            .toc { position: static; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0 16px; }
-            .toc-label { grid-column: 1 / -1; }
-            .flow { grid-template-columns: 1fr; }
-            .flow-step:not(:last-child)::after { content: "↓"; top: auto; right: 50%; bottom: -17px; }
-            .grid-4 { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media (max-width: 700px) {
-            .shell { width: min(100% - 28px, 1320px); }
-            .document-mark, .confidential { display: none; }
-            .hero { padding: 64px 0 54px; }
-            h1 { font-size: 44px; }
-            .layout { padding-top: 36px; }
-            .toc { grid-template-columns: repeat(2, 1fr); }
-            .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
-            .section-head { grid-template-columns: 1fr; gap: 4px; }
-            .scenario.base { transform: none; }
-            .timeline-item { grid-template-columns: 1fr; gap: 8px; }
-            .risk { grid-template-columns: 52px 1fr; }
-            .risk-control { grid-column: 2; }
-            .footer-inner { flex-direction: column; }
-        }
-        @media print {
-            .topbar, .toc { display: none; }
-            .hero { padding: 35px 0; }
-            .layout { display: block; padding: 30px 0; }
-            .section { break-inside: avoid; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Proposal Investasi — TPS3R Rescue Nirmala Anggadita</title>
+<meta name="description" content="Proposal investasi pengembangan TPS3R Rescue Nirmala Anggadita di Desa Anggadita, Kabupaten Karawang.">
+<meta name="theme-color" content="#123a26">
+<meta property="og:title" content="Proposal Investasi — TPS3R Rescue Nirmala Anggadita">
+<meta property="og:description" content="Pengembangan fasilitas pengolahan sampah di TPS3R Desa Anggadita, Kabupaten Karawang.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://temamumtaza.github.io/tps-anggadita/details/">
+<meta property="og:image" content="https://temamumtaza.github.io/tps-anggadita/details/assets/tps3r-anggadita.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#fff;--soft:#f5f8f4;--ink:#14231b;--ink2:#3a4a40;--muted:#647067;--faint:#97a29a;
+    --rule:#e1e6df;--rule2:#eef1ec;--brand:#2c6a48;--brand-d:#1b4a31;--brand-dd:#123a26;
+    --mint:#5aa97b;--mint-bg:#ecf4ef;--amber:#9a6a16;--amber-bg:#f7efe0;--red:#9c3b2e;--red-bg:#f6ebe7;
+    --blue:#3a7d94;--blue-bg:#e9f1f4;--disp:"Space Grotesk",system-ui,sans-serif;--sans:"Inter",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{background:#dfe2da;color:var(--ink);font-family:var(--sans);line-height:1.6;font-size:15px;padding:22px 10px 60px}
+  .doc{max-width:900px;margin:0 auto;background:var(--paper);overflow:hidden;box-shadow:0 30px 70px -45px rgba(20,40,28,.55);border-radius:4px}
+  .pad{padding:clamp(24px,5.5vw,60px)}
+  .wm{font-family:var(--disp);font-weight:400;letter-spacing:.3em;text-transform:uppercase}
+  .hero{background:linear-gradient(160deg,#1c4d33 0%,#143a26 55%,#0e2c1d 100%);color:#eaf2ec;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 85% -10%,rgba(111,194,149,.20),transparent 60%);pointer-events:none}
+  .hero .pad{position:relative}
+  .hero-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;border-bottom:1px solid rgba(255,255,255,.16);padding-bottom:16px;margin-bottom:28px;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#a9c6b6}
+  .hero-top .brand{color:#fff;font-weight:600;letter-spacing:.13em}
+  .doctype{font-family:var(--mono);font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:#7fd0a2;margin-bottom:18px}
+  .project-mark{font-size:clamp(19px,4.8vw,28px);color:#fff;margin-bottom:4px}
+  .project-mark small{font-size:.5em;letter-spacing:.3em;color:#8fd3ab;margin-left:.4em}
+  h1{font-family:var(--disp);font-weight:600;font-size:clamp(27px,6vw,44px);line-height:1.05;letter-spacing:-.015em;color:#fff;margin:14px 0 16px;max-width:22ch}
+  h1 .accent{color:#8fd3ab}
+  .hero-sub{font-size:clamp(15px,3.2vw,18px);color:#c6d6cc;max-width:62ch}
+  .hero-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px 22px;margin-top:32px;border-top:1px solid rgba(255,255,255,.16);padding-top:22px;font-family:var(--mono);font-size:11px}
+  .hero-meta dt{color:#7f9789;text-transform:uppercase;letter-spacing:.08em;font-size:9.5px;margin-bottom:3px}
+  .hero-meta dd{color:#fff;font-weight:500}
+  .hero-link{display:inline-flex;margin-top:26px;padding:10px 14px;border:1px solid rgba(255,255,255,.28);border-radius:5px;color:#fff;text-decoration:none;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;background:rgba(255,255,255,.06)}
+  .hero-link:hover{background:rgba(255,255,255,.14)}
+
+  .snap{background:var(--brand-dd);color:#eaf2ec}
+  .snap .pad{padding-top:28px;padding-bottom:28px}
+  .snap .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#7fd0a2;margin-bottom:16px}
+  .snap-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:1px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.12)}
+  .snap-cell{background:var(--brand-dd);padding:18px 16px}
+  .snap-cell .n{font-family:var(--mono);font-size:clamp(17px,3.6vw,23px);font-weight:600;color:#fff;line-height:1.05}
+  .snap-cell .n.acc{color:#7fd0a2}
+  .snap-cell .k{font-size:11px;color:#9fb3a6;margin-top:7px;line-height:1.35}
+
+  .project-nav{display:flex;gap:8px;flex-wrap:wrap;padding:14px clamp(24px,5.5vw,60px);border-bottom:1px solid var(--rule);background:#fff}
+  .project-nav a{color:var(--brand-d);font-family:var(--mono);font-size:10px;letter-spacing:.07em;text-transform:uppercase;text-decoration:none;padding:6px 8px;border:1px solid var(--rule);border-radius:4px}
+  .project-nav a:hover{background:var(--mint-bg);border-color:#bcd8c6}
+
+  .sec{border-top:1px solid var(--rule);padding-top:34px;margin-top:40px;scroll-margin-top:20px}
+  .sec:first-child{border-top:none;margin-top:0}
+  .sec-h{display:flex;gap:15px;align-items:baseline;margin-bottom:8px}
+  .sec-num{font-family:var(--mono);font-size:12px;font-weight:600;color:#fff;background:var(--brand);border-radius:4px;padding:3px 9px;flex:none}
+  .sec-h h2{font-family:var(--disp);font-weight:600;font-size:clamp(20px,4.4vw,28px);line-height:1.12;letter-spacing:-.01em}
+  .sec-intro{color:var(--muted);font-size:15px;margin:6px 0 18px;max-width:66ch}
+  h3{font-family:var(--disp);font-weight:600;font-size:17px;margin:26px 0 8px}
+  p{margin-bottom:13px;color:var(--ink2)}
+  strong{color:var(--ink);font-weight:600}
+  ul{list-style:none;margin:0 0 14px}
+  ul li{position:relative;padding-left:22px;margin-bottom:8px;color:var(--ink2)}
+  ul li::before{content:"";position:absolute;left:3px;top:9px;width:7px;height:7px;background:var(--brand);border-radius:2px;transform:rotate(45deg)}
+
+  .call{border-left:3px solid var(--brand);background:var(--mint-bg);padding:15px 18px;margin:20px 0;border-radius:0 6px 6px 0}
+  .call.warn{border-color:var(--amber);background:var(--amber-bg)}
+  .call.big{border-width:4px;padding:20px}
+  .call .ct{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--brand-d);font-weight:600;margin-bottom:6px}
+  .call.warn .ct{color:var(--amber)}
+  .call p{margin:0;color:var(--ink)}
+  .call.big p{font-size:16px}
+
+  .location-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:14px;margin:18px 0}
+  .media-card{border:1px solid var(--rule);border-radius:10px;overflow:hidden;background:#fff}
+  .media-card img{display:block;width:100%;height:100%;min-height:280px;object-fit:cover}
+  .media-card figcaption{font-family:var(--mono);font-size:10px;letter-spacing:.04em;color:var(--faint);padding:10px 13px;text-transform:uppercase}.media-card figcaption a{color:var(--brand);text-decoration:none}.media-card figcaption a:hover{text-decoration:underline}
+  .map-card{border:1px solid var(--rule);border-radius:10px;overflow:hidden;background:#fff;display:flex;flex-direction:column}
+  .map-card iframe{display:block;width:100%;height:280px;border:0;flex:1;min-height:280px}
+  .map-card figcaption{font-family:var(--mono);font-size:10px;letter-spacing:.04em;color:var(--faint);padding:10px 13px;text-transform:uppercase}
+  .evidence{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:6px;overflow:hidden;margin:18px 0}
+  .evidence-card{background:#fff;padding:14px 15px}
+  .evidence-card .el{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand);font-weight:600;margin-bottom:5px}
+  .evidence-card p{font-size:12px;color:var(--muted);margin:0}
+  .data-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0}
+  .data-card{border:1px solid var(--rule);border-radius:9px;padding:16px;background:#fff}
+  .data-card.primary{border-color:#bcd8c6;background:var(--mint-bg)}
+  .data-card .dl{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand);font-weight:600}
+  .data-card .dn{font-family:var(--disp);font-size:clamp(25px,5vw,36px);font-weight:700;line-height:1.05;color:var(--ink);margin:8px 0 5px}
+  .data-card .dp{font-size:12px;color:var(--muted);line-height:1.45;margin:0}
+  .src a{color:var(--brand);text-decoration:none}.src a:hover{text-decoration:underline}
+
+  .specs{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:6px;overflow:hidden;margin:18px 0}
+  .spec{background:#fff;padding:13px 15px}
+  .spec dt{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);margin-bottom:4px}
+  .spec dd{font-weight:600;color:var(--ink);font-size:13.5px}
+  .machine{margin:18px 0 6px;border:1px solid var(--rule);border-radius:10px;background:#fff;padding:14px}
+  .machine img{display:block;width:100%;height:auto;border-radius:6px}
+  .machine figcaption{font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;color:var(--faint);margin-top:10px;text-transform:uppercase}
+  .flowsteps{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:10px;margin:16px 0}
+  .step{border:1px solid var(--rule);border-radius:8px;padding:12px 14px;background:#fff}
+  .step .sn{font-family:var(--mono);font-size:11px;color:var(--brand);font-weight:600}
+  .step .st{font-size:12.5px;font-weight:600;color:var(--ink);margin-top:4px;line-height:1.3}
+
+  .roles{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:18px 0}
+  .role{border:1px solid var(--rule);border-left:3px solid var(--brand);border-radius:8px;padding:16px 18px;background:#fff}
+  .role .rl{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--mint);font-weight:600;margin-bottom:6px}
+  .role h4{margin:0 0 6px;color:var(--ink);font-size:15px;font-family:var(--disp);font-weight:600}
+  .role p{font-size:12.5px;margin:0;color:var(--muted)}
+  .stakeholder-map{position:relative;overflow:hidden;margin:20px 0 24px;padding:18px;border:1px solid var(--rule);border-radius:10px;background:linear-gradient(145deg,#f5f9f5 0%,#fff 68%);box-shadow:0 14px 28px -28px rgba(20,55,35,.8)}
+  .stakeholder-map::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.34;background-image:linear-gradient(rgba(44,106,72,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(44,106,72,.06) 1px,transparent 1px);background-size:24px 24px;mask-image:linear-gradient(135deg,#000 0%,transparent 72%)}
+  .stakeholder-map-head{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:flex-start;gap:18px;padding-bottom:14px;border-bottom:1px solid var(--rule)}
+  .stakeholder-map-kicker{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--brand);font-weight:600;margin-bottom:5px}
+  .stakeholder-map-title{font-family:var(--disp);font-size:20px;line-height:1.12;color:var(--ink);font-weight:600}
+  .stakeholder-map-intro{max-width:56ch;margin:5px 0 0;color:var(--muted);font-size:12px;line-height:1.45}
+  .stakeholder-map-key{display:flex;align-items:center;gap:7px;flex:none;font-family:var(--mono);font-size:9.5px;line-height:1.35;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);text-align:right}
+  .stakeholder-map-key i{display:inline-block;width:25px;height:0;border-top:2px dashed var(--amber)}
+  .stakeholder-map-grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1.16fr 1fr;gap:12px;margin-top:16px;align-items:stretch}
+  .map-column{display:flex;flex-direction:column;gap:9px;min-width:0}
+  .map-column-center{position:relative;padding:0 10px 12px;border:1px solid #c8dfcf;border-radius:9px;background:rgba(236,244,239,.72)}
+  .map-column-center::before{content:"";position:absolute;z-index:0;top:38px;bottom:22px;left:50%;width:2px;transform:translateX(-50%);background:repeating-linear-gradient(180deg,var(--brand) 0 16px,transparent 16px 27px);opacity:.45}
+  .map-column-center>*{position:relative;z-index:1}
+  .map-lane-label{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);font-weight:600;padding:2px 2px 1px}
+  .map-column-center .map-lane-label{color:var(--brand-d);padding-left:2px}
+  .map-node{position:relative;border:1px solid var(--rule);border-left:3px solid var(--brand);border-radius:8px;padding:12px 13px;background:#fff;box-shadow:0 8px 17px -19px rgba(20,40,28,.9)}
+  .map-node-green{border-left-color:var(--brand)}
+  .map-node-amber{border-left-color:var(--amber);background:#fffdf8}
+  .map-node-muted{border-left-color:#8c9b91;background:rgba(255,255,255,.72)}
+  .map-node-core{border-left-color:var(--brand-d);background:#fff;box-shadow:0 8px 19px -18px rgba(20,55,35,.9)}
+  .map-node-kso{border-color:#a7cdb2;border-left:4px solid var(--mint);background:var(--mint-bg)}
+  .map-node-primary{border-color:#8fbea0;border-left:5px solid var(--brand-d);background:linear-gradient(145deg,#eaf5ed 0%,#fff 72%);box-shadow:0 12px 22px -18px rgba(20,55,35,.95)}
+  .map-node-primary h4{font-size:18px;letter-spacing:-.01em}
+  .map-node-type{font-family:var(--mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand);font-weight:600;margin-bottom:4px}
+  .map-node-amber .map-node-type{color:var(--amber)}
+  .map-node h4{font-family:var(--disp);font-size:15px;line-height:1.15;color:var(--ink);font-weight:600;margin:0 0 5px}
+  .map-node p{font-size:11.5px;line-height:1.42;color:var(--muted);margin:0}
+  .map-edge{display:block;margin-top:9px;padding-top:7px;border-top:1px dashed var(--rule);font-family:var(--mono);font-size:9px;line-height:1.35;letter-spacing:.03em;color:var(--brand-d);font-weight:600}
+  .map-node-amber .map-edge{color:var(--amber)}
+  .map-mini-list{display:flex;gap:5px;flex-wrap:wrap;margin-top:9px}
+  .map-mini-list span{padding:4px 6px;border:1px solid #c6ddcd;border-radius:4px;background:#fff;color:var(--brand-d);font-family:var(--mono);font-size:9px;line-height:1.1}
+  .map-arrow{display:flex;flex-direction:column;align-items:center;gap:1px;min-height:28px;color:var(--brand);font-family:var(--mono);font-size:9px;letter-spacing:.04em;text-transform:uppercase;text-align:center}
+  .map-arrow b{font-family:var(--disp);font-size:20px;line-height:.85;color:var(--brand)}
+  .map-route-strip{position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:13px;padding-top:13px;border-top:1px solid var(--rule)}
+  .map-flow-card{border:1px solid var(--rule);border-top:2px solid var(--brand);border-radius:7px;padding:11px 12px;background:rgba(255,255,255,.85)}
+  .map-flow-card:nth-child(2){border-top-color:var(--amber);background:#fffdf8}
+  .map-flow-card:nth-child(3){border-top-color:#5c9b72}
+  .map-flow-card b{display:block;font-family:var(--mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand);margin-bottom:4px}
+  .map-flow-card:nth-child(2) b{color:var(--amber)}
+  .map-flow-card p{font-size:11.5px;line-height:1.42;color:var(--muted);margin:0}
+  .flowline{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:7px;overflow:hidden;margin:18px 0}
+  .flowline div{background:#fff;padding:14px;text-align:center}
+  .flowline b{display:block;font-family:var(--disp);font-size:13px;color:var(--ink)}
+  .flowline span{display:block;font-size:11px;color:var(--muted);margin-top:4px}
+
+  .tablewrap{overflow-x:auto;border:1px solid var(--rule);border-radius:6px;-webkit-overflow-scrolling:touch}
+  table{width:100%;border-collapse:collapse;font-size:13px;min-width:440px}
+  thead th{background:var(--brand-d);color:#eaf2ec;font-family:var(--mono);font-weight:500;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;text-align:left;padding:11px 12px;vertical-align:bottom}
+  tbody td{padding:10px 12px;border-bottom:1px solid var(--rule2);color:var(--ink2);vertical-align:top}
+  tbody tr:last-child td{border-bottom:none}
+  tbody tr:nth-child(even) td{background:rgba(44,106,72,.03)}
+  td.num,th.num{text-align:right;font-family:var(--mono);white-space:nowrap}
+  td.tot{font-weight:600;color:var(--ink);background:var(--mint-bg)!important}
+  tr.anchor td{background:var(--mint-bg)!important}
+  .hi{color:var(--brand-d);font-weight:600}
+  .src{font-family:var(--mono);font-size:10.5px;color:var(--faint);margin-top:8px;line-height:1.6}
+
+  .finance-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0}
+  .finance-card{border:1px solid var(--rule);border-radius:10px;padding:20px;background:#fff}
+  .finance-card.primary{border:1.5px solid var(--brand);background:var(--mint-bg)}
+  .finance-card .tag{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .finance-card.primary .tag{color:var(--brand-d)}
+  .finance-card .metric{font-family:var(--disp);font-weight:700;font-size:clamp(30px,7vw,42px);line-height:1;margin:8px 0 2px;color:var(--ink)}
+  .finance-card.primary .metric{color:var(--brand-d)}
+  .finance-card .label{font-size:12px;color:var(--muted);margin-bottom:14px}
+  .finance-card .line{display:flex;justify-content:space-between;gap:8px;font-size:12.5px;padding:6px 0;border-top:1px dashed var(--rule)}
+  .finance-card .line .v{font-family:var(--mono);font-weight:500;color:var(--ink);white-space:nowrap}
+  .finance-note{font-size:11.5px;color:var(--muted);line-height:1.55}
+  .financial-basis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin:18px 0}
+  .basis{border:1px solid var(--rule);border-radius:8px;padding:13px 14px;background:#fff}
+  .basis b{display:block;font-family:var(--mono);font-size:11px;color:var(--brand-d);margin-bottom:4px}
+  .basis span{display:block;font-size:12px;color:var(--muted)}
+
+  .timeline{margin:18px 0;border:1px solid var(--rule);border-radius:9px;overflow:hidden}
+  .timeline-row{display:grid;grid-template-columns:145px 1fr;gap:14px;padding:14px 16px;border-bottom:1px solid var(--rule2);align-items:center}
+  .timeline-row:last-child{border-bottom:none}
+  .timeline-label{font-family:var(--mono);font-size:10px;letter-spacing:.07em;text-transform:uppercase;color:var(--brand);font-weight:600}
+  .timeline-detail b{font-family:var(--disp);font-size:14px;color:var(--ink)}
+  .timeline-detail p{font-size:12px;color:var(--muted);margin:3px 0 0}
+  .ramp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:18px 0}
+  .ramp{border:1px solid var(--rule);border-radius:8px;padding:13px;background:#fff;text-align:center}
+  .ramp .rn{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand);font-weight:600}
+  .ramp .ru{font-family:var(--disp);font-weight:700;font-size:24px;color:var(--ink);margin-top:4px}
+  .ramp .rd{font-size:11px;color:var(--muted);line-height:1.35;margin-top:3px}
+
+  .roadmap{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:28px 0 24px;min-height:560px}
+  .roadmap::before{content:"";position:absolute;z-index:0;top:50%;left:1.5%;right:1.5%;height:24px;transform:translateY(-50%);border:1px solid rgba(255,255,255,.16);border-radius:24px;background:linear-gradient(90deg,#173b28 0%,#28533b 37%,#4f805e 68%,#977029 100%);box-shadow:0 9px 18px -13px rgba(15,45,28,.8),inset 0 1px 0 rgba(255,255,255,.12)}
+  .roadmap::after{content:"";position:absolute;z-index:1;top:50%;left:2.6%;right:2.6%;height:3px;transform:translateY(-50%);background:repeating-linear-gradient(90deg,rgba(255,255,255,.86) 0 17px,transparent 17px 32px);opacity:.9}
+  .roadmap-route-legend{position:absolute;z-index:1;top:calc(50% + 23px);left:4%;right:4%;display:flex;justify-content:space-between;gap:12px;color:var(--faint);font-family:var(--mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase}
+  .roadmap-route-legend span:nth-child(2){color:var(--brand);font-weight:600;text-align:center}
+  .roadmap-route-legend span:last-child{color:var(--amber);font-weight:600;text-align:right}
+  .roadmap-step{position:relative;z-index:2;height:560px;min-width:0}
+  .roadmap-step::before{content:"";position:absolute;z-index:3;top:50%;left:50%;width:14px;height:14px;border:3px solid var(--paper);border-radius:50%;background:var(--brand);box-shadow:0 3px 8px rgba(20,55,35,.24);transform:translate(-50%,-50%)}
+  .roadmap-step:nth-child(2)::before{background:#438f65}
+  .roadmap-step:nth-child(3)::before{background:#5c9b72}
+  .roadmap-step:nth-child(4)::before{background:#a87825}
+  .roadmap-marker{position:absolute;z-index:4;top:14px;left:14px;display:grid;place-items:center;width:34px;height:34px;margin:0;border:4px solid var(--paper);border-radius:50%;background:var(--brand);box-shadow:0 0 0 1px #a8cdb7,0 4px 10px rgba(20,55,35,.18);color:#fff;font-family:var(--mono);font-size:10px;font-weight:600}
+  .roadmap-step:nth-child(2) .roadmap-marker{background:#438f65;box-shadow:0 0 0 1px #9bc5aa,0 5px 12px rgba(20,55,35,.14)}
+  .roadmap-step:nth-child(3) .roadmap-marker{background:#5c9b72;box-shadow:0 0 0 1px #a9ceb3,0 5px 12px rgba(20,55,35,.14)}
+  .roadmap-step:nth-child(4) .roadmap-marker{background:#a87825;box-shadow:0 0 0 1px #dcc38e,0 5px 12px rgba(80,55,18,.14)}
+  .roadmap-card{position:absolute;top:0;left:0;right:0;min-height:250px;border:1px solid var(--rule);border-top:3px solid var(--brand);border-radius:9px;padding:56px 14px 16px;background:#fff;box-shadow:0 12px 24px -20px rgba(20,40,28,.9)}
+  .roadmap-step:nth-child(even) .roadmap-card{top:auto;bottom:0}
+  .roadmap-step:nth-child(2) .roadmap-card{border-top-color:#438f65}
+  .roadmap-step:nth-child(3) .roadmap-card{border-top-color:#5c9b72}
+  .roadmap-step:nth-child(4) .roadmap-card{border-top-color:#a87825;background:#fffdf8}
+  .roadmap-stage{font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand);font-weight:600;line-height:1.3}
+  .roadmap-step:nth-child(4) .roadmap-stage{color:var(--amber)}
+  .roadmap-card h3{font-family:var(--disp);font-weight:700;font-size:21px;line-height:1.05;color:var(--ink);margin:6px 0 3px}
+  .roadmap-place{font-size:11px;color:var(--muted);min-height:17px}
+  .roadmap-data{display:inline-flex;gap:6px;flex-wrap:wrap;margin:12px 0 9px;padding:5px 7px;border:1px solid #c9dfd0;border-radius:4px;background:var(--mint-bg);font-family:var(--mono);font-size:10px;color:var(--brand-d);font-weight:600;line-height:1.3}
+  .roadmap-step:nth-child(4) .roadmap-data{border-color:#e4d2aa;background:var(--amber-bg);color:var(--amber)}
+  .roadmap-card p{font-size:12px;line-height:1.45;margin:0;color:var(--ink2)}
+  .roadmap-gate{margin-top:13px;padding-top:10px;border-top:1px dashed var(--rule);font-size:11px;line-height:1.4}
+  .roadmap-gate b{display:block;margin-bottom:3px;font-family:var(--mono);font-size:9.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--brand-d)}
+  .roadmap-step:nth-child(4) .roadmap-gate b{color:var(--amber)}
+  .roadmap-gate span{display:block;color:var(--muted)}
+  .offer{border:1px solid var(--rule);border-radius:10px;overflow:hidden;margin:16px 0}
+  .offer .oitem{display:flex;gap:14px;padding:14px 18px;border-bottom:1px solid var(--rule2);align-items:flex-start}
+  .offer .oitem:last-child{border-bottom:none}
+  .offer .ok{font-family:var(--mono);font-size:11px;color:var(--brand);font-weight:600;min-width:26px}
+  .offer .ov{font-size:13.5px;color:var(--ink2)}.offer .ov b{color:var(--ink)}
+  .steps{counter-reset:s;margin:16px 0}
+  .steps .si{counter-increment:s;position:relative;padding:12px 0 12px 46px;border-bottom:1px dashed var(--rule)}
+  .steps .si:last-child{border-bottom:none}
+  .steps .si::before{content:counter(s);position:absolute;left:0;top:11px;width:30px;height:30px;border-radius:50%;background:var(--brand);color:#fff;font-family:var(--mono);font-weight:600;font-size:13px;display:flex;align-items:center;justify-content:center}
+  .steps .si b{color:var(--ink)}
+
+  .foot{background:var(--brand-dd);color:#cdddd2}
+  .foot .pad{padding-top:30px;padding-bottom:30px}
+  .foot .quote{font-family:var(--disp);font-style:italic;font-size:clamp(16px,3.4vw,20px);color:#fff;margin-bottom:22px;max-width:48ch}
+  .foot .disc{font-size:11.5px;color:#9fb3a6;line-height:1.6}
+  .foot .sig{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,.14);font-family:var(--mono);font-size:11px;color:#7f9789;letter-spacing:.04em}
+  @media(max-width:680px){.location-grid{grid-template-columns:1fr}.data-grid{grid-template-columns:1fr}.finance-grid{grid-template-columns:1fr}.flowline{grid-template-columns:1fr 1fr}.timeline-row{grid-template-columns:1fr;gap:5px}.ramp-grid{grid-template-columns:1fr 1fr}.stakeholder-map-grid{grid-template-columns:1fr}.map-column-center{order:-1;padding:0 9px 12px}.stakeholder-map-head{display:block}.stakeholder-map-key{margin-top:10px;text-align:left}.map-route-strip{grid-template-columns:1fr}}
+  @media(max-width:680px){.roadmap{display:block;min-height:0;margin:24px 0 18px;padding:0 0 0 45px}.roadmap::before{top:22px;bottom:22px;left:20px;right:auto;width:18px;height:auto;transform:translateX(-50%);background:linear-gradient(180deg,#173b28 0%,#4f805e 68%,#977029 100%);box-shadow:0 7px 15px -13px rgba(15,45,28,.8)}.roadmap::after{top:25px;bottom:25px;left:20px;right:auto;width:3px;height:auto;transform:translateX(-50%);background:repeating-linear-gradient(180deg,rgba(255,255,255,.86) 0 17px,transparent 17px 32px)}.roadmap-route-legend{display:none}.roadmap-step{height:auto;min-height:0;padding-bottom:14px}.roadmap-step:last-child{padding-bottom:0}.roadmap-step::before{top:26px;left:-25px}.roadmap-marker{top:14px;left:14px}.roadmap-card,.roadmap-step:nth-child(even) .roadmap-card{position:relative;top:auto;right:auto;bottom:auto;left:auto;min-height:0;padding:56px 16px 16px}.roadmap-card h3{font-size:22px}}
+  @media(max-width:480px){.flowline{grid-template-columns:1fr}.hero-top{font-size:9px}.project-nav{padding-left:24px;padding-right:24px}.stakeholder-map{padding:15px}.map-node{padding:11px 12px}}
+  @media print{body{background:#fff;padding:0}.doc{box-shadow:none;max-width:none}.hero,.snap,.foot{-webkit-print-color-adjust:exact;print-color-adjust:exact}thead th{-webkit-print-color-adjust:exact;print-color-adjust:exact}.project-nav{display:none}}
+</style>
 </head>
 <body>
-    <header class="topbar">
-        <div class="shell topbar-inner">
-            <div class="brand">
-                <span class="brand-mark">R</span>
-                <div>
-                    <div>TPS3R Rescue Nirmala</div>
-                    <div class="document-mark" data-id="Ruang investor · Detail proyek" data-en="Investor room · Project details">Ruang investor · Detail proyek</div>
-                </div>
-            </div>
-            <div class="top-actions">
-                <span class="confidential" data-id="Tautan terbatas" data-en="Limited-access link">Tautan terbatas</span>
-                <div class="language" aria-label="Pilih bahasa">
-                    <button type="button" data-language="id" class="active">ID</button>
-                    <button type="button" data-language="en">EN</button>
-                </div>
-            </div>
+<article class="doc">
+
+  <header class="hero" id="overview">
+    <div class="pad">
+      <div class="hero-top">
+        <span class="brand wm">TPS3R Rescue Nirmala Anggadita</span>
+        <span>Berbasis penugasan resmi dan dukungan kelembagaan lokal</span>
+      </div>
+      <div class="doctype">Proposal Investasi</div>
+      <div class="project-mark wm">TPS3R <small>ANGGADITA</small></div>
+      <h1>Pengembangan fasilitas pengolahan sampah di <span class="accent">Desa Anggadita</span></h1>
+      <p class="hero-sub">Proposal investasi untuk meningkatkan TPS3R yang telah beroperasi dari fasilitas pemilahan manual menjadi fasilitas pengolahan dengan kapasitas teknis hingga 8 ton per hari.</p>
+      <dl class="hero-meta">
+        <div><dt>Pengusul / pengelola</dt><dd>TPS3R Rescue Nirmala Anggadita</dd></div>
+        <div><dt>Lokasi implementasi</dt><dd>Desa Anggadita, Kabupaten Karawang</dd></div>
+        <div><dt>Mitra lokasi</dt><dd>Pemerintah Desa dan pemilik lahan</dd></div>
+        <div><dt>Dokumen pendukung</dt><dd>SK DLH dan Desa Anggadita</dd></div>
+        <div><dt>Kapasitas teknis</dt><dd>8 ton/hari · 200 ton/bulan</dd></div>
+        <div><dt>Basis pendapatan</dt><dd>75% non-residensial</dd></div>
+      </dl>
+      <a class="hero-link" href="#investment">Lihat kebutuhan investasi</a>
+    </div>
+  </header>
+
+  <section class="snap">
+    <div class="pad">
+      <div class="lbl">Ringkasan Investasi</div>
+      <div class="snap-grid">
+        <div class="snap-cell"><div class="n">Rp 1,70 M</div><div class="k">Total kebutuhan investasi awal</div></div>
+        <div class="snap-cell"><div class="n">8 ton/hari</div><div class="k">Kapasitas teknis target operasi</div></div>
+        <div class="snap-cell"><div class="n acc">95%</div><div class="k">Target penanganan sesuai spesifikasi sistem</div></div>
+        <div class="snap-cell"><div class="n acc">±24 bln</div><div class="k">Tipping fee saja · basis konservatif</div></div>
+      </div>
+    </div>
+  </section>
+
+  <nav class="project-nav" aria-label="Navigasi proyek">
+    <a href="#location">Lokasi</a>
+    <a href="#challenge">Tantangan</a>
+    <a href="#prospectus">Prospektus</a>
+    <a href="#technology">Teknologi</a>
+    <a href="#investment">Investasi &amp; OPEX</a>
+    <a href="#tipping">Tipping fee</a>
+    <a href="#market">Pasar</a>
+    <a href="#product">Produk</a>
+    <a href="#timeline">Timeline</a>
+    <a href="#scale">Roadmap</a>
+  </nav>
+
+  <div class="pad">
+
+    <section class="sec" id="location">
+      <div class="sec-h"><span class="sec-num">01</span><h2>Konteks Lokasi &amp; Status Proyek</h2></div>
+      <p class="sec-intro">Investasi ini diarahkan untuk mengembangkan TPS3R yang telah beroperasi di Desa Anggadita dan memiliki kegiatan pengelolaan sampah yang berjalan.</p>
+      <div class="location-grid">
+        <figure class="media-card">
+          <img src="assets/tps3r-anggadita.jpg" alt="Bangunan TPS3R Rescue Nirmala Anggadita di Desa Anggadita" loading="eager">
+          <figcaption>Lokasi TPS3R Rescue Nirmala Anggadita · <a href="https://photos.app.goo.gl/ntSz9BAL44g4APj9A" target="_blank" rel="noopener">Album foto</a></figcaption>
+        </figure>
+        <figure class="map-card">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.3348793575633!2d107.32755787499148!3d-6.35067129363923!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e697700744aacbb%3A0xb93ffb993c935146!2sTPS3R%20ANGGADITA!5e0!3m2!1sid!2ssg!4v1785866202171!5m2!1sid!2ssg" title="Lokasi TPS3R Anggadita di Google Maps" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          <figcaption>Lokasi TPS3R Anggadita · Google Maps</figcaption>
+        </figure>
+      </div>
+      <p>Operasi saat ini masih berfokus pada pemilahan manual material ekonomis, seperti botol, besi, dan material daur ulang lainnya. Sekitar 90% sampah yang masuk masih diangkut kembali ke TPA.</p>
+      <div class="evidence">
+        <div class="evidence-card"><div class="el">Dokumen DLH</div><p>SK dari DLH tersedia sebagai bagian dari dokumen pendukung proyek.</p></div>
+        <div class="evidence-card"><div class="el">Desa Anggadita</div><p>SK dan dukungan Desa Anggadita tersedia.</p></div>
+        <div class="evidence-card"><div class="el">Mitra lokasi</div><p>Pemerintah Desa dan pemilik lahan menjadi bagian dari kesiapan lokasi.</p></div>
+        <div class="evidence-card"><div class="el">Status operasi</div><p>TPS3R telah berjalan dan akan ditingkatkan kapasitas pengolahannya.</p></div>
+      </div>
+      <div class="call">
+        <div class="ct">Tujuan investasi</div>
+        <p>Investasi ditujukan untuk mengubah fungsi TPS3R dari titik pemilahan manual menjadi fasilitas pengolahan sampah di lokasi.</p>
+      </div>
+    </section>
+
+    <section class="sec" id="challenge">
+      <div class="sec-h"><span class="sec-num">02</span><h2>Tantangan Problematika Sampah Lokal &amp; Nasional</h2></div>
+      <p class="sec-intro">Kebutuhan fasilitas pengolahan di Anggadita berada di dalam persoalan yang lebih besar: kapasitas layanan belum sebanding dengan timbulan sampah, sementara sebagian besar aliran masih berakhir di TPA atau belum tertangani.</p>
+      <div class="data-grid">
+        <div class="data-card primary"><div class="dl">SIPSN · input 2025</div><div class="dn">65,38%</div><p class="dp">Sampah tidak terkelola pada data 206 kabupaten/kota yang masuk ke dashboard SIPSN.</p></div>
+        <div class="data-card"><div class="dl">SIPSN · TPA</div><div class="dn">5,96 jt</div><p class="dp">Ton per tahun tercatat masuk ke TPA dengan sistem open dumping pada data input 2025.</p></div>
+        <div class="data-card"><div class="dl">Karawang · 2026</div><div class="dn">1.108,60</div><p class="dp">Ton per hari timbulan sampah Kabupaten Karawang yang tersebar di 30 kecamatan.</p></div>
+      </div>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Aliran sampah Karawang</th><th class="num">Ton/hari</th><th>Keterangan</th></tr></thead>
+        <tbody>
+          <tr class="anchor"><td>Terolah di sumber dan fasilitas</td><td class="num hi">68,15</td><td>Sudah masuk proses pengolahan</td></tr>
+          <tr><td>Terangkut ke TPA Jalupang</td><td class="num">378,34</td><td>Masih bergantung pada pemrosesan akhir</td></tr>
+          <tr><td>Belum terangkut</td><td class="num">662,11</td><td>Berpotensi terbuang liar ke lingkungan</td></tr>
+          <tr><td class="tot">Total timbulan</td><td class="num tot">1.108,60</td><td class="tot">Cakupan layanan baru 17 dari 30 kecamatan</td></tr>
+        </tbody>
+      </table></div>
+      <div class="evidence">
+        <div class="evidence-card"><div class="el">Kondisi TPA Jalupang</div><p>TPA Jalupang dilaporkan telah menampung sekitar 1,2 juta ton dengan penambahan rata-rata 1.360 ton per hari.</p></div>
+        <div class="evidence-card"><div class="el">Kesenjangan layanan</div><p>Data Pemkab menunjukkan pelayanan persampahan baru menjangkau sekitar 56,67% wilayah kecamatan.</p></div>
+        <div class="evidence-card"><div class="el">Peluang Anggadita</div><p>Lokasi di sekitar kawasan industri membutuhkan jalur pengolahan yang menyelesaikan sampah lebih dekat dari sumber.</p></div>
+      </div>
+      <div class="call warn">
+        <div class="ct">Konteks nasional</div>
+        <p>Surat Edaran Hari Peduli Sampah Nasional 2025 mencatat estimasi timbulan nasional tahun 2023 sebesar 56,63 juta ton per tahun; 60,99% disebut belum dikelola dan 306 daerah masih menggunakan sistem open dumping. Cakupan setiap dataset berbeda, tetapi arahnya sama: kapasitas pengolahan di hulu perlu diperkuat.</p>
+      </div>
+      <p class="src">Sumber: <a href="https://sipsn.menlhk.go.id/sipsn/" target="_blank" rel="noopener">SIPSN — Capaian Kinerja Pengelolaan Sampah</a> (input 206 kabupaten/kota, 2025); <a href="https://sipsn.menlhk.go.id/download/HPSN2025/SE%20HPSN%202025.pdf" target="_blank" rel="noopener">SE HPSN 2025</a>; <a href="https://karawangkab.go.id/berita/bupati-karawang-hadiri-rakor-penanganan-sampah-dan-mitigasi-el-nino-godzilla-se-wilayah-jawa?order=created&amp;sort=asc" target="_blank" rel="noopener">Pemkab Karawang, 22 Juni 2026</a>.</p>
+    </section>
+
+    <section class="sec" id="prospectus">
+      <div class="sec-h"><span class="sec-num">03</span><h2>Filosofi &amp; Prospektus Anggadita</h2></div>
+      <p class="sec-intro">Proyek ini berangkat dari kebutuhan untuk menyelesaikan sampah lebih dekat dengan sumbernya, terutama pada wilayah dengan aktivitas industri dan komersial.</p>
+      <div class="call big">
+        <div class="ct">Prinsip proyek</div>
+        <p>Sampah tidak hanya dipindahkan dari TPS ke TPA. Sampah perlu ditimbang, dipilah, dan diolah di hulu dengan pencatatan yang dapat dipertanggungjawabkan.</p>
+      </div>
+      <ul>
+        <li><strong>Lokasi strategis.</strong> Desa Anggadita berada di sekitar wilayah industri dan bersebelahan dengan kawasan industri Karawang Timur.</li>
+        <li><strong>Kebutuhan pengolahan lokal.</strong> Pelaku industri dan komersial memerlukan jalur pengelolaan sampah yang lebih dekat, tercatat, dan dapat dipantau.</li>
+        <li><strong>Kondisi saat ini.</strong> Banyak fasilitas masih berfungsi sebagai titik transit; sampah yang sudah dikumpulkan tetap diangkut kembali ke TPA.</li>
+        <li><strong>Peluang proyek.</strong> TPS3R Anggadita telah memiliki kegiatan operasional, dukungan lokasi, dan dasar kelembagaan untuk dikembangkan menjadi fasilitas pengolahan.</li>
+      </ul>
+      <div class="call warn">
+        <div class="ct">Catatan proyeksi</div>
+        <p>Target penanganan hingga 95% berlaku untuk material yang sesuai dengan spesifikasi sistem. B3, kasur, sofa, dan material lain yang tidak dapat diproses melalui mesin dikelola melalui jalur terpisah.</p>
+      </div>
+    </section>
+
+    <section class="sec" id="model">
+      <div class="sec-h"><span class="sec-num">04</span><h2>Model Kelembagaan &amp; Operasi</h2></div>
+      <p class="sec-intro">Proyek menggabungkan pengelola lokal, KSO manajemen operasional, DLH, Pemerintah Desa, pemilik lahan, investor, mitra teknologi, sumber volume, dan sistem data dalam satu tata kelola yang terkoordinasi.</p>
+      <div class="stakeholder-map" aria-label="Peta keterlibatan proyek TPS3R">
+        <div class="stakeholder-map-head">
+          <div>
+            <div class="stakeholder-map-kicker">Peta keterlibatan proyek</div>
+            <div class="stakeholder-map-title">Siapa melakukan apa</div>
+            <p class="stakeholder-map-intro">Garis pengelolaan, teknologi, pendanaan, pengawasan, input, dan keluaran disusun dalam satu peta kerja.</p>
+          </div>
+          <div class="stakeholder-map-key"><i></i><span>garis pengawasan &amp; koordinasi investor</span></div>
         </div>
-    </header>
-
-    <main>
-        <section class="hero">
-            <div class="shell hero-grid">
-                <div>
-                    <div class="kicker" data-id="Dokumen pembahasan investor · Draf 01" data-en="Investor discussion document · Draft 01">Dokumen pembahasan investor · Draf 01</div>
-                    <h1 data-id="Detail proyek investasi TPS3R Anggadita" data-en="TPS3R Anggadita investment details">Detail proyek investasi TPS3R Anggadita</h1>
-                    <p class="hero-copy" data-id="Dokumen ini menjelaskan cara proyek bekerja, penggunaan dana, sumber pendapatan, asumsi proyeksi, jadwal pelaksanaan, dan risiko utama. Angka di halaman ini adalah bahan pembahasan dan belum menjadi penawaran atau perjanjian yang mengikat." data-en="This document explains how the project works, how funds would be used, where revenue comes from, the forecast assumptions, the delivery schedule, and the main risks. The figures are for discussion and do not constitute a binding offer or agreement.">Dokumen ini menjelaskan cara proyek bekerja, penggunaan dana, sumber pendapatan, asumsi proyeksi, jadwal pelaksanaan, dan risiko utama. Angka di halaman ini adalah bahan pembahasan dan belum menjadi penawaran atau perjanjian yang mengikat.</p>
-                </div>
-                <aside>
-                    <div class="hero-meta">
-                        <div class="meta-row"><span data-id="Lokasi" data-en="Location">Lokasi</span><strong data-id="Desa Anggadita, Karawang Timur" data-en="Anggadita Village, East Karawang">Desa Anggadita, Karawang Timur</strong></div>
-                        <div class="meta-row"><span data-id="Modal awal" data-en="Initial capital">Modal awal</span><strong>Rp 1.600.000.000</strong></div>
-                        <div class="meta-row"><span data-id="Kapasitas desain" data-en="Design capacity">Kapasitas desain</span><strong data-id="8 ton per hari" data-en="8 tonnes per day">8 ton per hari</strong></div>
-                        <div class="meta-row"><span data-id="Masa kontrak" data-en="Contract term">Masa kontrak</span><strong data-id="5 tahun" data-en="5 years">5 tahun</strong></div>
-                        <div class="meta-row"><span data-id="Status" data-en="Status">Status</span><strong data-id="Untuk pembahasan" data-en="For discussion">Untuk pembahasan</strong></div>
-                    </div>
-                    <div class="notice" data-id="Perlu verifikasi sebelum penandatanganan: legalitas lahan, spesifikasi dan garansi mesin, izin operasi, kontrak pasokan sampah, serta kontrak pembeli biochar dan RDF." data-en="Items to verify before signing: land rights, machine specifications and warranty, operating permits, waste-supply contracts, and buyer agreements for biochar and RDF.">Perlu verifikasi sebelum penandatanganan: legalitas lahan, spesifikasi dan garansi mesin, izin operasi, kontrak pasokan sampah, serta kontrak pembeli biochar dan RDF.</div>
-                </aside>
+        <div class="stakeholder-map-grid">
+          <div class="map-column">
+            <div class="map-lane-label">Kelembagaan &amp; konteks</div>
+            <div class="map-node map-node-green">
+              <div class="map-node-type">Penugasan &amp; koordinasi</div>
+              <h4>DLH Kabupaten Karawang</h4>
+              <p>Memberikan dasar penugasan, koordinasi layanan, dan konteks pengembangan jaringan.</p>
+              <span class="map-edge">→ penugasan · koordinasi</span>
             </div>
-        </section>
-
-        <div class="shell layout">
-            <nav class="toc" aria-label="Daftar isi">
-                <div class="toc-label" data-id="Daftar pembahasan" data-en="Contents">Daftar pembahasan</div>
-                <a href="#filosofi"><span class="mono">01</span><span data-id="Filosofi" data-en="Philosophy">Filosofi</span></a>
-                <a href="#keuangan"><span class="mono">02</span><span data-id="Pengelolaan keuangan" data-en="Financial management">Pengelolaan keuangan</span></a>
-                <a href="#prospektus"><span class="mono">03</span><span data-id="Prospektus" data-en="Prospectus">Prospektus</span></a>
-                <a href="#teknologi"><span class="mono">04</span><span data-id="Detail teknologi" data-en="Technology details">Detail teknologi</span></a>
-                <a href="#proyeksi"><span class="mono">05</span><span data-id="Proyeksi" data-en="Forecast">Proyeksi</span></a>
-                <a href="#implementasi"><span class="mono">06</span><span data-id="Timeline implementasi" data-en="Implementation timeline">Timeline implementasi</span></a>
-                <a href="#timeline-keuangan"><span class="mono">07</span><span data-id="Timeline keuangan" data-en="Financial timeline">Timeline keuangan</span></a>
-                <a href="#risiko"><span class="mono">08</span><span data-id="Mitigasi risiko" data-en="Risk mitigation">Mitigasi risiko</span></a>
-            </nav>
-
-            <article>
-                <section class="section" id="filosofi">
-                    <div class="section-head">
-                        <div class="section-num mono">01 / 08</div>
-                        <div>
-                            <h2 data-id="Filosofi proyek" data-en="Project philosophy">Filosofi proyek</h2>
-                            <p class="section-intro" data-id="Proyek dirancang untuk menangani sampah di tingkat desa sekaligus membangun operasi yang dapat membayar biaya hariannya sendiri. Pendapatan tidak hanya bergantung pada iuran pengangkutan; biochar dan RDF juga perlu memiliki pembeli yang jelas." data-en="The project is designed to treat waste at village level and support its own day-to-day operating costs. Revenue does not rely solely on collection fees; biochar and RDF also need identified buyers.">Proyek dirancang untuk menangani sampah di tingkat desa sekaligus membangun operasi yang dapat membayar biaya hariannya sendiri. Pendapatan tidak hanya bergantung pada iuran pengangkutan; biochar dan RDF juga perlu memiliki pembeli yang jelas.</p>
-                        </div>
-                    </div>
-                    <div class="grid-3">
-                        <div class="card"><div class="card-label mono">01</div><h3 data-id="Sampah diproses dekat sumber" data-en="Waste treated near its source">Sampah diproses dekat sumber</h3><p data-id="Jarak angkut ke TPA berkurang. Setiap muatan tetap ditimbang agar volume dapat diaudit." data-en="Haulage to landfill is reduced. Every load is still weighed so volumes can be audited.">Jarak angkut ke TPA berkurang. Setiap muatan tetap ditimbang agar volume dapat diaudit.</p></div>
-                        <div class="card"><div class="card-label mono">02</div><h3 data-id="Produk harus punya pembeli" data-en="Outputs need buyers">Produk harus punya pembeli</h3><p data-id="Biochar dan RDF baru dihitung sebagai pendapatan setelah spesifikasi produk dan pembelinya dapat dibuktikan." data-en="Biochar and RDF should only be treated as revenue once product specifications and buyers can be evidenced.">Biochar dan RDF baru dihitung sebagai pendapatan setelah spesifikasi produk dan pembelinya dapat dibuktikan.</p></div>
-                        <div class="card"><div class="card-label mono">03</div><h3 data-id="Aset berakhir di desa" data-en="Assets end with the village">Aset berakhir di desa</h3><p data-id="Setelah kontrak lima tahun selesai, hak bagi hasil investor berakhir dan aset diserahkan kepada pengelola desa." data-en="At the end of the five-year contract, the investor's profit share ends and the assets transfer to the village operator.">Setelah kontrak lima tahun selesai, hak bagi hasil investor berakhir dan aset diserahkan kepada pengelola desa.</p></div>
-                    </div>
-                    <div class="quote" data-id="Ukuran keberhasilan proyek: tonase tercatat, fasilitas beroperasi, produk terjual, biaya dibayar, dan aset tetap terawat." data-en="The project succeeds when tonnage is recorded, the facility runs, products are sold, costs are paid, and the assets remain maintained.">Ukuran keberhasilan proyek: tonase tercatat, fasilitas beroperasi, produk terjual, biaya dibayar, dan aset tetap terawat.</div>
-                </section>
-
-                <section class="section" id="keuangan">
-                    <div class="section-head">
-                        <div class="section-num mono">02 / 08</div>
-                        <div><h2 data-id="Pengelolaan keuangan" data-en="Financial management">Pengelolaan keuangan</h2><p class="section-intro" data-id="Arus kas proyek perlu dipisahkan dari kas operasional lain. Semua penerimaan dan pembayaran dicatat pada rekening proyek, didukung bukti timbang, faktur, dan persetujuan sesuai batas kewenangan." data-en="Project cash should be kept separate from other operating funds. All receipts and payments are recorded through a project account and supported by weighbridge records, invoices, and approvals within agreed authority limits.">Arus kas proyek perlu dipisahkan dari kas operasional lain. Semua penerimaan dan pembayaran dicatat pada rekening proyek, didukung bukti timbang, faktur, dan persetujuan sesuai batas kewenangan.</p></div>
-                    </div>
-                    <div class="grid-4">
-                        <div class="metric"><div class="metric-label" data-id="Mesin Pyronex" data-en="Pyronex machine">Mesin Pyronex</div><div class="metric-value">Rp 1,5 M</div><div class="metric-note" data-id="93,75% modal awal" data-en="93.75% of initial capital">93,75% modal awal</div></div>
-                        <div class="metric"><div class="metric-label" data-id="Jembatan timbang dan pekerjaan sipil" data-en="Weighbridge and civil works">Jembatan timbang dan pekerjaan sipil</div><div class="metric-value">Rp 100 jt</div><div class="metric-note" data-id="6,25% modal awal" data-en="6.25% of initial capital">6,25% modal awal</div></div>
-                        <div class="metric"><div class="metric-label" data-id="Biaya operasi bulanan" data-en="Monthly operating cost">Biaya operasi bulanan</div><div class="metric-value">Rp 12 jt</div><div class="metric-note" data-id="Asumsi awal" data-en="Initial assumption">Asumsi awal</div></div>
-                        <div class="metric"><div class="metric-label" data-id="Hari operasi" data-en="Operating days">Hari operasi</div><div class="metric-value">25</div><div class="metric-note" data-id="hari per bulan" data-en="days per month">hari per bulan</div></div>
-                    </div>
-                    <div class="flow">
-                        <div class="flow-step"><b data-id="1. Penerimaan" data-en="1. Receipts">1. Penerimaan</b><span data-id="Tipping fee, biochar, dan RDF masuk ke rekening proyek." data-en="Tipping fees, biochar, and RDF receipts enter the project account.">Tipping fee, biochar, dan RDF masuk ke rekening proyek.</span></div>
-                        <div class="flow-step"><b data-id="2. Rekonsiliasi" data-en="2. Reconciliation">2. Rekonsiliasi</b><span data-id="Data bank dicocokkan dengan bukti timbang dan faktur penjualan." data-en="Bank records are matched to weighbridge records and sales invoices.">Data bank dicocokkan dengan bukti timbang dan faktur penjualan.</span></div>
-                        <div class="flow-step"><b data-id="3. Biaya operasi" data-en="3. Operating costs">3. Biaya operasi</b><span data-id="Biaya yang disetujui dibayar lebih dahulu." data-en="Approved operating costs are paid first.">Biaya yang disetujui dibayar lebih dahulu.</span></div>
-                        <div class="flow-step"><b data-id="4. Laba bersih" data-en="4. Net profit">4. Laba bersih</b><span data-id="Pendapatan dikurangi biaya operasi dan kewajiban proyek." data-en="Revenue less operating costs and project obligations.">Pendapatan dikurangi biaya operasi dan kewajiban proyek.</span></div>
-                        <div class="flow-step"><b data-id="5. Pembagian" data-en="5. Distribution">5. Pembagian</b><span data-id="Laba dibagi sesuai fase, setelah laporan bulanan disetujui." data-en="Profit is distributed by phase after the monthly report is approved.">Laba dibagi sesuai fase, setelah laporan bulanan disetujui.</span></div>
-                    </div>
-                    <p class="footnote" data-id="Kontrol yang disarankan: rekening khusus proyek, laporan bulanan, dua tingkat persetujuan untuk pembayaran material, inventaris aset, dan audit hak akses data timbang." data-en="Suggested controls: a dedicated project account, monthly reporting, two-level approval for material payments, an asset register, and audited access to weighbridge data.">Kontrol yang disarankan: rekening khusus proyek, laporan bulanan, dua tingkat persetujuan untuk pembayaran material, inventaris aset, dan audit hak akses data timbang.</p>
-                </section>
-
-                <section class="section" id="prospektus">
-                    <div class="section-head">
-                        <div class="section-num mono">03 / 08</div>
-                        <div><h2 data-id="Ringkasan prospektus" data-en="Prospectus summary">Ringkasan prospektus</h2><p class="section-intro" data-id="Bagian ini merangkum struktur yang akan dibahas dengan investor. Ketentuan final hanya berlaku setelah uji tuntas dan penandatanganan perjanjian." data-en="This section summarizes the structure to be discussed with an investor. Final terms only apply after due diligence and signed agreements.">Bagian ini merangkum struktur yang akan dibahas dengan investor. Ketentuan final hanya berlaku setelah uji tuntas dan penandatanganan perjanjian.</p></div>
-                    </div>
-                    <div class="table-wrap">
-                        <table>
-                            <thead><tr><th data-id="Komponen" data-en="Item">Komponen</th><th data-id="Rancangan awal" data-en="Initial structure">Rancangan awal</th><th data-id="Perlu dikunci" data-en="To be finalized">Perlu dikunci</th></tr></thead>
-                            <tbody>
-                                <tr><td><strong data-id="Nilai investasi" data-en="Investment amount">Nilai investasi</strong></td><td>Rp 1.600.000.000</td><td data-id="Jadwal pencairan dan bukti penggunaan dana" data-en="Disbursement schedule and evidence of use">Jadwal pencairan dan bukti penggunaan dana</td></tr>
-                                <tr><td><strong data-id="Tenor" data-en="Term">Tenor</strong></td><td data-id="5 tahun / 60 bulan" data-en="5 years / 60 months">5 tahun / 60 bulan</td><td data-id="Tanggal efektif dan kondisi perpanjangan" data-en="Effective date and extension conditions">Tanggal efektif dan kondisi perpanjangan</td></tr>
-                                <tr><td><strong data-id="Fase sebelum BEP" data-en="Pre-BEP phase">Fase sebelum BEP</strong></td><td data-id="Investor 80% · pengelola 20% dari laba bersih" data-en="Investor 80% · operator 20% of net profit">Investor 80% · pengelola 20% dari laba bersih</td><td data-id="Definisi laba bersih dan urutan pembayaran" data-en="Definition of net profit and payment waterfall">Definisi laba bersih dan urutan pembayaran</td></tr>
-                                <tr><td><strong data-id="Fase setelah BEP" data-en="Post-BEP phase">Fase setelah BEP</strong></td><td data-id="Investor 20% · pengelola 80% dari laba bersih" data-en="Investor 20% · operator 80% of net profit">Investor 20% · pengelola 80% dari laba bersih</td><td data-id="Metode verifikasi tanggal BEP" data-en="Method for confirming the BEP date">Metode verifikasi tanggal BEP</td></tr>
-                                <tr><td><strong data-id="Akhir kontrak" data-en="Contract end">Akhir kontrak</strong></td><td data-id="Aset diserahkan kepada TPS3R Rescue Nirmala Anggadita" data-en="Assets transfer to TPS3R Rescue Nirmala Anggadita">Aset diserahkan kepada TPS3R Rescue Nirmala Anggadita</td><td data-id="Berita acara, kondisi aset, dan kewajiban perawatan" data-en="Handover record, asset condition, and maintenance duties">Berita acara, kondisi aset, dan kewajiban perawatan</td></tr>
-                                <tr><td><strong data-id="Pelaporan" data-en="Reporting">Pelaporan</strong></td><td data-id="Laporan operasi dan keuangan setiap bulan" data-en="Monthly operating and financial report">Laporan operasi dan keuangan setiap bulan</td><td data-id="Format laporan, tenggat, dan hak audit" data-en="Report format, deadline, and audit rights">Format laporan, tenggat, dan hak audit</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <p class="footnote" data-id="Dokumen ini bukan prospektus pasar modal, bukan ajakan kepada publik, dan bukan pengganti nasihat hukum, pajak, atau investasi independen." data-en="This document is not a public-market prospectus, is not a public solicitation, and does not replace independent legal, tax, or investment advice.">Dokumen ini bukan prospektus pasar modal, bukan ajakan kepada publik, dan bukan pengganti nasihat hukum, pajak, atau investasi independen.</p>
-                </section>
-
-                <section class="section" id="teknologi">
-                    <div class="section-head">
-                        <div class="section-num mono">04 / 08</div>
-                        <div><h2 data-id="Detail teknologi" data-en="Technology details">Detail teknologi</h2><p class="section-intro" data-id="Rancangan alur memakai pemilahan mekanis, pemrosesan termal Pyronex untuk fraksi organik, dan pencacahan fraksi anorganik menjadi RDF. Angka hasil konversi masih perlu dibuktikan melalui uji penerimaan mesin." data-en="The proposed process uses mechanical sorting, Pyronex thermal treatment for the organic fraction, and shredding of the inorganic fraction into RDF. Conversion yields still need to be proven through machine acceptance testing.">Rancangan alur memakai pemilahan mekanis, pemrosesan termal Pyronex untuk fraksi organik, dan pencacahan fraksi anorganik menjadi RDF. Angka hasil konversi masih perlu dibuktikan melalui uji penerimaan mesin.</p></div>
-                    </div>
-                    <div class="grid-2">
-                        <div class="card dark"><div class="card-label" data-id="Aliran material" data-en="Material flow">Aliran material</div><h3 data-id="Asumsi desain" data-en="Design assumptions">Asumsi desain</h3><p data-id="Masuk 8 ton/hari; komposisi 70% organik dan 30% anorganik; hasil biochar 10% dari massa organik; hasil RDF 80% dari massa anorganik." data-en="Input of 8 tonnes/day; composition of 70% organic and 30% inorganic; biochar yield of 10% of organic mass; RDF yield of 80% of inorganic mass.">Masuk 8 ton/hari; komposisi 70% organik dan 30% anorganik; hasil biochar 10% dari massa organik; hasil RDF 80% dari massa anorganik.</p></div>
-                        <div class="card accent"><div class="card-label" data-id="Kapasitas mesin" data-en="Machine capacity">Kapasitas mesin</div><h3 data-id="Pyronex 1 ton per jam" data-en="Pyronex 1 tonne per hour">Pyronex 1 ton per jam</h3><p data-id="Kapasitas nameplate perlu diuji terhadap jenis sampah lokal, kadar air, jam kerja efektif, kebutuhan energi, waktu henti, dan kualitas keluaran." data-en="Nameplate capacity must be tested against local waste composition, moisture, effective operating hours, energy use, downtime, and output quality.">Kapasitas nameplate perlu diuji terhadap jenis sampah lokal, kadar air, jam kerja efektif, kebutuhan energi, waktu henti, dan kualitas keluaran.</p></div>
-                    </div>
-                    <div class="table-wrap" style="margin-top:16px">
-                        <table>
-                            <thead><tr><th data-id="Tahap" data-en="Stage">Tahap</th><th data-id="Data yang dicatat" data-en="Data recorded">Data yang dicatat</th><th data-id="Kriteria penerimaan" data-en="Acceptance criterion">Kriteria penerimaan</th></tr></thead>
-                            <tbody>
-                                <tr><td data-id="Penerimaan dan timbang" data-en="Receipt and weighing">Penerimaan dan timbang</td><td data-id="Asal, berat masuk, berat keluar, waktu" data-en="Source, inbound weight, outbound weight, time">Asal, berat masuk, berat keluar, waktu</td><td data-id="Tiket timbang lengkap dan dapat ditelusuri" data-en="Complete, traceable weighbridge ticket">Tiket timbang lengkap dan dapat ditelusuri</td></tr>
-                                <tr><td data-id="Pemilahan" data-en="Sorting">Pemilahan</td><td data-id="Rasio organik, anorganik, dan material tidak sesuai" data-en="Organic, inorganic, and rejected-material ratios">Rasio organik, anorganik, dan material tidak sesuai</td><td data-id="Material berbahaya dipisahkan sebelum proses" data-en="Hazardous material removed before processing">Material berbahaya dipisahkan sebelum proses</td></tr>
-                                <tr><td data-id="Pemrosesan termal" data-en="Thermal processing">Pemrosesan termal</td><td data-id="Laju umpan, suhu, energi, waktu henti" data-en="Feed rate, temperature, energy, downtime">Laju umpan, suhu, energi, waktu henti</td><td data-id="Operasi stabil dan memenuhi spesifikasi vendor serta izin" data-en="Stable operation within vendor specification and permits">Operasi stabil dan memenuhi spesifikasi vendor serta izin</td></tr>
-                                <tr><td data-id="Biochar" data-en="Biochar">Biochar</td><td data-id="Berat, kadar air, hasil uji mutu" data-en="Weight, moisture, quality-test result">Berat, kadar air, hasil uji mutu</td><td data-id="Sesuai spesifikasi pembeli sebelum dikirim" data-en="Meets buyer specification before shipment">Sesuai spesifikasi pembeli sebelum dikirim</td></tr>
-                                <tr><td>RDF</td><td data-id="Berat, ukuran, kadar air, nilai kalor bila diwajibkan" data-en="Weight, size, moisture, calorific value if required">Berat, ukuran, kadar air, nilai kalor bila diwajibkan</td><td data-id="Sesuai spesifikasi pembeli sebelum dikirim" data-en="Meets buyer specification before shipment">Sesuai spesifikasi pembeli sebelum dikirim</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
-
-                <section class="section" id="proyeksi">
-                    <div class="section-head">
-                        <div class="section-num mono">05 / 08</div>
-                        <div><h2 data-id="Proyeksi tiga skenario" data-en="Three-scenario forecast">Proyeksi tiga skenario</h2><p class="section-intro" data-id="Skenario menunjukkan hasil model, bukan jaminan. Perbedaan volume, harga jual produk, biaya aktual, dan waktu henti mesin akan mengubah hasil." data-en="These scenarios are model outputs, not guarantees. Actual volume, product prices, costs, and machine downtime will change the result.">Skenario menunjukkan hasil model, bukan jaminan. Perbedaan volume, harga jual produk, biaya aktual, dan waktu henti mesin akan mengubah hasil.</p></div>
-                    </div>
-                    <div class="grid-3">
-                        <div class="card scenario">
-                            <div class="card-label" data-id="Konservatif" data-en="Conservative">Konservatif</div>
-                            <h3 data-id="Volume 4 ton/hari" data-en="Volume 4 tonnes/day">Volume 4 ton/hari</h3>
-                            <div class="scenario-value">28,7 <small data-id="bulan" data-en="months">bulan</small></div>
-                            <p data-id="Perkiraan BEP setelah penjualan produk." data-en="Estimated BEP after product sales.">Perkiraan BEP setelah penjualan produk.</p>
-                            <ul><li><span data-id="Target BEP dasar" data-en="Base BEP target">Target BEP dasar</span><b data-id="36 bulan" data-en="36 months">36 bulan</b></li><li><span data-id="Tipping fee minimum" data-en="Minimum tipping fee">Tipping fee minimum</span><b>Rp 676/kg</b></li><li><span data-id="Pendapatan produk" data-en="Product revenue">Pendapatan produk</span><b>Rp 14,2 jt</b></li><li><span data-id="Laba bersih/bulan" data-en="Net profit/month">Laba bersih/bulan</span><b>Rp 69,8 jt</b></li></ul>
-                        </div>
-                        <div class="card scenario base">
-                            <div class="card-label" data-id="Skenario dasar" data-en="Base case">Skenario dasar</div>
-                            <h3 data-id="Volume 8 ton/hari" data-en="Volume 8 tonnes/day">Volume 8 ton/hari</h3>
-                            <div class="scenario-value">15,6 <small data-id="bulan" data-en="months">bulan</small></div>
-                            <p data-id="Perkiraan BEP setelah penjualan produk." data-en="Estimated BEP after product sales.">Perkiraan BEP setelah penjualan produk.</p>
-                            <ul><li><span data-id="Target BEP dasar" data-en="Base BEP target">Target BEP dasar</span><b data-id="24 bulan" data-en="24 months">24 bulan</b></li><li><span data-id="Tipping fee minimum" data-en="Minimum tipping fee">Tipping fee minimum</span><b>Rp 477/kg</b></li><li><span data-id="Pendapatan produk" data-en="Product revenue">Pendapatan produk</span><b>Rp 45,3 jt</b></li><li><span data-id="Laba bersih/bulan" data-en="Net profit/month">Laba bersih/bulan</span><b>Rp 128,6 jt</b></li></ul>
-                        </div>
-                        <div class="card scenario">
-                            <div class="card-label" data-id="Optimistis" data-en="Upside">Optimistis</div>
-                            <h3 data-id="Volume 8 ton/hari" data-en="Volume 8 tonnes/day">Volume 8 ton/hari</h3>
-                            <div class="scenario-value">11,6 <small data-id="bulan" data-en="months">bulan</small></div>
-                            <p data-id="Perkiraan BEP setelah penjualan produk." data-en="Estimated BEP after product sales.">Perkiraan BEP setelah penjualan produk.</p>
-                            <ul><li><span data-id="Target BEP dasar" data-en="Base BEP target">Target BEP dasar</span><b data-id="18 bulan" data-en="18 months">18 bulan</b></li><li><span data-id="Tipping fee minimum" data-en="Minimum tipping fee">Tipping fee minimum</span><b>Rp 616/kg</b></li><li><span data-id="Pendapatan produk" data-en="Product revenue">Pendapatan produk</span><b>Rp 61,6 jt</b></li><li><span data-id="Laba bersih/bulan" data-en="Net profit/month">Laba bersih/bulan</span><b>Rp 172,7 jt</b></li></ul>
-                        </div>
-                    </div>
-                    <p class="footnote" data-id="Asumsi bersama: 25 hari operasi/bulan, biaya operasi Rp 12 juta/bulan, komposisi 70% organik dan 30% anorganik, hasil biochar 10%, hasil RDF 80%, serta pembagian laba pra-BEP 80% untuk investor. Harga skenario konservatif: biochar Rp 1.000/kg dan RDF Rp 300.000/ton. Dasar: Rp 2.000/kg dan Rp 360.000/ton. Optimistis: Rp 2.000/kg dan Rp 700.000/ton." data-en="Shared assumptions: 25 operating days/month, operating cost of IDR 12 million/month, composition of 70% organic and 30% inorganic, biochar yield of 10%, RDF yield of 80%, and 80% of pre-BEP profit to the investor. Conservative prices: biochar IDR 1,000/kg and RDF IDR 300,000/tonne. Base: IDR 2,000/kg and IDR 360,000/tonne. Upside: IDR 2,000/kg and IDR 700,000/tonne.">Asumsi bersama: 25 hari operasi/bulan, biaya operasi Rp 12 juta/bulan, komposisi 70% organik dan 30% anorganik, hasil biochar 10%, hasil RDF 80%, serta pembagian laba pra-BEP 80% untuk investor. Harga skenario konservatif: biochar Rp 1.000/kg dan RDF Rp 300.000/ton. Dasar: Rp 2.000/kg dan Rp 360.000/ton. Optimistis: Rp 2.000/kg dan Rp 700.000/ton.</p>
-                </section>
-
-                <section class="section" id="implementasi">
-                    <div class="section-head">
-                        <div class="section-num mono">06 / 08</div>
-                        <div><h2 data-id="Timeline implementasi" data-en="Implementation timeline">Timeline implementasi</h2><p class="section-intro" data-id="Jadwal berikut adalah rencana kerja awal. Durasi aktual bergantung pada izin, kesiapan lahan, waktu pengiriman mesin, dan hasil uji penerimaan." data-en="The schedule below is an initial working plan. Actual duration depends on permits, site readiness, machine delivery, and acceptance-test results.">Jadwal berikut adalah rencana kerja awal. Durasi aktual bergantung pada izin, kesiapan lahan, waktu pengiriman mesin, dan hasil uji penerimaan.</p></div>
-                    </div>
-                    <div class="timeline">
-                        <div class="timeline-item"><div class="timeline-time mono" data-id="MINGGU 0–2" data-en="WEEK 0–2">MINGGU 0–2</div><div class="timeline-content"><h3 data-id="Uji tuntas dan penetapan ruang lingkup" data-en="Due diligence and scope confirmation">Uji tuntas dan penetapan ruang lingkup</h3><p data-id="Periksa lahan, izin, badan hukum, data volume sampah, spesifikasi mesin, calon pembeli produk, dan rancangan perjanjian." data-en="Check land, permits, legal entities, waste-volume data, machine specification, potential product buyers, and draft agreements.">Periksa lahan, izin, badan hukum, data volume sampah, spesifikasi mesin, calon pembeli produk, dan rancangan perjanjian.</p></div></div>
-                        <div class="timeline-item"><div class="timeline-time mono" data-id="MINGGU 3–6" data-en="WEEK 3–6">MINGGU 3–6</div><div class="timeline-content"><h3 data-id="Pengadaan dan persiapan lokasi" data-en="Procurement and site preparation">Pengadaan dan persiapan lokasi</h3><p data-id="Finalisasi pesanan mesin, desain sipil, utilitas, drainase, area penyimpanan, dan alur kendaraan." data-en="Finalize the machine order, civil design, utilities, drainage, storage areas, and vehicle flow.">Finalisasi pesanan mesin, desain sipil, utilitas, drainase, area penyimpanan, dan alur kendaraan.</p></div></div>
-                        <div class="timeline-item"><div class="timeline-time mono" data-id="MINGGU 7–10" data-en="WEEK 7–10">MINGGU 7–10</div><div class="timeline-content"><h3 data-id="Pekerjaan sipil dan pemasangan" data-en="Civil works and installation">Pekerjaan sipil dan pemasangan</h3><p data-id="Bangun fondasi dan area kerja, pasang jembatan timbang, mesin, sambungan listrik, serta perangkat keselamatan." data-en="Build foundations and work areas; install the weighbridge, machine, electrical connections, and safety equipment.">Bangun fondasi dan area kerja, pasang jembatan timbang, mesin, sambungan listrik, serta perangkat keselamatan.</p></div></div>
-                        <div class="timeline-item"><div class="timeline-time mono" data-id="MINGGU 11–12" data-en="WEEK 11–12">MINGGU 11–12</div><div class="timeline-content"><h3 data-id="Uji penerimaan dan pelatihan" data-en="Acceptance testing and training">Uji penerimaan dan pelatihan</h3><p data-id="Uji kapasitas, konsumsi energi, keselamatan, hasil produk, pencatatan data, serta prosedur berhenti darurat." data-en="Test capacity, energy use, safety, product yield, data recording, and emergency shutdown procedures.">Uji kapasitas, konsumsi energi, keselamatan, hasil produk, pencatatan data, serta prosedur berhenti darurat.</p></div></div>
-                        <div class="timeline-item"><div class="timeline-time mono" data-id="MINGGU 13+" data-en="WEEK 13+">MINGGU 13+</div><div class="timeline-content"><h3 data-id="Operasi komersial bertahap" data-en="Phased commercial operation">Operasi komersial bertahap</h3><p data-id="Mulai dari volume terbatas, ukur hasil aktual, koreksi prosedur, lalu naikkan volume setelah kriteria operasi terpenuhi." data-en="Start at limited volume, measure actual results, correct procedures, and increase volume once operating criteria are met.">Mulai dari volume terbatas, ukur hasil aktual, koreksi prosedur, lalu naikkan volume setelah kriteria operasi terpenuhi.</p></div></div>
-                    </div>
-                </section>
-
-                <section class="section" id="timeline-keuangan">
-                    <div class="section-head">
-                        <div class="section-num mono">07 / 08</div>
-                        <div><h2 data-id="Timeline keuangan" data-en="Financial timeline">Timeline keuangan</h2><p class="section-intro" data-id="Urutan berikut menunjukkan kapan modal digunakan dan bagaimana pembagian laba berubah. Tanggal BEP dihitung dari arus kas investor yang benar-benar diterima, bukan dari omzet." data-en="The sequence below shows when capital is used and how profit sharing changes. BEP is measured from cash actually received by the investor, not from revenue.">Urutan berikut menunjukkan kapan modal digunakan dan bagaimana pembagian laba berubah. Tanggal BEP dihitung dari arus kas investor yang benar-benar diterima, bukan dari omzet.</p></div>
-                    </div>
-                    <div class="timeline">
-                        <div class="timeline-item"><div class="timeline-time mono" data-id="SEBELUM OPERASI" data-en="PRE-OPERATION">SEBELUM OPERASI</div><div class="timeline-content"><h3 data-id="Pencairan modal berbasis milestone" data-en="Milestone-based capital disbursement">Pencairan modal berbasis milestone</h3><p data-id="Pembayaran mesin dan pekerjaan sipil mengikuti dokumen pengadaan, progres fisik, serta hasil pemeriksaan." data-en="Machine and civil-work payments follow procurement documents, physical progress, and inspection results.">Pembayaran mesin dan pekerjaan sipil mengikuti dokumen pengadaan, progres fisik, serta hasil pemeriksaan.</p></div></div>
-                        <div class="timeline-item"><div class="timeline-time mono" data-id="BULAN 1–3" data-en="MONTH 1–3">BULAN 1–3</div><div class="timeline-content"><h3 data-id="Stabilisasi operasi dan modal kerja" data-en="Operating stabilization and working capital">Stabilisasi operasi dan modal kerja</h3><p data-id="Volume dinaikkan bertahap. Selisih terhadap anggaran dilaporkan setiap bulan; distribusi hanya dilakukan dari kas yang tersedia." data-en="Volume ramps up gradually. Variance to budget is reported monthly; distributions are made only from available cash.">Volume dinaikkan bertahap. Selisih terhadap anggaran dilaporkan setiap bulan; distribusi hanya dilakukan dari kas yang tersedia.</p></div></div>
-                        <div class="timeline-item"><div class="timeline-time mono" data-id="PRA-BEP" data-en="PRE-BEP">PRA-BEP</div><div class="timeline-content"><h3 data-id="Investor menerima 80% laba bersih" data-en="Investor receives 80% of net profit">Investor menerima 80% laba bersih</h3><p data-id="Akumulasi distribusi kepada investor dibandingkan dengan modal Rp 1,6 miliar. Selisih yang belum kembali dilaporkan setiap bulan." data-en="Cumulative distributions to the investor are compared with the IDR 1.6 billion capital. The unrecovered balance is reported monthly.">Akumulasi distribusi kepada investor dibandingkan dengan modal Rp 1,6 miliar. Selisih yang belum kembali dilaporkan setiap bulan.</p></div></div>
-                        <div class="timeline-item"><div class="timeline-time mono" data-id="SETELAH BEP" data-en="POST-BEP">SETELAH BEP</div><div class="timeline-content"><h3 data-id="Pembagian berbalik menjadi 20% : 80%" data-en="Profit split reverses to 20% : 80%">Pembagian berbalik menjadi 20% : 80%</h3><p data-id="Investor menerima 20% dan pengelola menerima 80% laba bersih sampai akhir bulan ke-60." data-en="The investor receives 20% and the operator receives 80% of net profit through the end of month 60.">Investor menerima 20% dan pengelola menerima 80% laba bersih sampai akhir bulan ke-60.</p></div></div>
-                        <div class="timeline-item"><div class="timeline-time mono" data-id="BULAN 60" data-en="MONTH 60">BULAN 60</div><div class="timeline-content"><h3 data-id="Penutupan komersial dan serah terima aset" data-en="Commercial close and asset handover">Penutupan komersial dan serah terima aset</h3><p data-id="Laporan akhir disetujui, kewajiban diselesaikan, kondisi aset dicatat, dan serah terima dilakukan melalui berita acara." data-en="The final report is approved, obligations are settled, asset condition is recorded, and handover is completed through a signed record.">Laporan akhir disetujui, kewajiban diselesaikan, kondisi aset dicatat, dan serah terima dilakukan melalui berita acara.</p></div></div>
-                    </div>
-                </section>
-
-                <section class="section" id="risiko">
-                    <div class="section-head">
-                        <div class="section-num mono">08 / 08</div>
-                        <div><h2 data-id="Mitigasi risiko A–D" data-en="Risk mitigation A–D">Mitigasi risiko A–D</h2><p class="section-intro" data-id="Risk register ini memuat empat risiko yang paling langsung memengaruhi operasi dan pengembalian modal. Pemilik risiko, indikator, serta tindakan koreksi perlu dimasukkan ke perjanjian dan laporan bulanan." data-en="This risk register covers four risks with the most direct effect on operations and capital recovery. Risk owners, indicators, and corrective actions should be included in agreements and monthly reporting.">Risk register ini memuat empat risiko yang paling langsung memengaruhi operasi dan pengembalian modal. Pemilik risiko, indikator, serta tindakan koreksi perlu dimasukkan ke perjanjian dan laporan bulanan.</p></div>
-                    </div>
-                    <div class="risk">
-                        <div class="risk-code">A</div>
-                        <div><h3 data-id="Volume sampah di bawah target" data-en="Waste volume below target">Volume sampah di bawah target</h3><p data-id="Tonase rendah menaikkan tipping fee minimum dan memperpanjang BEP. Risiko dipantau dari rata-rata tonase harian dan utilisasi kapasitas." data-en="Low tonnage raises the minimum tipping fee and extends BEP. Monitor average daily tonnage and capacity utilization.">Tonase rendah menaikkan tipping fee minimum dan memperpanjang BEP. Risiko dipantau dari rata-rata tonase harian dan utilisasi kapasitas.</p></div>
-                        <div class="risk-control"><b data-id="Rencana kendali" data-en="Control plan">Rencana kendali</b><span data-id="Kontrak pasokan minimum, beberapa sumber sampah, tarif bertingkat, dan evaluasi volume mingguan." data-en="Minimum-supply contracts, multiple waste sources, tiered pricing, and weekly volume review.">Kontrak pasokan minimum, beberapa sumber sampah, tarif bertingkat, dan evaluasi volume mingguan.</span></div>
-                    </div>
-                    <div class="risk">
-                        <div class="risk-code">B</div>
-                        <div><h3 data-id="Biochar atau RDF tidak terserap" data-en="Biochar or RDF is not sold">Biochar atau RDF tidak terserap</h3><p data-id="Tanpa pembeli, produk menambah persediaan dan tidak mempercepat BEP. Harga juga dapat berada di bawah asumsi." data-en="Without buyers, products add inventory and do not accelerate BEP. Prices may also fall below assumptions.">Tanpa pembeli, produk menambah persediaan dan tidak mempercepat BEP. Harga juga dapat berada di bawah asumsi.</p></div>
-                        <div class="risk-control"><b data-id="Rencana kendali" data-en="Control plan">Rencana kendali</b><span data-id="Uji sampel, spesifikasi tertulis, calon pembeli cadangan, batas persediaan, dan proyeksi tanpa pendapatan produk." data-en="Sample testing, written specifications, backup buyers, inventory limits, and a forecast excluding product revenue.">Uji sampel, spesifikasi tertulis, calon pembeli cadangan, batas persediaan, dan proyeksi tanpa pendapatan produk.</span></div>
-                    </div>
-                    <div class="risk">
-                        <div class="risk-code">C</div>
-                        <div><h3 data-id="Mesin tidak mencapai kapasitas atau kualitas" data-en="Machine misses capacity or quality targets">Mesin tidak mencapai kapasitas atau kualitas</h3><p data-id="Kadar air, komposisi sampah, gangguan listrik, atau waktu henti dapat menurunkan hasil aktual." data-en="Moisture, waste composition, power disruption, or downtime can reduce actual output.">Kadar air, komposisi sampah, gangguan listrik, atau waktu henti dapat menurunkan hasil aktual.</p></div>
-                        <div class="risk-control"><b data-id="Rencana kendali" data-en="Control plan">Rencana kendali</b><span data-id="Uji penerimaan berbasis KPI, garansi vendor, stok suku cadang kritis, jadwal perawatan, dan pelatihan operator." data-en="KPI-based acceptance testing, vendor warranty, critical spare stock, maintenance schedule, and operator training.">Uji penerimaan berbasis KPI, garansi vendor, stok suku cadang kritis, jadwal perawatan, dan pelatihan operator.</span></div>
-                    </div>
-                    <div class="risk">
-                        <div class="risk-code">D</div>
-                        <div><h3 data-id="Izin, kontrak, atau tata kelola tidak lengkap" data-en="Incomplete permits, contracts, or governance">Izin, kontrak, atau tata kelola tidak lengkap</h3><p data-id="Kekurangan dokumen dapat menunda operasi, menimbulkan sengketa pembagian, atau menghambat serah terima aset." data-en="Missing documents can delay operations, create distribution disputes, or block asset handover.">Kekurangan dokumen dapat menunda operasi, menimbulkan sengketa pembagian, atau menghambat serah terima aset.</p></div>
-                        <div class="risk-control"><b data-id="Rencana kendali" data-en="Control plan">Rencana kendali</b><span data-id="Daftar izin dan kondisi pendahuluan, rekening proyek, hak audit, matriks kewenangan, mekanisme sengketa, dan berita acara aset." data-en="Permit and condition-precedent checklist, project account, audit rights, authority matrix, dispute process, and asset records.">Daftar izin dan kondisi pendahuluan, rekening proyek, hak audit, matriks kewenangan, mekanisme sengketa, dan berita acara aset.</span></div>
-                    </div>
-                </section>
-            </article>
+            <div class="map-node">
+              <div class="map-node-type">Lokasi implementasi</div>
+              <h4>Pemerintah Desa &amp; Pemilik Lahan</h4>
+              <p>Mendukung kesiapan lokasi, hubungan lokal, dan penggunaan lahan sesuai dokumen kerja sama.</p>
+              <span class="map-edge">→ lokasi · dukungan lokal</span>
+            </div>
+            <div class="map-node map-node-muted">
+              <div class="map-node-type">Konteks jaringan wilayah</div>
+              <h4>17 TPS di Kabupaten Karawang</h4>
+              <p>Jumlah TPS di wilayah kabupaten sebagai konteks jaringan dan peluang koordinasi lanjutan.</p>
+              <span class="map-edge">→ konteks skala wilayah</span>
+            </div>
+          </div>
+          <div class="map-column map-column-center">
+            <div class="map-lane-label">Pusat proyek &amp; unit operasi</div>
+            <div class="map-node map-node-primary">
+              <div class="map-node-type">Main project view</div>
+              <h4>TPS3R Rescue Nirmala Anggadita</h4>
+              <p>Unit utama pengolahan dan pusat manfaat proyek, dengan satu TPS Jabar dalam koordinasi pengelola.</p>
+              <div class="map-mini-list"><span>8 ton/hari</span><span>Timbang</span><span>Olah</span><span>Catat</span></div>
+              <span class="map-edge">↑ pusat operasi · data · hasil pengolahan</span>
+            </div>
+            <div class="map-arrow"><span>dikelola oleh</span><b>↓</b></div>
+            <div class="map-node map-node-core">
+              <div class="map-node-type">Pengelola / kelembagaan lokal</div>
+              <h4>Karang Taruna Kabupaten Karawang</h4>
+              <p>Mengelola TPS3R Anggadita dan satu TPS Jabar serta menjadi penghubung kelembagaan lokal.</p>
+              <span class="map-edge">↓ pengelolaan lokal · hubungan kelembagaan</span>
+            </div>
+            <div class="map-arrow"><span>beroperasi bersama</span><b>↓</b></div>
+            <div class="map-node map-node-muted">
+              <div class="map-node-type">Unit koordinasi tambahan</div>
+              <h4>1 TPS Jabar</h4>
+              <p>Dikelola bersamaan dalam kerangka operasi dan koordinasi pengelola.</p>
+              <span class="map-edge">→ operasi paralel · koordinasi</span>
+            </div>
+          </div>
+          <div class="map-column">
+            <div class="map-lane-label">KSO, teknologi, modal &amp; data</div>
+            <div class="map-node map-node-kso">
+              <div class="map-node-type">KSO pendukung operasi</div>
+              <h4>Kibar Laksana Bintang</h4>
+              <p>Mendukung operasi melalui manajemen SDM, SOP, keuangan, operasi, dan ERP cloud.</p>
+              <div class="map-mini-list"><span>SDM</span><span>SOP</span><span>Finance</span><span>ERP Cloud</span></div>
+              <span class="map-edge">↔ garis koordinasi &amp; pengawasan investor</span>
+            </div>
+            <div class="map-node map-node-amber">
+              <div class="map-node-type">Pendanaan &amp; tata kelola</div>
+              <h4>Investor Proyek</h4>
+              <p>Menyediakan CAPEX dan mengawasi kinerja, laporan, serta keputusan strategis.</p>
+              <span class="map-edge">↕ pengawasan · laporan · koordinasi dengan KSO</span>
+            </div>
+            <div class="map-node">
+              <div class="map-node-type">Mitra teknologi</div>
+              <h4>Lestari Bumi Sembada</h4>
+              <p>Mendukung teknologi proses, instalasi, pelatihan, commissioning, dan pemeliharaan teknis.</p>
+              <span class="map-edge">→ teknologi proses · maintenance</span>
+            </div>
+            <div class="map-node map-node-muted">
+              <div class="map-node-type">Sistem tata kelola</div>
+              <h4>ERP Berbasis Cloud</h4>
+              <p>Mencatat data SDM, volume, biaya, operasi, dan laporan dengan jejak audit yang dapat dipantau.</p>
+              <span class="map-edge">→ dashboard · laporan · audit trail</span>
+            </div>
+          </div>
         </div>
-    </main>
-
-    <footer>
-        <div class="shell footer-inner">
-            <div><strong style="color:white">TPS3R Rescue Nirmala Anggadita</strong><br><span data-id="Dokumen pembahasan investor · Draf 01" data-en="Investor discussion document · Draft 01">Dokumen pembahasan investor · Draf 01</span></div>
-            <div data-id="Rahasia terbatas · Jangan disebarkan tanpa persetujuan pengelola" data-en="Limited confidential material · Do not distribute without operator approval">Rahasia terbatas · Jangan disebarkan tanpa persetujuan pengelola</div>
+        <div class="map-route-strip">
+          <div class="map-flow-card">
+            <b>Input &amp; logistik</b>
+            <p>Industri, komersial, residensial, serta pengangkut menyediakan volume dan jadwal layanan yang tercatat.</p>
+          </div>
+          <div class="map-flow-card">
+            <b>Fuel loop internal</b>
+            <p>Kayu tebangan dan pemangkasan DLH diolah menjadi wood pellet sebagai bahan bakar internal TPS3R, bukan untuk offtaker.</p>
+          </div>
+          <div class="map-flow-card">
+            <b>Output &amp; penyerapan</b>
+            <p>Produk hasil pengolahan lain diarahkan kepada offtaker sesuai spesifikasi, hasil validasi, dan kesepakatan komersial.</p>
+          </div>
         </div>
-    </footer>
+      </div>
+      <div class="roles">
+        <div class="role"><div class="rl">Pengelola lokal</div><h4>Karang Taruna Kabupaten Karawang</h4><p>Mengelola TPS3R Rescue Nirmala Anggadita dan satu TPS Jabar serta menjadi penghubung kelembagaan lokal.</p></div>
+        <div class="role"><div class="rl">KSO operasional</div><h4>Kibar Laksana Bintang</h4><p>Mengelola SDM, SOP, keuangan, operasi, pelaporan, dan ERP cloud untuk mendukung operasi yang sustain dan transparan.</p></div>
+        <div class="role"><div class="rl">Unit implementasi</div><h4>TPS3R Anggadita &amp; 1 TPS Jabar</h4><p>Menjalankan penimbangan, pemilahan, pengolahan, pencatatan, dan pengelolaan residu sesuai standar operasi.</p></div>
+        <div class="role"><div class="rl">Mitra lokasi</div><h4>Pemerintah Desa &amp; Pemilik Lahan</h4><p>Mendukung lokasi implementasi sesuai dokumen dan kerja sama yang tersedia.</p></div>
+        <div class="role"><div class="rl">Mitra teknologi</div><h4>Lestari Bumi Sembada</h4><p>Menyediakan dukungan teknologi proses, instalasi, pelatihan, commissioning, dan pemeliharaan teknis.</p></div>
+        <div class="role"><div class="rl">Mitra investasi</div><h4>Investor proyek</h4><p>Menyediakan kebutuhan investasi awal serta melakukan pengawasan dan koordinasi atas keputusan strategis.</p></div>
+        <div class="role"><div class="rl">Sistem transparansi</div><h4>ERP Berbasis Cloud</h4><p>Menyediakan data operasi dan keuangan yang terdokumentasi, terkontrol, dan dapat ditinjau sesuai hak akses.</p></div>
+        <div class="role"><div class="rl">Penerimaan layanan</div><h4>Industri, komersial, dan residensial</h4><p>Menjadi sumber volume sampah dengan struktur biaya layanan yang berbeda.</p></div>
+      </div>
+      <div class="flowline" aria-label="Alur operasi proyek">
+        <div><b>Sampah masuk</b><span>Ditimbang dan dicatat</span></div>
+        <div><b>Pemilahan</b><span>Material ekonomis dipisahkan</span></div>
+        <div><b>Pengolahan</b><span>Material sesuai spesifikasi diproses</span></div>
+        <div><b>Produk &amp; hasil</b><span>Produk dijual atau dimanfaatkan</span></div>
+      </div>
+    </section>
 
-    <script>
-        let currentLanguage = new URLSearchParams(location.search).get('lang') === 'en' ? 'en' : 'id';
-        const languageButtons = document.querySelectorAll('[data-language]');
-        const translatedElements = document.querySelectorAll('[data-id][data-en]');
+    <section class="sec" id="technology">
+      <div class="sec-h"><span class="sec-num">05</span><h2>Teknologi &amp; Alur Pemrosesan</h2></div>
+      <p class="sec-intro">Pyronex II digunakan sebagai sistem pengolahan termal untuk meningkatkan kapasitas TPS3R dan mengurangi volume sampah yang perlu diangkut ke TPA.</p>
+      <figure class="machine">
+        <img src="assets/pyronex-system.jpg" alt="Susunan sistem dan alur proses Pyronex II" loading="lazy">
+        <figcaption>Susunan sistem Pyronex II · ilustrasi rangkaian proses</figcaption>
+      </figure>
+      <div class="specs">
+        <div class="spec"><dt>Kapasitas teknis</dt><dd>1 ton/jam</dd></div>
+        <div class="spec"><dt>Target operasi</dt><dd>8 ton/hari</dd></div>
+        <div class="spec"><dt>Setara bulanan</dt><dd>200 ton/bulan</dd></div>
+        <div class="spec"><dt>Proses</dt><dd>Pengolahan termal terkendali</dd></div>
+        <div class="spec"><dt>Pengendalian</dt><dd>Wet scrubber</dd></div>
+        <div class="spec"><dt>Bahan reaktor</dt><dd>Stainless steel AISI 304</dd></div>
+        <div class="spec"><dt>Basis pendapatan</dt><dd>75% non-residensial</dd></div>
+        <div class="spec"><dt>Target penanganan</dt><dd>Hingga 95% sesuai spesifikasi</dd></div>
+      </div>
+      <h3>Alur pemrosesan 10 tahap</h3>
+      <div class="flowsteps">
+        <div class="step"><div class="sn">01</div><div class="st">Sampah masuk &amp; penimbangan</div></div>
+        <div class="step"><div class="sn">02</div><div class="st">Pemisahan logam</div></div>
+        <div class="step"><div class="sn">03</div><div class="st">Screening awal / gibrik</div></div>
+        <div class="step"><div class="sn">04</div><div class="st">Transfer conveyor</div></div>
+        <div class="step"><div class="sn">05</div><div class="st">Pencacahan / shredder</div></div>
+        <div class="step"><div class="sn">06</div><div class="st">IPAL &amp; pengolahan air lindi</div></div>
+        <div class="step"><div class="sn">07</div><div class="st">Reaktor pirolisis</div></div>
+        <div class="step"><div class="sn">08</div><div class="st">Sistem kondensasi</div></div>
+        <div class="step"><div class="sn">09</div><div class="st">Wet scrubber</div></div>
+        <div class="step"><div class="sn">10</div><div class="st">Biochar &amp; hasil pemrosesan</div></div>
+      </div>
+      <div class="call">
+        <div class="ct">Definisi target</div>
+        <p>Target 95% menunjukkan porsi sampah yang dapat ditangani melalui rangkaian sistem. Material di luar spesifikasi mesin tetap dicatat dan dikelola melalui jalur yang sesuai.</p>
+      </div>
+    </section>
 
-        function applyLanguage(language, updateUrl = false) {
-            currentLanguage = language;
-            document.documentElement.lang = language;
-            translatedElements.forEach(element => {
-                element.textContent = element.dataset[language];
-            });
-            languageButtons.forEach(button => {
-                button.classList.toggle('active', button.dataset.language === language);
-            });
-            document.title = language === 'en'
-                ? 'Project Details · TPS3R Rescue Nirmala Anggadita'
-                : 'Detail Proyek · TPS3R Rescue Nirmala Anggadita';
-            document.querySelector('meta[name="description"]').content = language === 'en'
-                ? 'Investor discussion document for the TPS3R Rescue Nirmala Anggadita project.'
-                : 'Dokumen pembahasan investasi TPS3R Rescue Nirmala Anggadita untuk calon investor.';
-            if (updateUrl) {
-                const url = new URL(location.href);
-                if (language === 'en') url.searchParams.set('lang', 'en');
-                else url.searchParams.delete('lang');
-                history.pushState({ language }, '', url);
-            }
-        }
-        languageButtons.forEach(button => {
-            button.addEventListener('click', () => applyLanguage(button.dataset.language, true));
-        });
-        window.addEventListener('popstate', () => {
-            const language = new URLSearchParams(location.search).get('lang') === 'en' ? 'en' : 'id';
-            applyLanguage(language);
-        });
-        applyLanguage(currentLanguage);
+    <section class="sec" id="investment">
+      <div class="sec-h"><span class="sec-num">06</span><h2>Kebutuhan Investasi, OPEX &amp; Pengelolaan Keuangan</h2></div>
+      <p class="sec-intro">Kebutuhan investasi awal mencakup mesin, fasilitas penimbangan, modal operasional awal, APD, perlengkapan operasional, dashboard pemantauan, dan administrasi proyek.</p>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Komponen</th><th class="num">Nilai</th><th>Keterangan</th></tr></thead>
+        <tbody>
+          <tr><td>Mesin Pyronex II</td><td class="num hi">1.500.000.000</td><td>Set lengkap dan pekerjaan sipil sederhana</td></tr>
+          <tr><td>Jembatan timbang</td><td class="num">100.000.000</td><td>Penimbangan dan pencatatan volume</td></tr>
+          <tr><td>Modal operasional tiga bulan pertama</td><td class="num">50.000.000</td><td>Cadangan awal kegiatan operasi</td></tr>
+          <tr><td>Perlengkapan operasional dan administrasi proyek</td><td class="num">50.000.000</td><td>APD, perlengkapan kerja, dashboard pemantauan, dan administrasi proyek</td></tr>
+          <tr><td class="tot">Total kebutuhan investasi awal</td><td class="num tot">1.700.000.000</td><td class="tot">Basis kebutuhan pendanaan proyek</td></tr>
+        </tbody>
+      </table></div>
 
-        const sections = [...document.querySelectorAll('.section')];
-        const tocLinks = [...document.querySelectorAll('.toc a')];
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) return;
-                tocLinks.forEach(link => link.classList.toggle('active', link.hash === `#${entry.target.id}`));
-            });
-        }, { rootMargin: '-20% 0px -70% 0px' });
-        sections.forEach(section => observer.observe(section));
-    </script>
+      <h3>OPEX indikatif bulanan</h3>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Komponen</th><th class="num">Biaya/bulan (Rp)</th><th>Basis kerja</th></tr></thead>
+        <tbody>
+          <tr><td>Tenaga kerja</td><td class="num">7.500.000</td><td>3 operator</td></tr>
+          <tr><td>Listrik</td><td class="num">2.780.400</td><td>±66,2 kWh/hari</td></tr>
+          <tr><td>Wood pellet</td><td class="num">4.604.640</td><td>±95,93 kg/hari</td></tr>
+          <tr><td>Mikrobakteri dan bahan habis pakai</td><td class="num">300.000</td><td>Konsumabel proses</td></tr>
+          <tr><td class="tot">Total OPEX indikatif</td><td class="num tot">15.185.040</td><td class="tot">Belum termasuk sewa lahan</td></tr>
+        </tbody>
+      </table></div>
+      <p class="src">OPEX merupakan asumsi kerja dari draft teknis untuk operasi 8 jam per hari dan 25 hari kerja. Nilai final perlu divalidasi melalui spesifikasi vendor, tarif energi, jadwal operasi, dan kondisi lokasi.</p>
+
+      <h3>Prioritas sumber penerimaan</h3>
+      <div class="roles">
+        <div class="role"><div class="rl">Skenario dasar</div><h4>Biaya layanan pengolahan</h4><p>Tipping fee dari volume non-residensial menjadi dasar pengembalian modal. Penjualan produk belum dihitung.</p></div>
+        <div class="role"><div class="rl">Pelayanan residensial</div><h4>25% kapasitas</h4><p>Tarif layanan lebih rendah dan diarahkan terutama untuk mendukung biaya operasional pelayanan masyarakat.</p></div>
+        <div class="role"><div class="rl">Potensi percepatan</div><h4>Penjualan produk</h4><p>RDF, biochar, dan material lain dapat mempercepat pengembalian setelah kualitas dan penyerapan produk tervalidasi.</p></div>
+      </div>
+      <div class="call">
+        <div class="ct">Prinsip pengelolaan keuangan</div>
+        <p>Volume sampah, penerimaan biaya layanan, biaya operasional, dan penjualan produk dicatat secara terpisah. Proyeksi dasar tidak memasukkan subsidi DLH dan tidak menjadikan penjualan produk sebagai syarat utama pengembalian modal.</p>
+      </div>
+    </section>
+
+    <section class="sec" id="tipping">
+      <div class="sec-h"><span class="sec-num">07</span><h2>Struktur Tipping Fee</h2></div>
+      <p class="sec-intro">Tipping fee menjadi sumber penerimaan utama dalam skenario konservatif. Struktur berikut merupakan tangga tarif indikatif untuk volume non-residensial dengan basis aman sekitar 150 ton per bulan.</p>
+      <div class="call big">
+        <div class="ct">Dasar perhitungan investor</div>
+        <p>Tarif jangkar sekitar <strong>Rp700/kg</strong> menghasilkan pemasukan tipping indikatif sekitar <strong>Rp103,7 juta per bulan</strong> pada basis 75% non-residensial. Setelah OPEX sekitar Rp15,2 juta, porsi laba investor dalam model kerja adalah sekitar Rp70,8 juta per bulan sebelum pengembalian modal.</p>
+      </div>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Paket layanan</th><th class="num">Tarif indikatif (Rp/kg)</th><th>Posisi dalam struktur</th></tr></thead>
+        <tbody>
+          <tr class="anchor"><td>Paket 50 ton</td><td class="num hi">700</td><td>Tarif jangkar untuk volume kontrak terbesar</td></tr>
+          <tr><td>Paket 30 ton</td><td class="num">715</td><td>Tarif volume menengah</td></tr>
+          <tr><td>Paket 20 ton</td><td class="num">730</td><td>Tarif volume menengah</td></tr>
+          <tr><td>Paket 10 ton</td><td class="num">750</td><td>Tarif volume kecil</td></tr>
+          <tr><td>Eceran / over-quota</td><td class="num">800</td><td>Tarif non-kontrak atau kelebihan volume</td></tr>
+        </tbody>
+      </table></div>
+      <div class="call warn">
+        <div class="ct">Porsi residensial</div>
+        <p>Sekitar 25% kapasitas teknis dapat dialokasikan untuk sampah residensial dengan tarif lebih rendah. Porsi ini diposisikan untuk membantu menutup operasional layanan masyarakat, bukan sebagai sumber margin utama. Potensi dukungan atau subsidi DLH belum dimasukkan karena masih menunggu dasar kerja sama dan regulasi yang sesuai.</p>
+      </div>
+      <p class="src">Tarif dan volume di atas adalah asumsi kerja untuk pembahasan investasi. Nilai final mengikuti kontrak volume, kualitas sampah, jarak angkut, kebijakan daerah, dan hasil validasi operasional.</p>
+    </section>
+
+    <section class="sec" id="market">
+      <div class="sec-h"><span class="sec-num">08</span><h2>Strategi Pasar &amp; Penyerapan</h2></div>
+      <p class="sec-intro">Pasar utama diarahkan kepada penghasil sampah non-residensial di sekitar Anggadita dan kawasan industri Karawang Timur. Sampah residensial tetap dilayani sebagai bagian dari fungsi sosial TPS3R dengan struktur tarif yang berbeda.</p>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Segmen</th><th>Peran</th><th class="num">Target volume</th><th>Model penyerapan</th></tr></thead>
+        <tbody>
+          <tr class="anchor"><td>Industri</td><td>Jangkar utama</td><td class="num">100 ton/bulan</td><td>Kontrak layanan dan jadwal angkut teratur</td></tr>
+          <tr><td>Komersial / kawasan</td><td>Primer</td><td class="num">50 ton/bulan</td><td>Kerja sama tenant, gudang, pasar, dan fasilitas komersial</td></tr>
+          <tr><td>Residensial</td><td>Layanan masyarakat</td><td class="num">50 ton/bulan</td><td>Kerja sama desa atau skema layanan publik bertarif lebih rendah</td></tr>
+          <tr><td class="tot">Total kapasitas teknis</td><td class="tot">Basis operasi</td><td class="num tot">200 ton/bulan</td><td class="tot">75% non-residensial sebagai basis investor</td></tr>
+        </tbody>
+      </table></div>
+      <div class="roles">
+        <div class="role"><div class="rl">Saluran 01</div><h4>Kontrak langsung industri</h4><p>Menawarkan layanan timbang, pengolahan, dan laporan volume kepada perusahaan di sekitar lokasi.</p></div>
+        <div class="role"><div class="rl">Saluran 02</div><h4>Kawasan dan pengangkut</h4><p>Membangun kerja sama dengan pengelola kawasan, vendor angkut, gudang, dan fasilitas komersial.</p></div>
+        <div class="role"><div class="rl">Saluran 03</div><h4>Desa dan residensial</h4><p>Menjaga fungsi pelayanan lokal melalui kerja sama desa atau dukungan pemerintah yang dapat diverifikasi.</p></div>
+      </div>
+      <div class="call">
+        <div class="ct">Nilai layanan bagi pelanggan</div>
+        <p>TPS3R menawarkan penyelesaian yang lebih dekat dengan sumber, pencatatan melalui jembatan timbang, dan target penanganan hingga 95% untuk material sesuai spesifikasi. Kontrak volume, kualitas sampah, dan jadwal pembayaran tetap perlu dikonfirmasi sebelum dimasukkan ke model final.</p>
+      </div>
+    </section>
+
+    <section class="sec" id="product">
+      <div class="sec-h"><span class="sec-num">09</span><h2>Pendapatan dari Produk</h2></div>
+      <p class="sec-intro">Penjualan produk merupakan lapisan pendapatan tambahan. Dalam urutan pengambilan keputusan investor, produk tidak digunakan sebagai dasar skenario konservatif dan hanya menjadi potensi percepatan setelah kualitas serta pembeli tervalidasi.</p>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Produk</th><th class="num">Yield kerja</th><th class="num">Volume/bulan</th><th class="num">Harga asumsi</th><th class="num">Pendapatan indikatif</th></tr></thead>
+        <tbody>
+          <tr><td>RDF / bahan baku energi</td><td class="num">27%</td><td class="num">40.500 kg</td><td class="num">Rp1.000/kg</td><td class="num">Rp40.500.000</td></tr>
+          <tr><td>Biochar / pembenah tanah</td><td class="num">4,2%</td><td class="num">6.300 kg</td><td class="num">Rp2.250/kg</td><td class="num">Rp14.175.000</td></tr>
+          <tr><td>Material ekonomis / daur ulang</td><td class="num">3,0%</td><td class="num">4.500 kg</td><td class="num">Rp2.500/kg</td><td class="num">Rp11.250.000</td></tr>
+          <tr><td class="tot">Total produk</td><td class="num tot">—</td><td class="num tot">—</td><td class="num tot">—</td><td class="num tot">Rp65.925.000</td></tr>
+        </tbody>
+      </table></div>
+      <div class="call warn">
+        <div class="ct">Syarat pendapatan tambahan</div>
+        <p>Nilai produk bergantung pada mutu keluaran, hasil uji, biaya pemrosesan, harga pasar, dan kepastian offtake. Karena itu angka produk diperlakukan sebagai estimasi operasional dan tidak dimasukkan ke skenario tipping fee saja.</p>
+      </div>
+      <p class="src">Asumsi yield, volume, dan harga berasal dari model kerja draft proposal pada basis 150 ton per bulan. Angka tersebut perlu diuji melalui operasi aktual dan perjanjian pembelian produk.</p>
+    </section>
+
+    <section class="sec" id="projection">
+      <div class="sec-h"><span class="sec-num">10</span><h2>Proyeksi Pengembalian Modal</h2></div>
+      <p class="sec-intro">Urutan proyeksi dimulai dari pendapatan tipping fee saja. Penjualan produk ditampilkan sebagai potensi percepatan, bukan sebagai dasar utama keputusan investasi.</p>
+      <div class="financial-basis">
+        <div class="basis"><b>Investasi awal</b><span>Rp1,70 miliar</span></div>
+        <div class="basis"><b>Volume basis</b><span>75% = ±150 ton/bulan</span></div>
+        <div class="basis"><b>Kapasitas teknis</b><span>8 ton/hari · 200 ton/bulan</span></div>
+        <div class="basis"><b>OPEX draft</b><span>±Rp15,185 juta/bulan</span></div>
+      </div>
+      <div class="finance-grid">
+        <div class="finance-card primary">
+          <div class="tag">01 · Skenario dasar</div>
+          <div class="metric">±24</div>
+          <div class="label">bulan · tipping fee saja</div>
+          <div class="line"><span>Pemasukan tipping</span><span class="v">±Rp103,7 jt</span></div>
+          <div class="line"><span>OPEX</span><span class="v">−Rp15,2 jt</span></div>
+          <div class="line"><span>Porsi investor (80%)</span><span class="v">±Rp70,8 jt</span></div>
+          <div class="line"><span>Penjualan produk</span><span class="v">Tidak dihitung</span></div>
+        </div>
+        <div class="finance-card">
+          <div class="tag">02 · Potensi percepatan</div>
+          <div class="metric">±14</div>
+          <div class="label">bulan · tipping fee + produk</div>
+          <div class="line"><span>Omzet tipping + produk</span><span class="v">±Rp169,6 jt</span></div>
+          <div class="line"><span>OPEX</span><span class="v">−Rp15,2 jt</span></div>
+          <div class="line"><span>Porsi investor (80%)</span><span class="v">±Rp123,6 jt</span></div>
+          <div class="line"><span>Status</span><span class="v">Potensial</span></div>
+        </div>
+        <div class="finance-card">
+          <div class="tag">03 · Target operasi</div>
+          <div class="metric">10–11</div>
+          <div class="label">bulan · target teknis 100%</div>
+          <div class="line"><span>Volume teknis</span><span class="v">200 ton/bulan</span></div>
+          <div class="line"><span>Omzet tipping + produk</span><span class="v">±Rp226,2 jt</span></div>
+          <div class="line"><span>Porsi investor (80%)</span><span class="v">±Rp168,8 jt</span></div>
+          <div class="line"><span>Status</span><span class="v">Potensial</span></div>
+        </div>
+      </div>
+      <p class="finance-note">Angka di atas merupakan proyeksi indikatif berdasarkan asumsi kerja yang perlu divalidasi melalui tarif layanan, volume aktual, biaya operasional, harga produk, dan perjanjian bagi hasil. Estimasi pengembalian memperhitungkan ramp-up bulan pertama secara bertahap; angka dibulatkan untuk kebutuhan pembahasan awal.</p>
+    </section>
+
+    <section class="sec" id="timeline">
+      <div class="sec-h"><span class="sec-num">11</span><h2>Timeline Implementasi &amp; Keuangan</h2></div>
+      <p class="sec-intro">Utilisasi teknis ditingkatkan hingga 100% pada akhir bulan operasi pertama. Untuk menjaga kehati-hatian, basis pendapatan investor tetap menggunakan 75% volume non-residensial.</p>
+      <div class="timeline">
+        <div class="timeline-row"><div class="timeline-label">Hari 1–45</div><div class="timeline-detail"><b>Pemesanan, produksi, dan pemasangan</b><p>Pengadaan mesin dan pekerjaan sipil sederhana. Pendapatan belum dijadikan dasar proyeksi.</p></div></div>
+        <div class="timeline-row"><div class="timeline-label">Minggu berikutnya</div><div class="timeline-detail"><b>Trial dan pelatihan</b><p>Pengujian fungsi, penyesuaian proses, dan pelatihan operator.</p></div></div>
+        <div class="timeline-row"><div class="timeline-label">Bulan operasi 1</div><div class="timeline-detail"><b>Utilisasi teknis meningkat bertahap</b><p>Pendapatan mengikuti volume sampah yang benar-benar diterima dan diproses.</p></div></div>
+        <div class="timeline-row"><div class="timeline-label">Bulan operasi 2</div><div class="timeline-detail"><b>Operasi ditargetkan stabil</b><p>Target teknis 8 ton/hari; proyeksi dasar investor tetap memakai 75% volume non-residensial.</p></div></div>
+      </div>
+      <div class="ramp-grid">
+        <div class="ramp"><div class="rn">Minggu 1</div><div class="ru">25%</div><div class="rd">Utilisasi teknis</div></div>
+        <div class="ramp"><div class="rn">Minggu 2</div><div class="ru">50%</div><div class="rd">Utilisasi teknis</div></div>
+        <div class="ramp"><div class="rn">Minggu 3</div><div class="ru">75%</div><div class="rd">Utilisasi teknis</div></div>
+        <div class="ramp"><div class="rn">Minggu 4</div><div class="ru">100%</div><div class="rd">Target teknis akhir bulan</div></div>
+      </div>
+      <div class="call warn">
+        <div class="ct">Basis keuangan</div>
+        <p>Utilisasi teknis 100% tidak otomatis menjadi pendapatan investor 100%. Sebanyak 25% kapasitas dapat dialokasikan untuk layanan residensial dengan tarif lebih rendah, sedangkan 75% volume non-residensial menjadi basis utama proyeksi pengembalian.</p>
+      </div>
+    </section>
+
+    <section class="sec" id="scale">
+      <div class="sec-h"><span class="sec-num">12</span><h2>Roadmap Scale &amp; Komponen Replikasi</h2></div>
+      <p class="sec-intro">Setiap tahap hanya dilanjutkan setelah tahap sebelumnya menunjukkan penurunan residu ke landfill dan memiliki data operasi yang cukup. Skala 7 dan 17 TPS dirancang untuk berjalan paralel, terkoordinasi, dan saling mendukung.</p>
+      <div class="roadmap" aria-label="Roadmap pengembangan jaringan TPS3R Karawang">
+        <div class="roadmap-route-legend" aria-hidden="true"><span>Mulai · Unit pembuktian</span><span>Lulus gate → scale berikutnya</span><span>Target hilir</span></div>
+        <article class="roadmap-step">
+          <div class="roadmap-card">
+            <div class="roadmap-marker" aria-hidden="true">01</div>
+            <div class="roadmap-stage">Unit pembuktian</div>
+            <h3>1 TPS3R</h3>
+            <div class="roadmap-place">Rescue Nirmala Anggadita</div>
+            <div class="roadmap-data"><span>8 ton/hari</span><span>·</span><span>200 ton/bulan</span></div>
+            <p>Operasi awal untuk membuktikan alur timbang, pemilahan, pengolahan, SOP, OPEX, dan kualitas keluaran.</p>
+            <div class="roadmap-gate"><b>Naik tahap jika</b><span>residu akhir yang masuk landfill dapat ditekan semaksimal mungkin dan neraca massa terdokumentasi.</span></div>
+          </div>
+        </article>
+        <article class="roadmap-step">
+          <div class="roadmap-card">
+            <div class="roadmap-marker" aria-hidden="true">02</div>
+            <div class="roadmap-stage">Replikasi terkoordinasi</div>
+            <h3>7 TPS</h3>
+            <div class="roadmap-place">Melalui koordinasi dan penugasan DLH</div>
+            <div class="roadmap-data"><span>Operasi paralel</span><span>·</span><span>Backup lintas lokasi</span></div>
+            <p>Model Anggadita direplikasi pada jaringan TPS dengan SOP, pelaporan, pemeliharaan, dan koordinasi volume yang seragam.</p>
+            <div class="roadmap-gate"><b>Naik tahap jika</b><span>setiap unit memenuhi kriteria tahap awal dan dapat saling mendukung saat terjadi gangguan.</span></div>
+          </div>
+        </article>
+        <article class="roadmap-step">
+          <div class="roadmap-card">
+            <div class="roadmap-marker" aria-hidden="true">03</div>
+            <div class="roadmap-stage">Jaringan Karawang</div>
+            <h3>17 TPS</h3>
+            <div class="roadmap-place">Skala jaringan secara kumulatif</div>
+            <div class="roadmap-data"><span>Data terpadu</span><span>·</span><span>Maintenance bersama</span></div>
+            <p>Jaringan diperluas dengan standar operasi lintas lokasi, dukungan teknis, agregasi volume, dan jalur backup.</p>
+            <div class="roadmap-gate"><b>Siap ke tahap hilir jika</b><span>kinerja jaringan stabil dan pasokan bahan baku terpilah dapat dipetakan secara konsisten.</span></div>
+          </div>
+        </article>
+        <article class="roadmap-step">
+          <div class="roadmap-card">
+            <div class="roadmap-marker" aria-hidden="true">04</div>
+            <div class="roadmap-stage">Hilirisasi kayu</div>
+            <h3>Wood Pellet</h3>
+            <div class="roadmap-place">Fasilitas produksi Karawang</div>
+            <div class="roadmap-data"><span>Batang</span><span>·</span><span>Dahan</span><span>·</span><span>Ranting</span></div>
+            <p>Produksi wood pellet secara mandiri dari limbah kayu hasil penebangan dan pemangkasan pohon di ruang publik.</p>
+            <div class="roadmap-gate"><b>Prasyarat investasi</b><span>kualitas bahan baku, kapasitas produksi, spesifikasi produk, dan offtake tervalidasi.</span></div>
+          </div>
+        </article>
+      </div>
+      <div class="roles">
+        <div class="role"><div class="rl">Komponen 01</div><h4>Paket teknologi dan sipil</h4><p>Spesifikasi mesin, tata letak, jembatan timbang, utilitas, dan pekerjaan sipil sederhana dibuat sebagai paket yang dapat direplikasi.</p></div>
+        <div class="role"><div class="rl">Komponen 02</div><h4>SOP dan operator</h4><p>Pelatihan, standar keselamatan, pencatatan material masuk, serta prosedur pemilahan dan pengolahan diseragamkan.</p></div>
+        <div class="role"><div class="rl">Komponen 03</div><h4>Dashboard dan data</h4><p>Data timbang, volume terolah, residu di luar spesifikasi, OPEX, dan penerimaan dilaporkan dengan format yang sama.</p></div>
+        <div class="role"><div class="rl">Komponen 04</div><h4>Jaringan offtake</h4><p>Volume RDF, biochar, dan material ekonomis dapat diagregasi antarunit untuk memperkuat konsistensi mutu dan negosiasi pembeli.</p></div>
+        <div class="role"><div class="rl">Komponen 05</div><h4>Kelembagaan lokal</h4><p>Karang Taruna, pemerintah desa, pemilik lahan, dan pengelola setempat menjadi bagian dari kesiapan setiap lokasi.</p></div>
+        <div class="role"><div class="rl">Komponen 06</div><h4>Pembiayaan bertahap</h4><p>Setiap lokasi baru dinilai berdasarkan volume, kesiapan lahan, kontrak layanan, kebutuhan CAPEX, dan hasil unit sebelumnya.</p></div>
+      </div>
+      <div class="call">
+        <div class="ct">Kriteria pengembangan</div>
+        <p>Replikasi dipertimbangkan berdasarkan kestabilan operasi, penurunan residu ke landfill, kesiapan lokasi, volume sampah, kualitas pelaporan, kapasitas operator, pemeliharaan lintas lokasi, kontrak layanan, dan kepastian penerimaan produk. Fasilitas wood pellet menggunakan jalur bahan baku kayu yang dipisahkan dari sampah campuran.</p>
+      </div>
+    </section>
+
+    <section class="sec" id="next-step">
+      <div class="sec-h"><span class="sec-num">13</span><h2>Ruang Lingkup Investasi &amp; Langkah Berikutnya</h2></div>
+      <p class="sec-intro">Investasi awal mencakup komponen utama untuk memulai pengembangan fasilitas dan menyiapkan operasi tiga bulan pertama.</p>
+      <div class="offer">
+        <div class="oitem"><span class="ok">01</span><span class="ov"><b>Verifikasi dokumen dan lokasi</b> — peninjauan SK DLH, dokumen Desa Anggadita, status lahan, dan kesiapan lokasi.</span></div>
+        <div class="oitem"><span class="ok">02</span><span class="ov"><b>Finalisasi rancangan teknis</b> — penyesuaian tata letak, jembatan timbang, alur masuk, dan area pengolahan.</span></div>
+        <div class="oitem"><span class="ok">03</span><span class="ov"><b>Penetapan struktur kerja sama</b> — nilai investasi, penggunaan dana, pencatatan penerimaan, bagi hasil, dan pelaporan.</span></div>
+        <div class="oitem"><span class="ok">04</span><span class="ov"><b>Pengadaan dan implementasi</b> — pemesanan, produksi, pemasangan, trial, serta pelatihan operator.</span></div>
+      </div>
+      <h3>Dokumen untuk pembahasan investasi</h3>
+      <div class="steps">
+        <div class="si"><b>SK dan dokumen dukungan.</b> Dokumen DLH, Desa Anggadita, dan dokumen terkait status lokasi.</div>
+        <div class="si"><b>Rancangan anggaran.</b> Rincian mesin, jembatan timbang, operasional awal, alat pendukung, dashboard, dan administrasi.</div>
+        <div class="si"><b>Model keuangan.</b> Proyeksi tipping fee sebagai dasar serta potensi pendapatan produk sebagai percepatan.</div>
+        <div class="si"><b>Rencana pelaksanaan.</b> Jadwal 45 hari, trial, pelatihan, ramp-up, dan target operasi stabil.</div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="foot">
+    <div class="pad">
+      <p class="quote">Proposal investasi pengembangan TPS3R Rescue Nirmala Anggadita di Desa Anggadita, Kabupaten Karawang.</p>
+      <p class="disc"><strong style="color:#fff">Catatan.</strong> Dokumen ini merupakan bahan pembahasan investasi dan bukan dokumen perikatan yang mengikat. Proyeksi menggunakan asumsi kerja mengenai kapasitas, volume, biaya layanan, biaya operasional, harga produk, dan struktur bagi hasil. Pengembalian modal tidak dijamin dan wajib divalidasi melalui dokumen kerja sama, kondisi lokasi, hasil timbang, tarif layanan, serta kepastian penyerapan produk.</p>
+      <div class="sig">
+        <span>TPS3R Rescue Nirmala Anggadita</span>
+        <span>Desa Anggadita · Kabupaten Karawang</span>
+        <span>Proposal Investasi · 2026</span>
+      </div>
+    </div>
+  </footer>
+
+</article>
 </body>
 </html>
