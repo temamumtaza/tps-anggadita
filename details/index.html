@@ -163,16 +163,16 @@
   .diagram-bridge-line.is-dashed::after{color:var(--amber)}
   .diagram-bridge-right .diagram-bridge-line.is-dashed span{color:var(--amber)}
   .diagram-core .diagram-node:not(:last-child)::after{content:"↓";position:absolute;z-index:2;left:50%;bottom:-17px;transform:translateX(-50%);padding:0 4px;background:#e8f3eb;color:var(--brand);font-family:var(--disp);font-size:17px;line-height:1}
-  .mermaid-wrap{position:relative;overflow-x:auto;margin:0 -2px;padding:15px 8px 10px;border-bottom:1px solid var(--rule);-webkit-overflow-scrolling:touch}
+  .mermaid-wrap{position:relative;overflow-x:auto;min-height:410px;margin:0 -2px;padding:25px 14px 20px;border-bottom:1px solid var(--rule);-webkit-overflow-scrolling:touch}
   .mermaid-wrap::after{content:"geser untuk melihat seluruh peta";display:block;margin:4px 0 0;text-align:right;font-family:var(--mono);font-size:8.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--faint)}
-  .mermaid{min-width:820px;margin:0;text-align:center;font-family:var(--sans);font-size:12px;color:var(--ink);background:transparent}
-  .mermaid svg{display:block;width:100%;height:auto;max-width:none;margin:0 auto;overflow:visible}
+  .mermaid{min-width:980px;margin:0;text-align:center;font-family:var(--sans);font-size:14px;color:var(--ink);background:transparent}
+  .mermaid svg{display:block;width:100%;height:auto;min-height:370px;max-width:none;margin:0 auto;overflow:visible}
   .mermaid .node rect,.mermaid .node polygon,.mermaid .node circle{rx:7px;ry:7px}
-  .mermaid .nodeLabel{font-family:var(--sans)!important;font-size:12px!important;line-height:1.25!important;color:var(--ink)!important}
-  .mermaid .edgeLabel{font-family:var(--mono)!important;font-size:9px!important;letter-spacing:.02em;color:var(--ink2)!important}
+  .mermaid .nodeLabel{font-family:var(--sans)!important;font-size:14px!important;line-height:1.3!important;color:var(--ink)!important}
+  .mermaid .edgeLabel{font-family:var(--mono)!important;font-size:11px!important;letter-spacing:.02em;color:var(--ink2)!important}
   .mermaid .edgeLabel rect{fill:#fff!important;opacity:.94!important}
   .mermaid .cluster rect{fill:rgba(245,249,245,.82)!important;stroke:#c8dfcf!important;stroke-width:1px!important;rx:9px;ry:9px}
-  .mermaid .cluster-label text,.mermaid .cluster-label foreignObject{font-family:var(--mono)!important;font-size:10px!important;letter-spacing:.08em;text-transform:uppercase;fill:var(--brand-d)!important;color:var(--brand-d)!important}
+  .mermaid .cluster-label text,.mermaid .cluster-label foreignObject{font-family:var(--mono)!important;font-size:11px!important;letter-spacing:.08em;text-transform:uppercase;fill:var(--brand-d)!important;color:var(--brand-d)!important}
   .mermaid .flowchart-link{stroke-linecap:round}
   .diagram-caption{margin:12px 0 0;padding:0 2px;color:var(--muted);font-size:12px;line-height:1.5}
   .diagram-caption strong{color:var(--brand-d)}
@@ -289,7 +289,7 @@
   .foot .disc{font-size:11.5px;color:#9fb3a6;line-height:1.6}
   .foot .sig{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,.14);font-family:var(--mono);font-size:11px;color:#7f9789;letter-spacing:.04em}
   .foot .sig .meta-updated{color:#a9c6b6}
-  @media(max-width:680px){.location-grid{grid-template-columns:1fr}.data-grid{grid-template-columns:1fr}.finance-grid{grid-template-columns:1fr}.flowline{grid-template-columns:1fr 1fr}.timeline-row{grid-template-columns:1fr;gap:5px}.ramp-grid{grid-template-columns:1fr 1fr}.stakeholder-map-head{display:block}.stakeholder-map-key{justify-content:flex-start;max-width:none;margin-top:11px}.diagram-lanes{display:block;margin-bottom:2px}.diagram-lane-heading{padding:6px 0 2px;border-top:1px solid var(--rule)}.diagram-lane-heading:nth-child(2){text-align:left}.diagram-lane-heading:nth-child(3){text-align:left}.diagram-field{display:block}.diagram-bridge{display:none}.diagram-stack{display:block;padding:0}.diagram-core{display:block;margin:12px 0;padding:0 10px}.diagram-node{margin-bottom:8px}.diagram-node:last-child{margin-bottom:0}.material-path-line{display:block}.material-arrow{padding:7px 0;text-align:left}.material-arrow small{display:inline;margin-left:7px}.model-role-head{display:none}.model-role-row{grid-template-columns:1fr;gap:3px}.model-role-row .role-label{margin-top:2px}}
+  @media(max-width:680px){.location-grid{grid-template-columns:1fr}.data-grid{grid-template-columns:1fr}.finance-grid{grid-template-columns:1fr}.flowline{grid-template-columns:1fr 1fr}.timeline-row{grid-template-columns:1fr;gap:5px}.ramp-grid{grid-template-columns:1fr 1fr}.stakeholder-map-head{display:block}.stakeholder-map-key{justify-content:flex-start;max-width:none;margin-top:11px}.diagram-lanes{display:block;margin-bottom:2px}.diagram-lane-heading{padding:6px 0 2px;border-top:1px solid var(--rule)}.diagram-lane-heading:nth-child(2){text-align:left}.diagram-lane-heading:nth-child(3){text-align:left}.diagram-field{display:block}.diagram-bridge{display:none}.diagram-stack{display:block;padding:0}.diagram-core{display:block;margin:12px 0;padding:0 10px}.diagram-node{margin-bottom:8px}.diagram-node:last-child{margin-bottom:0}.mermaid-wrap{min-height:360px;padding:20px 6px 18px}.mermaid{min-width:900px}.material-path-line{display:block}.material-arrow{padding:7px 0;text-align:left}.material-arrow small{display:inline;margin-left:7px}.model-role-head{display:none}.model-role-row{grid-template-columns:1fr;gap:3px}.model-role-row .role-label{margin-top:2px}}
   @media(max-width:680px){.roadmap{display:block;min-height:0;margin:24px 0 18px;padding:0 0 0 45px}.roadmap::before{top:22px;bottom:22px;left:20px;right:auto;width:18px;height:auto;transform:translateX(-50%);background:linear-gradient(180deg,#173b28 0%,#4f805e 68%,#977029 100%);box-shadow:0 7px 15px -13px rgba(15,45,28,.8)}.roadmap::after{top:25px;bottom:25px;left:20px;right:auto;width:3px;height:auto;transform:translateX(-50%);background:repeating-linear-gradient(180deg,rgba(255,255,255,.86) 0 17px,transparent 17px 32px)}.roadmap-route-legend{display:none}.roadmap-step{height:auto;min-height:0;padding-bottom:14px}.roadmap-step:last-child{padding-bottom:0}.roadmap-step::before{top:26px;left:-25px}.roadmap-marker{top:14px;left:14px}.roadmap-card,.roadmap-step:nth-child(even) .roadmap-card{position:relative;top:auto;right:auto;bottom:auto;left:auto;min-height:0;padding:56px 16px 16px}.roadmap-card h3{font-size:22px}}
   @media(max-width:480px){.flowline{grid-template-columns:1fr}.hero-top{font-size:9px}.project-nav{padding-left:24px;padding-right:24px}.stakeholder-map-title{font-size:18px}.stakeholder-map-key{display:block}.stakeholder-map-key span{margin-top:6px}.stakeholder-diagram{padding-top:12px}.diagram-node-primary{padding:14px 13px 13px}.material-point{padding-left:10px}}
   @media print{body{background:#fff;padding:0}.doc{box-shadow:none;max-width:none}.hero,.snap,.foot{-webkit-print-color-adjust:exact;print-color-adjust:exact}thead th{-webkit-print-color-adjust:exact;print-color-adjust:exact}.project-nav{display:none}}
@@ -443,7 +443,7 @@
             <div class="diagram-lane-heading">Pendukung &amp; kontrol</div>
           </div>
           <div class="mermaid-wrap">
-            <pre class="mermaid">%%{init: {'theme':'base','securityLevel':'loose','themeVariables':{'fontFamily':'Inter, sans-serif','fontSize':'13px','primaryColor':'#ffffff','primaryTextColor':'#14231b','primaryBorderColor':'#2c6a48','lineColor':'#6f957d','secondaryColor':'#ecf4ef','tertiaryColor':'#f7efe0','clusterBkg':'#f5f9f5','clusterBorder':'#c8dfcf','edgeLabelBackground':'#ffffff'},'flowchart':{'curve':'basis','htmlLabels':true,'nodeSpacing':32,'rankSpacing':52}}}%%
+            <pre class="mermaid">%%{init: {'theme':'base','securityLevel':'loose','themeVariables':{'fontFamily':'Inter, sans-serif','fontSize':'15px','primaryColor':'#ffffff','primaryTextColor':'#14231b','primaryBorderColor':'#2c6a48','lineColor':'#6f957d','secondaryColor':'#ecf4ef','tertiaryColor':'#f7efe0','clusterBkg':'#f5f9f5','clusterBorder':'#c8dfcf','edgeLabelBackground':'#ffffff'},'flowchart':{'curve':'basis','htmlLabels':true,'nodeSpacing':46,'rankSpacing':68}}}%%
 flowchart LR
   subgraph CTX["MANDAT &amp; KONTEKS"]
     direction TB
@@ -463,8 +463,8 @@ flowchart LR
 
   subgraph OPS["PENDUKUNG &amp; KONTROL"]
     direction TB
-    KIBAR["Kibar Laksana Bintang&lt;br/&gt;SDM · SOP · finance · operasi · ERP cloud"]
-    INV["Investor Proyek&lt;br/&gt;CAPEX · laporan · pengawasan"]
+    KIBAR["Kibar Laksana Bintang&lt;br/&gt;KSO · SDM · SOP · finance · operasi · ERP cloud"]
+    INV["Investor Proyek&lt;br/&gt;CAPEX ke TPS3R · pengawasan langsung"]
     LBS["Lestari Bumi Sembada&lt;br/&gt;teknologi · instalasi · training · maintenance"]
     ERP["ERP berbasis Cloud&lt;br/&gt;dashboard · data · audit trail"]
   end
@@ -473,7 +473,7 @@ flowchart LR
   DESA -->|kesiapan lokasi| TPS
   NET -. konteks skala .-> TPS
   TPS -. KSO · koordinasi .-> KIBAR
-  INV -. pengawasan · laporan .-> KIBAR
+  INV -. CAPEX · pengawasan .-> TPS
   LBS -->|dukungan teknis| TPS
   KIBAR -->|data operasi| ERP
   ERP -->|transparansi| INV
@@ -508,11 +508,11 @@ flowchart LR
       <div class="model-role-list" aria-label="Ringkasan tanggung jawab proyek">
         <div class="model-role-head"><span>Peran</span><span>Pelaku</span><span>Tanggung jawab utama</span></div>
         <div class="model-role-row"><div class="role-label">Pengelola lokal</div><h4>Karang Taruna Kabupaten Karawang</h4><p>Mengelola TPS3R Rescue Nirmala Anggadita dan satu TPS Jabar serta menjadi penghubung kelembagaan lokal.</p></div>
-        <div class="model-role-row"><div class="role-label">KSO operasional</div><h4>Kibar Laksana Bintang</h4><p>Mengelola SDM, SOP, keuangan, operasi, pelaporan, dan ERP cloud untuk mendukung operasi yang sustain dan transparan.</p></div>
+        <div class="model-role-row"><div class="role-label">KSO operasional</div><h4>Kibar Laksana Bintang</h4><p>Mengelola SDM, SOP, keuangan, operasi, pelaporan, dan ERP cloud; berkolaborasi dengan TPS3R untuk menyediakan bukti kinerja bagi pengawasan investor.</p></div>
         <div class="model-role-row"><div class="role-label">Unit implementasi</div><h4>TPS3R Anggadita &amp; 1 TPS Jabar</h4><p>Menjalankan penimbangan, pemilahan, pengolahan, pencatatan, dan pengelolaan residu sesuai standar operasi.</p></div>
         <div class="model-role-row"><div class="role-label">Mitra lokasi</div><h4>Pemerintah Desa &amp; Pemilik Lahan</h4><p>Mendukung lokasi implementasi sesuai dokumen dan kerja sama yang tersedia.</p></div>
         <div class="model-role-row"><div class="role-label">Mitra teknologi</div><h4>Lestari Bumi Sembada</h4><p>Menyediakan dukungan teknologi proses, instalasi, pelatihan, commissioning, dan pemeliharaan teknis.</p></div>
-        <div class="model-role-row"><div class="role-label">Mitra investasi</div><h4>Investor proyek</h4><p>Menyediakan kebutuhan investasi awal serta melakukan pengawasan dan koordinasi atas keputusan strategis.</p></div>
+        <div class="model-role-row"><div class="role-label">Mitra investasi</div><h4>Investor proyek</h4><p>Menempatkan CAPEX pada TPS3R dan melakukan pengawasan langsung atas penggunaan dana, kinerja teknologi, dan keputusan strategis; koordinasi operasi didukung KSO Kibar.</p></div>
         <div class="model-role-row"><div class="role-label">Sistem transparansi</div><h4>ERP Berbasis Cloud</h4><p>Menyediakan data operasi dan keuangan yang terdokumentasi, terkontrol, dan dapat ditinjau sesuai hak akses.</p></div>
         <div class="model-role-row"><div class="role-label">Penerimaan layanan</div><h4>Industri, komersial, dan residensial</h4><p>Menjadi sumber volume sampah dengan struktur biaya layanan yang berbeda.</p></div>
       </div>
@@ -834,7 +834,7 @@ flowchart LR
       theme:'base',
       themeVariables:{
         fontFamily:'Inter, sans-serif',
-        fontSize:'13px',
+        fontSize:'15px',
         primaryColor:'#ffffff',
         primaryTextColor:'#14231b',
         primaryBorderColor:'#2c6a48',
@@ -845,7 +845,7 @@ flowchart LR
         clusterBorder:'#c8dfcf',
         edgeLabelBackground:'#ffffff'
       },
-      flowchart:{htmlLabels:true,curve:'basis',nodeSpacing:32,rankSpacing:52}
+      flowchart:{htmlLabels:true,curve:'basis',nodeSpacing:46,rankSpacing:68}
     });
     mermaid.run({querySelector:'.mermaid'});
   });
