@@ -115,46 +115,87 @@
   .role .rl{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--mint);font-weight:600;margin-bottom:6px}
   .role h4{margin:0 0 6px;color:var(--ink);font-size:15px;font-family:var(--disp);font-weight:600}
   .role p{font-size:12.5px;margin:0;color:var(--muted)}
-  .stakeholder-map{position:relative;overflow:hidden;margin:20px 0 24px;padding:18px;border:1px solid var(--rule);border-radius:10px;background:linear-gradient(145deg,#f5f9f5 0%,#fff 68%);box-shadow:0 14px 28px -28px rgba(20,55,35,.8)}
-  .stakeholder-map::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.34;background-image:linear-gradient(rgba(44,106,72,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(44,106,72,.06) 1px,transparent 1px);background-size:24px 24px;mask-image:linear-gradient(135deg,#000 0%,transparent 72%)}
-  .stakeholder-map-head{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:flex-start;gap:18px;padding-bottom:14px;border-bottom:1px solid var(--rule)}
+  .stakeholder-map{position:relative;margin:20px 0 24px;padding:0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);background:linear-gradient(180deg,#f7faf7 0%,#fff 100%)}
+  .stakeholder-map-head{position:relative;display:flex;justify-content:space-between;align-items:flex-start;gap:18px;padding:17px 0 15px;border-bottom:1px solid var(--rule)}
   .stakeholder-map-kicker{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--brand);font-weight:600;margin-bottom:5px}
   .stakeholder-map-title{font-family:var(--disp);font-size:20px;line-height:1.12;color:var(--ink);font-weight:600}
   .stakeholder-map-intro{max-width:56ch;margin:5px 0 0;color:var(--muted);font-size:12px;line-height:1.45}
-  .stakeholder-map-key{display:flex;align-items:center;gap:7px;flex:none;font-family:var(--mono);font-size:9.5px;line-height:1.35;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);text-align:right}
-  .stakeholder-map-key i{display:inline-block;width:25px;height:0;border-top:2px dashed var(--amber)}
-  .stakeholder-map-grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1.16fr 1fr;gap:12px;margin-top:16px;align-items:stretch}
-  .map-column{display:flex;flex-direction:column;gap:9px;min-width:0}
-  .map-column-center{position:relative;padding:0 10px 12px;border:1px solid #c8dfcf;border-radius:9px;background:rgba(236,244,239,.72)}
-  .map-column-center::before{content:"";position:absolute;z-index:0;top:38px;bottom:22px;left:50%;width:2px;transform:translateX(-50%);background:repeating-linear-gradient(180deg,var(--brand) 0 16px,transparent 16px 27px);opacity:.45}
-  .map-column-center>*{position:relative;z-index:1}
-  .map-lane-label{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);font-weight:600;padding:2px 2px 1px}
-  .map-column-center .map-lane-label{color:var(--brand-d);padding-left:2px}
-  .map-node{position:relative;border:1px solid var(--rule);border-left:3px solid var(--brand);border-radius:8px;padding:12px 13px;background:#fff;box-shadow:0 8px 17px -19px rgba(20,40,28,.9)}
-  .map-node-green{border-left-color:var(--brand)}
-  .map-node-amber{border-left-color:var(--amber);background:#fffdf8}
-  .map-node-muted{border-left-color:#8c9b91;background:rgba(255,255,255,.72)}
-  .map-node-core{border-left-color:var(--brand-d);background:#fff;box-shadow:0 8px 19px -18px rgba(20,55,35,.9)}
-  .map-node-kso{border-color:#a7cdb2;border-left:4px solid var(--mint);background:var(--mint-bg)}
-  .map-node-primary{border-color:#8fbea0;border-left:5px solid var(--brand-d);background:linear-gradient(145deg,#eaf5ed 0%,#fff 72%);box-shadow:0 12px 22px -18px rgba(20,55,35,.95)}
-  .map-node-primary h4{font-size:18px;letter-spacing:-.01em}
-  .map-node-type{font-family:var(--mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand);font-weight:600;margin-bottom:4px}
-  .map-node-amber .map-node-type{color:var(--amber)}
-  .map-node h4{font-family:var(--disp);font-size:15px;line-height:1.15;color:var(--ink);font-weight:600;margin:0 0 5px}
-  .map-node p{font-size:11.5px;line-height:1.42;color:var(--muted);margin:0}
-  .map-edge{display:block;margin-top:9px;padding-top:7px;border-top:1px dashed var(--rule);font-family:var(--mono);font-size:9px;line-height:1.35;letter-spacing:.03em;color:var(--brand-d);font-weight:600}
-  .map-node-amber .map-edge{color:var(--amber)}
-  .map-mini-list{display:flex;gap:5px;flex-wrap:wrap;margin-top:9px}
-  .map-mini-list span{padding:4px 6px;border:1px solid #c6ddcd;border-radius:4px;background:#fff;color:var(--brand-d);font-family:var(--mono);font-size:9px;line-height:1.1}
-  .map-arrow{display:flex;flex-direction:column;align-items:center;gap:1px;min-height:28px;color:var(--brand);font-family:var(--mono);font-size:9px;letter-spacing:.04em;text-transform:uppercase;text-align:center}
-  .map-arrow b{font-family:var(--disp);font-size:20px;line-height:.85;color:var(--brand)}
-  .map-route-strip{position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:13px;padding-top:13px;border-top:1px solid var(--rule)}
-  .map-flow-card{border:1px solid var(--rule);border-top:2px solid var(--brand);border-radius:7px;padding:11px 12px;background:rgba(255,255,255,.85)}
-  .map-flow-card:nth-child(2){border-top-color:var(--amber);background:#fffdf8}
-  .map-flow-card:nth-child(3){border-top-color:#5c9b72}
-  .map-flow-card b{display:block;font-family:var(--mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand);margin-bottom:4px}
-  .map-flow-card:nth-child(2) b{color:var(--amber)}
-  .map-flow-card p{font-size:11.5px;line-height:1.42;color:var(--muted);margin:0}
+  .stakeholder-map-key{display:flex;align-items:flex-start;justify-content:flex-end;gap:12px;flex:none;max-width:285px;font-family:var(--mono);font-size:9px;line-height:1.35;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);text-align:left}
+  .stakeholder-map-key span{display:flex;align-items:center;gap:6px}
+  .stakeholder-map-key i{display:inline-block;width:25px;height:0;border-top:2px solid var(--brand);flex:none}
+  .stakeholder-map-key .key-dashed{border-top-style:dashed;border-top-color:var(--amber)}
+  .stakeholder-diagram{position:relative;padding:18px 0 10px;background-image:linear-gradient(rgba(44,106,72,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(44,106,72,.045) 1px,transparent 1px);background-size:28px 28px}
+  .diagram-lanes,.diagram-field{display:grid;grid-template-columns:minmax(0,1fr) 62px minmax(250px,1.35fr) 62px minmax(0,1fr);min-width:0}
+  .diagram-lanes{align-items:end;margin-bottom:8px}
+  .diagram-lane-heading{grid-column:span 1;font-family:var(--mono);font-size:9px;line-height:1.3;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);font-weight:600;padding:0 7px}
+  .diagram-lane-heading:nth-child(2){grid-column:3;color:var(--brand-d);text-align:center}
+  .diagram-lane-heading:nth-child(3){grid-column:5;text-align:right}
+  .diagram-field{align-items:stretch}
+  .diagram-stack,.diagram-core{display:grid;grid-template-rows:repeat(3,minmax(112px,auto));gap:10px;min-width:0}
+  .diagram-stack{padding:0 7px}
+  .diagram-core{position:relative;padding:0 13px;background:rgba(232,243,235,.78);border-left:1px solid #c8dfcf;border-right:1px solid #c8dfcf;border-radius:8px}
+  .diagram-core::before{content:"";position:absolute;z-index:0;top:20px;bottom:20px;left:50%;width:1px;background:repeating-linear-gradient(180deg,var(--brand) 0 15px,transparent 15px 25px);opacity:.55}
+  .diagram-node{position:relative;z-index:1;min-width:0;padding:13px 5px 12px 14px;border-bottom:1px solid #dce6de;background:transparent}
+  .diagram-node:last-child{border-bottom:0}
+  .diagram-node::before{content:"";position:absolute;left:0;top:15px;bottom:15px;width:3px;border-radius:3px;background:var(--brand)}
+  .diagram-node-primary{padding:16px 16px 14px;border:1px solid #87b79a;border-left:5px solid var(--brand-d);border-radius:9px;background:#fff;box-shadow:0 13px 25px -21px rgba(20,55,35,.95)}
+  .diagram-node-primary::before{display:none}
+  .diagram-node-primary h4{font-size:18px;letter-spacing:-.01em}
+  .diagram-node-kso{background:rgba(236,244,239,.55)}
+  .diagram-node-kso::before{background:var(--mint)}
+  .diagram-node-control::before{background:var(--amber)}
+  .diagram-node-muted::before{background:#8c9b91}
+  .diagram-node h4{font-family:var(--disp);font-size:15px;line-height:1.15;color:var(--ink);font-weight:600;margin:0 0 5px}
+  .diagram-node p{font-size:11.5px;line-height:1.42;color:var(--muted);margin:0}
+  .diagram-node-type{font-family:var(--mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand);font-weight:600;margin-bottom:4px}
+  .diagram-node-control .diagram-node-type{color:var(--amber)}
+  .diagram-edge{display:block;margin-top:9px;font-family:var(--mono);font-size:9px;line-height:1.35;letter-spacing:.03em;color:var(--brand-d);font-weight:600}
+  .diagram-node-control .diagram-edge{color:var(--amber)}
+  .diagram-mini-list{display:flex;gap:5px;flex-wrap:wrap;margin-top:9px}
+  .diagram-mini-list span{padding:4px 6px;border:1px solid #c6ddcd;border-radius:4px;background:var(--mint-bg);color:var(--brand-d);font-family:var(--mono);font-size:9px;line-height:1.1}
+  .diagram-bridge{display:grid;grid-template-rows:repeat(3,minmax(112px,auto));gap:10px;min-width:0}
+  .diagram-bridge-line{position:relative;display:flex;align-items:center;justify-content:center;min-width:0}
+  .diagram-bridge-line::before{content:"";position:absolute;left:0;right:0;top:50%;border-top:2px solid #83aa8e}
+  .diagram-bridge-line::after{content:"›";position:absolute;right:-2px;top:50%;transform:translateY(-56%);font-family:var(--disp);font-size:20px;line-height:1;color:var(--brand-d)}
+  .diagram-bridge-line span{position:relative;z-index:1;padding:2px 3px;background:#f7faf7;font-family:var(--mono);font-size:8px;line-height:1.15;letter-spacing:.03em;text-transform:uppercase;color:var(--brand-d);text-align:center}
+  .diagram-bridge-right .diagram-bridge-line::after{content:"‹";right:auto;left:-2px;color:var(--brand-d)}
+  .diagram-bridge-line.is-dashed::before{border-top-style:dashed;border-top-color:var(--amber)}
+  .diagram-bridge-line.is-dashed::after{color:var(--amber)}
+  .diagram-bridge-right .diagram-bridge-line.is-dashed span{color:var(--amber)}
+  .diagram-core .diagram-node:not(:last-child)::after{content:"↓";position:absolute;z-index:2;left:50%;bottom:-17px;transform:translateX(-50%);padding:0 4px;background:#e8f3eb;color:var(--brand);font-family:var(--disp);font-size:17px;line-height:1}
+  .mermaid-wrap{position:relative;overflow-x:auto;margin:0 -2px;padding:15px 8px 10px;border-bottom:1px solid var(--rule);-webkit-overflow-scrolling:touch}
+  .mermaid-wrap::after{content:"geser untuk melihat seluruh peta";display:block;margin:4px 0 0;text-align:right;font-family:var(--mono);font-size:8.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--faint)}
+  .mermaid{min-width:820px;margin:0;text-align:center;font-family:var(--sans);font-size:12px;color:var(--ink);background:transparent}
+  .mermaid svg{display:block;width:100%;height:auto;max-width:none;margin:0 auto;overflow:visible}
+  .mermaid .node rect,.mermaid .node polygon,.mermaid .node circle{rx:7px;ry:7px}
+  .mermaid .nodeLabel{font-family:var(--sans)!important;font-size:12px!important;line-height:1.25!important;color:var(--ink)!important}
+  .mermaid .edgeLabel{font-family:var(--mono)!important;font-size:9px!important;letter-spacing:.02em;color:var(--ink2)!important}
+  .mermaid .edgeLabel rect{fill:#fff!important;opacity:.94!important}
+  .mermaid .cluster rect{fill:rgba(245,249,245,.82)!important;stroke:#c8dfcf!important;stroke-width:1px!important;rx:9px;ry:9px}
+  .mermaid .cluster-label text,.mermaid .cluster-label foreignObject{font-family:var(--mono)!important;font-size:10px!important;letter-spacing:.08em;text-transform:uppercase;fill:var(--brand-d)!important;color:var(--brand-d)!important}
+  .mermaid .flowchart-link{stroke-linecap:round}
+  .diagram-caption{margin:12px 0 0;padding:0 2px;color:var(--muted);font-size:12px;line-height:1.5}
+  .diagram-caption strong{color:var(--brand-d)}
+  .material-path{margin-top:17px;padding:15px 0 5px;border-top:1px solid var(--rule)}
+  .material-path-head{font-family:var(--mono);font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--brand-d);font-weight:600;margin-bottom:10px}
+  .material-path-line{display:grid;grid-template-columns:minmax(0,1fr) 54px minmax(0,1.25fr) 54px minmax(0,1fr);align-items:center;gap:8px}
+  .material-point{min-height:45px;padding:4px 8px 4px 12px;border-left:3px solid var(--brand);display:flex;flex-direction:column;justify-content:center}
+  .material-point.main{border-left-color:var(--brand-d);background:var(--mint-bg)}
+  .material-point.output{border-left-color:#5c9b72}
+  .material-point b{font-family:var(--disp);font-size:13px;line-height:1.2;color:var(--ink)}
+  .material-point small{font-size:10.5px;line-height:1.35;color:var(--muted);margin-top:3px}
+  .material-arrow{position:relative;color:var(--brand);font-family:var(--disp);font-size:22px;font-style:normal;text-align:center}
+  .material-arrow small{display:block;font-family:var(--mono);font-size:8px;line-height:1.2;letter-spacing:.02em;color:var(--muted);white-space:normal}
+  .material-loop{margin:13px 0 0;padding-top:11px;border-top:1px dashed #d9c79f;color:var(--muted);font-size:11.5px;line-height:1.45}
+  .material-loop strong{color:var(--amber);font-family:var(--mono);font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;margin-right:5px}
+  .model-role-list{margin:22px 0 18px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+  .model-role-head,.model-role-row{display:grid;grid-template-columns:130px minmax(190px,.75fr) minmax(0,1.45fr);gap:16px;align-items:start}
+  .model-role-head{padding:10px 4px;border-bottom:1px solid var(--rule);font-family:var(--mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
+  .model-role-row{padding:12px 4px;border-bottom:1px dashed var(--rule);font-size:12px}
+  .model-role-row:last-child{border-bottom:0}
+  .model-role-row .role-label{font-family:var(--mono);font-size:9px;line-height:1.35;letter-spacing:.07em;text-transform:uppercase;color:var(--brand);font-weight:600}
+  .model-role-row h4{font-family:var(--disp);font-size:14px;line-height:1.2;color:var(--ink);font-weight:600;margin:0}
+  .model-role-row p{font-size:12px;line-height:1.45;color:var(--muted);margin:0}
   .flowline{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:7px;overflow:hidden;margin:18px 0}
   .flowline div{background:#fff;padding:14px;text-align:center}
   .flowline b{display:block;font-family:var(--disp);font-size:13px;color:var(--ink)}
@@ -247,9 +288,10 @@
   .foot .quote{font-family:var(--disp);font-style:italic;font-size:clamp(16px,3.4vw,20px);color:#fff;margin-bottom:22px;max-width:48ch}
   .foot .disc{font-size:11.5px;color:#9fb3a6;line-height:1.6}
   .foot .sig{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,.14);font-family:var(--mono);font-size:11px;color:#7f9789;letter-spacing:.04em}
-  @media(max-width:680px){.location-grid{grid-template-columns:1fr}.data-grid{grid-template-columns:1fr}.finance-grid{grid-template-columns:1fr}.flowline{grid-template-columns:1fr 1fr}.timeline-row{grid-template-columns:1fr;gap:5px}.ramp-grid{grid-template-columns:1fr 1fr}.stakeholder-map-grid{grid-template-columns:1fr}.map-column-center{order:-1;padding:0 9px 12px}.stakeholder-map-head{display:block}.stakeholder-map-key{margin-top:10px;text-align:left}.map-route-strip{grid-template-columns:1fr}}
+  .foot .sig .meta-updated{color:#a9c6b6}
+  @media(max-width:680px){.location-grid{grid-template-columns:1fr}.data-grid{grid-template-columns:1fr}.finance-grid{grid-template-columns:1fr}.flowline{grid-template-columns:1fr 1fr}.timeline-row{grid-template-columns:1fr;gap:5px}.ramp-grid{grid-template-columns:1fr 1fr}.stakeholder-map-head{display:block}.stakeholder-map-key{justify-content:flex-start;max-width:none;margin-top:11px}.diagram-lanes{display:block;margin-bottom:2px}.diagram-lane-heading{padding:6px 0 2px;border-top:1px solid var(--rule)}.diagram-lane-heading:nth-child(2){text-align:left}.diagram-lane-heading:nth-child(3){text-align:left}.diagram-field{display:block}.diagram-bridge{display:none}.diagram-stack{display:block;padding:0}.diagram-core{display:block;margin:12px 0;padding:0 10px}.diagram-node{margin-bottom:8px}.diagram-node:last-child{margin-bottom:0}.material-path-line{display:block}.material-arrow{padding:7px 0;text-align:left}.material-arrow small{display:inline;margin-left:7px}.model-role-head{display:none}.model-role-row{grid-template-columns:1fr;gap:3px}.model-role-row .role-label{margin-top:2px}}
   @media(max-width:680px){.roadmap{display:block;min-height:0;margin:24px 0 18px;padding:0 0 0 45px}.roadmap::before{top:22px;bottom:22px;left:20px;right:auto;width:18px;height:auto;transform:translateX(-50%);background:linear-gradient(180deg,#173b28 0%,#4f805e 68%,#977029 100%);box-shadow:0 7px 15px -13px rgba(15,45,28,.8)}.roadmap::after{top:25px;bottom:25px;left:20px;right:auto;width:3px;height:auto;transform:translateX(-50%);background:repeating-linear-gradient(180deg,rgba(255,255,255,.86) 0 17px,transparent 17px 32px)}.roadmap-route-legend{display:none}.roadmap-step{height:auto;min-height:0;padding-bottom:14px}.roadmap-step:last-child{padding-bottom:0}.roadmap-step::before{top:26px;left:-25px}.roadmap-marker{top:14px;left:14px}.roadmap-card,.roadmap-step:nth-child(even) .roadmap-card{position:relative;top:auto;right:auto;bottom:auto;left:auto;min-height:0;padding:56px 16px 16px}.roadmap-card h3{font-size:22px}}
-  @media(max-width:480px){.flowline{grid-template-columns:1fr}.hero-top{font-size:9px}.project-nav{padding-left:24px;padding-right:24px}.stakeholder-map{padding:15px}.map-node{padding:11px 12px}}
+  @media(max-width:480px){.flowline{grid-template-columns:1fr}.hero-top{font-size:9px}.project-nav{padding-left:24px;padding-right:24px}.stakeholder-map-title{font-size:18px}.stakeholder-map-key{display:block}.stakeholder-map-key span{margin-top:6px}.stakeholder-diagram{padding-top:12px}.diagram-node-primary{padding:14px 13px 13px}.material-point{padding-left:10px}}
   @media print{body{background:#fff;padding:0}.doc{box-shadow:none;max-width:none}.hero,.snap,.foot{-webkit-print-color-adjust:exact;print-color-adjust:exact}thead th{-webkit-print-color-adjust:exact;print-color-adjust:exact}.project-nav{display:none}}
 </style>
 </head>
@@ -265,7 +307,7 @@
       <div class="doctype">Proposal Investasi</div>
       <div class="project-mark wm">TPS3R <small>ANGGADITA</small></div>
       <h1>Pengembangan fasilitas pengolahan sampah di <span class="accent">Desa Anggadita</span></h1>
-      <p class="hero-sub">Proposal investasi untuk meningkatkan TPS3R yang telah beroperasi dari fasilitas pemilahan manual menjadi fasilitas pengolahan dengan kapasitas teknis hingga 8 ton per hari.</p>
+      <p class="hero-sub">Proposal investasi untuk meningkatkan TPS3R yang telah beroperasi menjadi fasilitas pengolahan berbasis teknologi pirolisis, dengan target mengelola 95–100% material sesuai spesifikasi dan menekan residu ke landfill seminimal mungkin.</p>
       <dl class="hero-meta">
         <div><dt>Pengusul / pengelola</dt><dd>TPS3R Rescue Nirmala Anggadita</dd></div>
         <div><dt>Lokasi implementasi</dt><dd>Desa Anggadita, Kabupaten Karawang</dd></div>
@@ -284,7 +326,7 @@
       <div class="snap-grid">
         <div class="snap-cell"><div class="n">Rp 1,70 M</div><div class="k">Total kebutuhan investasi awal</div></div>
         <div class="snap-cell"><div class="n">8 ton/hari</div><div class="k">Kapasitas teknis target operasi</div></div>
-        <div class="snap-cell"><div class="n acc">95%</div><div class="k">Target penanganan sesuai spesifikasi sistem</div></div>
+        <div class="snap-cell"><div class="n acc">95%</div><div class="k">Target material terkelola · minim residu</div></div>
         <div class="snap-cell"><div class="n acc">±24 bln</div><div class="k">Tipping fee saja · basis konservatif</div></div>
       </div>
     </div>
@@ -327,7 +369,7 @@
       </div>
       <div class="call">
         <div class="ct">Tujuan investasi</div>
-        <p>Investasi ditujukan untuk mengubah fungsi TPS3R dari titik pemilahan manual menjadi fasilitas pengolahan sampah di lokasi.</p>
+        <p>Investasi ditujukan untuk mengubah TPS3R dari titik pemilahan manual menjadi fasilitas pengolahan berbasis pirolisis yang mampu mengurangi ketergantungan pada landfill.</p>
       </div>
     </section>
 
@@ -362,146 +404,129 @@
 
     <section class="sec" id="prospectus">
       <div class="sec-h"><span class="sec-num">03</span><h2>Filosofi &amp; Prospektus Anggadita</h2></div>
-      <p class="sec-intro">Proyek ini berangkat dari kebutuhan untuk menyelesaikan sampah lebih dekat dengan sumbernya, terutama pada wilayah dengan aktivitas industri dan komersial.</p>
+      <p class="sec-intro">Proyek ini berangkat dari kebutuhan untuk menyelesaikan sampah lebih dekat dengan sumbernya melalui teknologi pirolisis, terutama pada wilayah dengan aktivitas industri dan komersial.</p>
       <div class="call big">
         <div class="ct">Prinsip proyek</div>
-        <p>Sampah tidak hanya dipindahkan dari TPS ke TPA. Sampah perlu ditimbang, dipilah, dan diolah di hulu dengan pencatatan yang dapat dipertanggungjawabkan.</p>
+        <p>Inti proyek ini adalah teknologi pirolisis: fraksi sampah yang sesuai diproses melalui konversi termal terkendali agar 95–100% material dapat dikelola dan residu akhir ditekan menuju target zero landfill. Penimbangan dan pencatatan berfungsi sebagai bukti kinerja, bukan tujuan utama fasilitas.</p>
       </div>
       <ul>
         <li><strong>Lokasi strategis.</strong> Desa Anggadita berada di sekitar wilayah industri dan bersebelahan dengan kawasan industri Karawang Timur.</li>
-        <li><strong>Kebutuhan pengolahan lokal.</strong> Pelaku industri dan komersial memerlukan jalur pengelolaan sampah yang lebih dekat, tercatat, dan dapat dipantau.</li>
+        <li><strong>Kebutuhan pengolahan lokal.</strong> Pelaku industri dan komersial memerlukan jalur pengelolaan sampah yang lebih dekat, efektif, dan mampu mengurangi aliran ke TPA.</li>
         <li><strong>Kondisi saat ini.</strong> Banyak fasilitas masih berfungsi sebagai titik transit; sampah yang sudah dikumpulkan tetap diangkut kembali ke TPA.</li>
-        <li><strong>Peluang proyek.</strong> TPS3R Anggadita telah memiliki kegiatan operasional, dukungan lokasi, dan dasar kelembagaan untuk dikembangkan menjadi fasilitas pengolahan.</li>
+        <li><strong>Peluang teknologi.</strong> TPS3R Anggadita telah memiliki kegiatan operasional, dukungan lokasi, dan dasar kelembagaan untuk ditingkatkan dengan sistem pirolisis serta tata kelola operasi yang terukur.</li>
       </ul>
       <div class="call warn">
         <div class="ct">Catatan proyeksi</div>
-        <p>Target penanganan hingga 95% berlaku untuk material yang sesuai dengan spesifikasi sistem. B3, kasur, sofa, dan material lain yang tidak dapat diproses melalui mesin dikelola melalui jalur terpisah.</p>
+        <p>Target 95–100% terkelola dan zero landfill adalah target kinerja yang harus dibuktikan melalui neraca massa, bukan klaim otomatis. Material di luar spesifikasi seperti B3, kasur, sofa, dan material inert tetap dikelola melalui jalur yang sesuai.</p>
       </div>
     </section>
 
     <section class="sec" id="model">
       <div class="sec-h"><span class="sec-num">04</span><h2>Model Kelembagaan &amp; Operasi</h2></div>
-      <p class="sec-intro">Proyek menggabungkan pengelola lokal, KSO manajemen operasional, DLH, Pemerintah Desa, pemilik lahan, investor, mitra teknologi, sumber volume, dan sistem data dalam satu tata kelola yang terkoordinasi.</p>
+      <p class="sec-intro">Proyek menempatkan TPS3R sebagai pusat pengolahan berbasis pirolisis, lalu menggabungkan pengelola lokal, KSO manajemen operasional, DLH, Pemerintah Desa, pemilik lahan, investor, mitra teknologi, sumber volume, dan sistem data dalam satu tata kelola yang terkoordinasi.</p>
       <div class="stakeholder-map" aria-label="Peta keterlibatan proyek TPS3R">
         <div class="stakeholder-map-head">
           <div>
             <div class="stakeholder-map-kicker">Peta keterlibatan proyek</div>
-            <div class="stakeholder-map-title">Siapa melakukan apa</div>
-            <p class="stakeholder-map-intro">Garis pengelolaan, teknologi, pendanaan, pengawasan, input, dan keluaran disusun dalam satu peta kerja.</p>
+            <div class="stakeholder-map-title">TPS3R sebagai pusat kerja</div>
+            <p class="stakeholder-map-intro">Baca dari kiri ke kanan: mandat dan konteks masuk ke TPS3R; KSO, investor, teknologi, dan data menjaga operasi tetap berjalan.</p>
           </div>
-          <div class="stakeholder-map-key"><i></i><span>garis pengawasan &amp; koordinasi investor</span></div>
-        </div>
-        <div class="stakeholder-map-grid">
-          <div class="map-column">
-            <div class="map-lane-label">Kelembagaan &amp; konteks</div>
-            <div class="map-node map-node-green">
-              <div class="map-node-type">Penugasan &amp; koordinasi</div>
-              <h4>DLH Kabupaten Karawang</h4>
-              <p>Memberikan dasar penugasan, koordinasi layanan, dan konteks pengembangan jaringan.</p>
-              <span class="map-edge">→ penugasan · koordinasi</span>
-            </div>
-            <div class="map-node">
-              <div class="map-node-type">Lokasi implementasi</div>
-              <h4>Pemerintah Desa &amp; Pemilik Lahan</h4>
-              <p>Mendukung kesiapan lokasi, hubungan lokal, dan penggunaan lahan sesuai dokumen kerja sama.</p>
-              <span class="map-edge">→ lokasi · dukungan lokal</span>
-            </div>
-            <div class="map-node map-node-muted">
-              <div class="map-node-type">Konteks jaringan wilayah</div>
-              <h4>17 TPS di Kabupaten Karawang</h4>
-              <p>Jumlah TPS di wilayah kabupaten sebagai konteks jaringan dan peluang koordinasi lanjutan.</p>
-              <span class="map-edge">→ konteks skala wilayah</span>
-            </div>
-          </div>
-          <div class="map-column map-column-center">
-            <div class="map-lane-label">Pusat proyek &amp; unit operasi</div>
-            <div class="map-node map-node-primary">
-              <div class="map-node-type">Main project view</div>
-              <h4>TPS3R Rescue Nirmala Anggadita</h4>
-              <p>Unit utama pengolahan dan pusat manfaat proyek, dengan satu TPS Jabar dalam koordinasi pengelola.</p>
-              <div class="map-mini-list"><span>8 ton/hari</span><span>Timbang</span><span>Olah</span><span>Catat</span></div>
-              <span class="map-edge">↑ pusat operasi · data · hasil pengolahan</span>
-            </div>
-            <div class="map-arrow"><span>dikelola oleh</span><b>↓</b></div>
-            <div class="map-node map-node-core">
-              <div class="map-node-type">Pengelola / kelembagaan lokal</div>
-              <h4>Karang Taruna Kabupaten Karawang</h4>
-              <p>Mengelola TPS3R Anggadita dan satu TPS Jabar serta menjadi penghubung kelembagaan lokal.</p>
-              <span class="map-edge">↓ pengelolaan lokal · hubungan kelembagaan</span>
-            </div>
-            <div class="map-arrow"><span>beroperasi bersama</span><b>↓</b></div>
-            <div class="map-node map-node-muted">
-              <div class="map-node-type">Unit koordinasi tambahan</div>
-              <h4>1 TPS Jabar</h4>
-              <p>Dikelola bersamaan dalam kerangka operasi dan koordinasi pengelola.</p>
-              <span class="map-edge">→ operasi paralel · koordinasi</span>
-            </div>
-          </div>
-          <div class="map-column">
-            <div class="map-lane-label">KSO, teknologi, modal &amp; data</div>
-            <div class="map-node map-node-kso">
-              <div class="map-node-type">KSO pendukung operasi</div>
-              <h4>Kibar Laksana Bintang</h4>
-              <p>Mendukung operasi melalui manajemen SDM, SOP, keuangan, operasi, dan ERP cloud.</p>
-              <div class="map-mini-list"><span>SDM</span><span>SOP</span><span>Finance</span><span>ERP Cloud</span></div>
-              <span class="map-edge">↔ garis koordinasi &amp; pengawasan investor</span>
-            </div>
-            <div class="map-node map-node-amber">
-              <div class="map-node-type">Pendanaan &amp; tata kelola</div>
-              <h4>Investor Proyek</h4>
-              <p>Menyediakan CAPEX dan mengawasi kinerja, laporan, serta keputusan strategis.</p>
-              <span class="map-edge">↕ pengawasan · laporan · koordinasi dengan KSO</span>
-            </div>
-            <div class="map-node">
-              <div class="map-node-type">Mitra teknologi</div>
-              <h4>Lestari Bumi Sembada</h4>
-              <p>Mendukung teknologi proses, instalasi, pelatihan, commissioning, dan pemeliharaan teknis.</p>
-              <span class="map-edge">→ teknologi proses · maintenance</span>
-            </div>
-            <div class="map-node map-node-muted">
-              <div class="map-node-type">Sistem tata kelola</div>
-              <h4>ERP Berbasis Cloud</h4>
-              <p>Mencatat data SDM, volume, biaya, operasi, dan laporan dengan jejak audit yang dapat dipantau.</p>
-              <span class="map-edge">→ dashboard · laporan · audit trail</span>
-            </div>
+          <div class="stakeholder-map-key">
+            <span><i></i>alur kerja langsung</span>
+            <span><i class="key-dashed"></i>koordinasi / pengawasan</span>
           </div>
         </div>
-        <div class="map-route-strip">
-          <div class="map-flow-card">
-            <b>Input &amp; logistik</b>
-            <p>Industri, komersial, residensial, serta pengangkut menyediakan volume dan jadwal layanan yang tercatat.</p>
+        <div class="stakeholder-diagram">
+          <div class="diagram-lanes" aria-hidden="true">
+            <div class="diagram-lane-heading">Mandat &amp; konteks</div>
+            <div class="diagram-lane-heading">Pusat proyek</div>
+            <div class="diagram-lane-heading">Pendukung &amp; kontrol</div>
           </div>
-          <div class="map-flow-card">
-            <b>Fuel loop internal</b>
-            <p>Kayu tebangan dan pemangkasan DLH diolah menjadi wood pellet sebagai bahan bakar internal TPS3R, bukan untuk offtaker.</p>
+          <div class="mermaid-wrap">
+            <pre class="mermaid">%%{init: {'theme':'base','securityLevel':'loose','themeVariables':{'fontFamily':'Inter, sans-serif','fontSize':'13px','primaryColor':'#ffffff','primaryTextColor':'#14231b','primaryBorderColor':'#2c6a48','lineColor':'#6f957d','secondaryColor':'#ecf4ef','tertiaryColor':'#f7efe0','clusterBkg':'#f5f9f5','clusterBorder':'#c8dfcf','edgeLabelBackground':'#ffffff'},'flowchart':{'curve':'basis','htmlLabels':true,'nodeSpacing':32,'rankSpacing':52}}}%%
+flowchart LR
+  subgraph CTX["MANDAT &amp; KONTEKS"]
+    direction TB
+    DLH["DLH Kabupaten Karawang&lt;br/&gt;penugasan · koordinasi layanan"]
+    DESA["Pemerintah Desa &amp; Pemilik Lahan&lt;br/&gt;kesiapan lokasi · dukungan lokal"]
+    NET["17 TPS di Kabupaten Karawang&lt;br/&gt;konteks jaringan wilayah"]
+  end
+
+  subgraph CORE["PUSAT PROYEK &amp; UNIT OPERASI"]
+    direction TB
+    TPS["TPS3R Rescue Nirmala Anggadita&lt;br/&gt;MAIN PROJECT VIEW · teknologi pirolisis · minim residu"]
+    KT["Karang Taruna Kabupaten Karawang&lt;br/&gt;pengelola lokal"]
+    TPSJ["1 TPS Jabar&lt;br/&gt;operasi paralel · koordinasi · backup"]
+    TPS -->|dikelola oleh| KT
+    KT -->|operasi paralel · backup| TPSJ
+  end
+
+  subgraph OPS["PENDUKUNG &amp; KONTROL"]
+    direction TB
+    KIBAR["Kibar Laksana Bintang&lt;br/&gt;SDM · SOP · finance · operasi · ERP cloud"]
+    INV["Investor Proyek&lt;br/&gt;CAPEX · laporan · pengawasan"]
+    LBS["Lestari Bumi Sembada&lt;br/&gt;teknologi · instalasi · training · maintenance"]
+    ERP["ERP berbasis Cloud&lt;br/&gt;dashboard · data · audit trail"]
+  end
+
+  DLH -->|mandat| TPS
+  DESA -->|kesiapan lokasi| TPS
+  NET -. konteks skala .-> TPS
+  TPS -. KSO · koordinasi .-> KIBAR
+  INV -. pengawasan · laporan .-> KIBAR
+  LBS -->|dukungan teknis| TPS
+  KIBAR -->|data operasi| ERP
+  ERP -->|transparansi| INV
+
+  classDef core fill:#eaf5ed,stroke:#1b4a31,stroke-width:3px,color:#14231b
+  classDef local fill:#ffffff,stroke:#2c6a48,stroke-width:1.5px,color:#14231b
+  classDef support fill:#ecf4ef,stroke:#5aa97b,stroke-width:1.5px,color:#14231b
+  classDef control fill:#fffdf8,stroke:#9a6a16,stroke-width:1.5px,color:#14231b
+  classDef muted fill:#f6f8f5,stroke:#8c9b91,stroke-width:1px,color:#3a4a40
+  class TPS core
+  class KT,TPSJ,DLH,DESA local
+  class KIBAR,LBS support
+  class INV control
+  class NET,ERP muted
+  linkStyle 0,1,2,3,7,8,9 stroke:#6f957d,stroke-width:2px
+  linkStyle 4,5,6 stroke:#9a6a16,stroke-width:2px,stroke-dasharray:5 4</pre>
           </div>
-          <div class="map-flow-card">
-            <b>Output &amp; penyerapan</b>
-            <p>Produk hasil pengolahan lain diarahkan kepada offtaker sesuai spesifikasi, hasil validasi, dan kesepakatan komersial.</p>
+          <p class="diagram-caption"><strong>Cara membaca:</strong> TPS3R Rescue Nirmala Anggadita adalah pusat teknologi pirolisis dan manfaat proyek. Karang Taruna menjalankan pengelolaan lokal; Kibar menjaga manajemen KSO; investor mengawasi; Lestari Bumi Sembada menopang teknologi; ERP menyatukan bukti kinerja.</p>
+        </div>
+        <div class="material-path" aria-label="Alur material proyek">
+          <div class="material-path-head">Alur material yang perlu dipahami</div>
+          <div class="material-path-line">
+            <div class="material-point"><b>Input &amp; logistik</b><small>Industri · komersial · residensial · pengangkut</small></div>
+            <div class="material-arrow" aria-hidden="true">→<small>timbang &amp; catat</small></div>
+            <div class="material-point main"><b>TPS3R Anggadita</b><small>Pirolisis · konversi termal · residu minimum</small></div>
+            <div class="material-arrow" aria-hidden="true">→<small>hasil tervalidasi</small></div>
+            <div class="material-point output"><b>Produk &amp; offtaker</b><small>Sesuai spesifikasi dan kesepakatan komersial</small></div>
           </div>
+          <p class="material-loop"><strong>↺ Fuel loop internal.</strong> Kayu tebangan dan pemangkasan DLH dipisahkan dari sampah campuran untuk diolah menjadi wood pellet sebagai bahan bakar internal TPS3R, bukan untuk offtaker.</p>
         </div>
       </div>
-      <div class="roles">
-        <div class="role"><div class="rl">Pengelola lokal</div><h4>Karang Taruna Kabupaten Karawang</h4><p>Mengelola TPS3R Rescue Nirmala Anggadita dan satu TPS Jabar serta menjadi penghubung kelembagaan lokal.</p></div>
-        <div class="role"><div class="rl">KSO operasional</div><h4>Kibar Laksana Bintang</h4><p>Mengelola SDM, SOP, keuangan, operasi, pelaporan, dan ERP cloud untuk mendukung operasi yang sustain dan transparan.</p></div>
-        <div class="role"><div class="rl">Unit implementasi</div><h4>TPS3R Anggadita &amp; 1 TPS Jabar</h4><p>Menjalankan penimbangan, pemilahan, pengolahan, pencatatan, dan pengelolaan residu sesuai standar operasi.</p></div>
-        <div class="role"><div class="rl">Mitra lokasi</div><h4>Pemerintah Desa &amp; Pemilik Lahan</h4><p>Mendukung lokasi implementasi sesuai dokumen dan kerja sama yang tersedia.</p></div>
-        <div class="role"><div class="rl">Mitra teknologi</div><h4>Lestari Bumi Sembada</h4><p>Menyediakan dukungan teknologi proses, instalasi, pelatihan, commissioning, dan pemeliharaan teknis.</p></div>
-        <div class="role"><div class="rl">Mitra investasi</div><h4>Investor proyek</h4><p>Menyediakan kebutuhan investasi awal serta melakukan pengawasan dan koordinasi atas keputusan strategis.</p></div>
-        <div class="role"><div class="rl">Sistem transparansi</div><h4>ERP Berbasis Cloud</h4><p>Menyediakan data operasi dan keuangan yang terdokumentasi, terkontrol, dan dapat ditinjau sesuai hak akses.</p></div>
-        <div class="role"><div class="rl">Penerimaan layanan</div><h4>Industri, komersial, dan residensial</h4><p>Menjadi sumber volume sampah dengan struktur biaya layanan yang berbeda.</p></div>
+      <div class="model-role-list" aria-label="Ringkasan tanggung jawab proyek">
+        <div class="model-role-head"><span>Peran</span><span>Pelaku</span><span>Tanggung jawab utama</span></div>
+        <div class="model-role-row"><div class="role-label">Pengelola lokal</div><h4>Karang Taruna Kabupaten Karawang</h4><p>Mengelola TPS3R Rescue Nirmala Anggadita dan satu TPS Jabar serta menjadi penghubung kelembagaan lokal.</p></div>
+        <div class="model-role-row"><div class="role-label">KSO operasional</div><h4>Kibar Laksana Bintang</h4><p>Mengelola SDM, SOP, keuangan, operasi, pelaporan, dan ERP cloud untuk mendukung operasi yang sustain dan transparan.</p></div>
+        <div class="model-role-row"><div class="role-label">Unit implementasi</div><h4>TPS3R Anggadita &amp; 1 TPS Jabar</h4><p>Menjalankan penimbangan, pemilahan, pengolahan, pencatatan, dan pengelolaan residu sesuai standar operasi.</p></div>
+        <div class="model-role-row"><div class="role-label">Mitra lokasi</div><h4>Pemerintah Desa &amp; Pemilik Lahan</h4><p>Mendukung lokasi implementasi sesuai dokumen dan kerja sama yang tersedia.</p></div>
+        <div class="model-role-row"><div class="role-label">Mitra teknologi</div><h4>Lestari Bumi Sembada</h4><p>Menyediakan dukungan teknologi proses, instalasi, pelatihan, commissioning, dan pemeliharaan teknis.</p></div>
+        <div class="model-role-row"><div class="role-label">Mitra investasi</div><h4>Investor proyek</h4><p>Menyediakan kebutuhan investasi awal serta melakukan pengawasan dan koordinasi atas keputusan strategis.</p></div>
+        <div class="model-role-row"><div class="role-label">Sistem transparansi</div><h4>ERP Berbasis Cloud</h4><p>Menyediakan data operasi dan keuangan yang terdokumentasi, terkontrol, dan dapat ditinjau sesuai hak akses.</p></div>
+        <div class="model-role-row"><div class="role-label">Penerimaan layanan</div><h4>Industri, komersial, dan residensial</h4><p>Menjadi sumber volume sampah dengan struktur biaya layanan yang berbeda.</p></div>
       </div>
-      <div class="flowline" aria-label="Alur operasi proyek">
-        <div><b>Sampah masuk</b><span>Ditimbang dan dicatat</span></div>
-        <div><b>Pemilahan</b><span>Material ekonomis dipisahkan</span></div>
-        <div><b>Pengolahan</b><span>Material sesuai spesifikasi diproses</span></div>
-        <div><b>Produk &amp; hasil</b><span>Produk dijual atau dimanfaatkan</span></div>
+      <div class="flowline" aria-label="Alur inti teknologi proyek">
+        <div><b>Karakterisasi</b><span>Material masuk diidentifikasi</span></div>
+        <div><b>Pemilahan</b><span>Fraksi sesuai spesifikasi disiapkan</span></div>
+        <div><b>Pirolisis</b><span>Konversi termal terkendali</span></div>
+        <div><b>Hasil terkelola</b><span>Produk dan residu minimum</span></div>
       </div>
     </section>
 
     <section class="sec" id="technology">
       <div class="sec-h"><span class="sec-num">05</span><h2>Teknologi &amp; Alur Pemrosesan</h2></div>
-      <p class="sec-intro">Pyronex II digunakan sebagai sistem pengolahan termal untuk meningkatkan kapasitas TPS3R dan mengurangi volume sampah yang perlu diangkut ke TPA.</p>
+      <p class="sec-intro">Pyronex II digunakan sebagai sistem pirolisis untuk mengonversi fraksi sampah yang sesuai melalui proses termal terkendali, sehingga TPS3R dapat mengelola volume lebih besar dengan residu akhir yang minimum.</p>
       <figure class="machine">
         <img src="assets/pyronex-system.jpg" alt="Susunan sistem dan alur proses Pyronex II" loading="lazy">
         <figcaption>Susunan sistem Pyronex II · ilustrasi rangkaian proses</figcaption>
@@ -510,11 +535,11 @@
         <div class="spec"><dt>Kapasitas teknis</dt><dd>1 ton/jam</dd></div>
         <div class="spec"><dt>Target operasi</dt><dd>8 ton/hari</dd></div>
         <div class="spec"><dt>Setara bulanan</dt><dd>200 ton/bulan</dd></div>
-        <div class="spec"><dt>Proses</dt><dd>Pengolahan termal terkendali</dd></div>
+        <div class="spec"><dt>Proses</dt><dd>Pirolisis · termal terkendali</dd></div>
         <div class="spec"><dt>Pengendalian</dt><dd>Wet scrubber</dd></div>
         <div class="spec"><dt>Bahan reaktor</dt><dd>Stainless steel AISI 304</dd></div>
         <div class="spec"><dt>Basis pendapatan</dt><dd>75% non-residensial</dd></div>
-        <div class="spec"><dt>Target penanganan</dt><dd>Hingga 95% sesuai spesifikasi</dd></div>
+        <div class="spec"><dt>Target pengelolaan</dt><dd>95–100% · minim residu</dd></div>
       </div>
       <h3>Alur pemrosesan 10 tahap</h3>
       <div class="flowsteps">
@@ -531,7 +556,7 @@
       </div>
       <div class="call">
         <div class="ct">Definisi target</div>
-        <p>Target 95% menunjukkan porsi sampah yang dapat ditangani melalui rangkaian sistem. Material di luar spesifikasi mesin tetap dicatat dan dikelola melalui jalur yang sesuai.</p>
+        <p>Target 95–100% menunjukkan porsi material yang dapat dikelola melalui rangkaian pemilahan dan pirolisis. Target zero landfill berarti residu akhir ditekan semaksimal mungkin dan harus dibuktikan melalui neraca massa; material di luar spesifikasi mesin tetap dikelola melalui jalur yang sesuai.</p>
       </div>
     </section>
 
@@ -617,7 +642,7 @@
       </div>
       <div class="call">
         <div class="ct">Nilai layanan bagi pelanggan</div>
-        <p>TPS3R menawarkan penyelesaian yang lebih dekat dengan sumber, pencatatan melalui jembatan timbang, dan target penanganan hingga 95% untuk material sesuai spesifikasi. Kontrak volume, kualitas sampah, dan jadwal pembayaran tetap perlu dikonfirmasi sebelum dimasukkan ke model final.</p>
+        <p>TPS3R menawarkan pengolahan berbasis pirolisis yang lebih dekat dengan sumber, dengan target 95–100% material sesuai spesifikasi dapat dikelola dan residu ke landfill ditekan seminimal mungkin. Kontrak volume, kualitas sampah, performa teknologi, dan jadwal pembayaran tetap perlu dikonfirmasi sebelum dimasukkan ke model final.</p>
       </div>
     </section>
 
@@ -714,7 +739,7 @@
             <h3>1 TPS3R</h3>
             <div class="roadmap-place">Rescue Nirmala Anggadita</div>
             <div class="roadmap-data"><span>8 ton/hari</span><span>·</span><span>200 ton/bulan</span></div>
-            <p>Operasi awal untuk membuktikan alur timbang, pemilahan, pengolahan, SOP, OPEX, dan kualitas keluaran.</p>
+            <p>Operasi awal untuk membuktikan kinerja pirolisis, kesiapan pemilahan, SOP, OPEX, kualitas keluaran, dan kemampuan menekan residu.</p>
             <div class="roadmap-gate"><b>Naik tahap jika</b><span>residu akhir yang masuk landfill dapat ditekan semaksimal mungkin dan neraca massa terdokumentasi.</span></div>
           </div>
         </article>
@@ -794,10 +819,36 @@
         <span>TPS3R Rescue Nirmala Anggadita</span>
         <span>Desa Anggadita · Kabupaten Karawang</span>
         <span>Proposal Investasi · 2026</span>
+        <span class="meta-updated">updated 15, august 2026</span>
       </div>
     </div>
   </footer>
 
 </article>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.3/dist/mermaid.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    mermaid.initialize({
+      startOnLoad:false,
+      securityLevel:'loose',
+      theme:'base',
+      themeVariables:{
+        fontFamily:'Inter, sans-serif',
+        fontSize:'13px',
+        primaryColor:'#ffffff',
+        primaryTextColor:'#14231b',
+        primaryBorderColor:'#2c6a48',
+        lineColor:'#6f957d',
+        secondaryColor:'#ecf4ef',
+        tertiaryColor:'#f7efe0',
+        clusterBkg:'#f5f9f5',
+        clusterBorder:'#c8dfcf',
+        edgeLabelBackground:'#ffffff'
+      },
+      flowchart:{htmlLabels:true,curve:'basis',nodeSpacing:32,rankSpacing:52}
+    });
+    mermaid.run({querySelector:'.mermaid'});
+  });
+</script>
 </body>
 </html>
